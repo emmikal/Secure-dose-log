@@ -53,4 +53,5 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("androidx.biometric:biometric:1.2.0-alpha05")
     implementation("net.zetetic:sqlcipher-android:4.16.0")
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 }
