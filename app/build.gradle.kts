@@ -13,8 +13,8 @@ android {
         applicationId = "com.example.turboautismdoselog"
         minSdk = 35
         targetSdk = 36
-        versionCode = 7
-        versionName = "0.7-alpha"
+        versionCode = 8
+        versionName = "0.8-alpha"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -52,7 +52,5 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("androidx.biometric:biometric:1.2.0-alpha05")
-    implementation("net.zetetic:sqlcipher-android:4.9.0")
-    implementation("androidx.sqlite:sqlite:2.4.0")
-    implementation("androidx.security:security-crypto:1.1.0-alpha06")
+    implementation("net.zetetic:sqlcipher-android:4.16.0")
 }
