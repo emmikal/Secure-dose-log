@@ -1,4 +1,7 @@
 <resources>
+    <string name="lock_prompt_message">Unlock to view your dose log</string>
+    <string name="unlock_button">Unlock</string>
+    <string name="lock_no_auth_available">No screen lock set up. Please enable a PIN, pattern, or biometric in device settings.</string>
     <string name="app_name">Turboautism Dose Log</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
