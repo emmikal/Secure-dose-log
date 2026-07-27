@@ -19,6 +19,7 @@ The project is currently in an early alpha stage, so features and database struc
 - CSV export
 - CSV import (for backups)
 - **App lock** — biometric (fingerprint/face) or device PIN/pattern/password required to open the app, with automatic re-lock when backgrounded
+- **Encrypted database** — the on-device database is encrypted at rest (AES-256 via SQLCipher), with the passphrase generated automatically and stored securely via the Android Keystore
 - Basic statistics:
   - total entries
   - entries today
@@ -27,7 +28,7 @@ The project is currently in an early alpha stage, so features and database struc
   - average doses per day
   - last dose timestamp
 
-## 🔒 Privacy
+## 🔒 Privacy & Security
 
 This application is designed to work completely offline.
 
@@ -37,10 +38,11 @@ This application is designed to work completely offline.
 - No user accounts
 - All data is stored locally on the device
 - App access is protected by biometric/device-credential lock
+- The local database is encrypted at rest
 
 The application does not request network permission.
 
-**Note:** the app lock protects access to the app; the underlying database is not yet encrypted at rest. This is a planned future improvement — see the Roadmap below.
+**Note:** CSV export files are plaintext. Keep this in mind if you back up or share exported CSVs.
 
 ## 📱 Compatibility
 
@@ -65,6 +67,8 @@ Download the latest `.apk` file and install it manually.
 
 Minimum supported Android version depends on the `minSdk` defined in the project.
 
+**Upgrading from an older version:** since v0.8, the database format has changed (encryption). If updating from a pre-0.8 install, export your data to CSV first, then uninstall the old version before installing the new one — see the CHANGELOG or release notes for details.
+
 ## 🛠 Build From Source
 
 ### Requirements
@@ -81,9 +85,9 @@ Open the project in Android Studio and build the APK.
 
 ## 🗺 Roadmap
 
-- Database encryption at rest
 - Option to disable/configure the app lock
 - Manual "lock now" action
+- Encrypted CSV export
 
 ## ⚠️ Disclaimer
 
