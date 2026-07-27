@@ -6,6 +6,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import com.example.turboautismdoselog.security.DatabaseProvider;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -43,11 +45,7 @@ public class DrugStatisticsActivity extends AppCompatActivity {
 
         statDrugName.setText(drug);
 
-        db = Room.databaseBuilder(
-                getApplicationContext(),
-                AppDatabase.class,
-                "drug_database"
-        ).allowMainThreadQueries().build();
+        db = DatabaseProvider.getDatabase(getApplicationContext());
 
         loadStats();
     }

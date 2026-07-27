@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.example.turboautismdoselog.security.DatabaseProvider;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -50,11 +52,7 @@ public class StatisticsActivity extends AppCompatActivity {
         emptyState = findViewById(R.id.emptyState);
         statisticsContent = findViewById(R.id.statisticsContent);
 
-        db = Room.databaseBuilder(
-                getApplicationContext(),
-                AppDatabase.class,
-                "drug_database"
-        ).allowMainThreadQueries().build();
+        db = DatabaseProvider.getDatabase(getApplicationContext());
 
         loadStatistics();
     }

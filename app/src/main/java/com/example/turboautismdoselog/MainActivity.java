@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.room.Room;
 
+import com.example.turboautismdoselog.security.DatabaseProvider;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -78,11 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         emptyState = findViewById(R.id.emptyState);
 
-        db = Room.databaseBuilder(
-                getApplicationContext(),
-                AppDatabase.class,
-                "drug_database"
-        ).allowMainThreadQueries().build();
+        db = DatabaseProvider.getDatabase(getApplicationContext());
 
         refreshList();
         setupSwipeDelete();
