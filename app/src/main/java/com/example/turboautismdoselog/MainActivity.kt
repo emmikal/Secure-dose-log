@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshList() {
-        val entries = db.drugDao().all
+        val entries = db.drugDao().getAll()
 
         if (entries.isEmpty()) {
             emptyState.visibility = View.VISIBLE
@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
-                val entries = db.drugDao().all
+                val entries = db.drugDao().getAll()
                 val deletedEntry = entries[position]
 
                 db.drugDao().delete(deletedEntry)
@@ -191,7 +191,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDrugAutocomplete(field: AutoCompleteTextView) {
-        val entries = db.drugDao().all
+        val entries = db.drugDao().getAll()
         val drugNames = mutableListOf<String>()
 
         for (entry in entries) {
@@ -213,7 +213,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun exportDatabaseToCSV() {
-        val entries = db.drugDao().all
+        val entries = db.drugDao().getAll()
 
         val fileDateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm", Locale.getDefault())
         val timestamp = fileDateFormat.format(Date())

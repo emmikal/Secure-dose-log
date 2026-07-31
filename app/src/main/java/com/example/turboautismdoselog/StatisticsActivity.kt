@@ -52,7 +52,7 @@ class StatisticsActivity : AppCompatActivity() {
     }
 
     private fun loadStatistics() {
-        val entries = db.drugDao().all
+        val entries = db.drugDao().getAll()
 
         if (entries.isEmpty()) {
             emptyState.visibility = View.VISIBLE
@@ -67,7 +67,7 @@ class StatisticsActivity : AppCompatActivity() {
         statTotalEntries.text = entries.size.toString()
 
         // Most used drug
-        val stats = db.drugDao().drugStats
+        val stats = db.drugDao().getDrugStats()
 
         if (stats.isNotEmpty()) {
             statMostUsedDrug.text = stats[0].drug
