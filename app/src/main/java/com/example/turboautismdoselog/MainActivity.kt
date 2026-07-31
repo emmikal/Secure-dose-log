@@ -31,6 +31,7 @@ import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import com.example.turboautismdoselog.security.disableCopyCut
 
 class MainActivity : AppCompatActivity() {
 
@@ -148,6 +149,8 @@ class MainActivity : AppCompatActivity() {
         val nameField: EditText = view.findViewById(R.id.editSessionName)
         val startButton: Button = view.findViewById(R.id.buttonStartSession)
 
+        nameField.disableCopyCut()
+        
         startButton.setOnClickListener {
             val typedName = nameField.text.toString().trim()
             val name = if (typedName.isEmpty()) defaultSessionName() else typedName
@@ -271,6 +274,10 @@ class MainActivity : AppCompatActivity() {
         val dosage: EditText = view.findViewById(R.id.editDosageSheet)
         val save: Button = view.findViewById(R.id.buttonSaveSheet)
 
+        drug.disableCopyCut()
+        route.disableCopyCut()
+        dosage.disableCopyCut()
+
         setupDrugAutocomplete(drug)
 
         save.setOnClickListener {
@@ -309,6 +316,10 @@ class MainActivity : AppCompatActivity() {
         val route: EditText = view.findViewById(R.id.editRouteSheet)
         val dosage: EditText = view.findViewById(R.id.editDosageSheet)
         val save: Button = view.findViewById(R.id.buttonSaveSheet)
+
+        drug.disableCopyCut()
+        route.disableCopyCut()
+        dosage.disableCopyCut()
 
         setupDrugAutocomplete(drug)
 
