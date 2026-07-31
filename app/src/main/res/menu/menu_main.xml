@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_start_session"
+        android:title="Start Session"
+        android:icon="@android:drawable/ic_media_play"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_sessions"
+        android:title="Sessions"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/action_statistics"
         android:title="Statistics"
         android:icon="@android:drawable/ic_menu_sort_by_size"
-        android:showAsAction="never"/>
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/action_export"
         android:title="Export CSV"
         android:icon="@android:drawable/ic_menu_save"
-        android:showAsAction="never"/>
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/action_import"
         android:title="Import CSV"
-        android:showAsAction="never"/>
+        app:showAsAction="never"/>
 
 </menu>

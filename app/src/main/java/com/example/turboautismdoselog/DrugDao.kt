@@ -10,7 +10,7 @@ import androidx.room.Update
 interface DrugDao {
 
     @Insert
-    fun insert(entry: DrugEntry)
+    fun insert(entry: DrugEntry): Long
 
     @Query("SELECT * FROM DrugEntry ORDER BY timestamp DESC")
     fun getAll(): List<DrugEntry>

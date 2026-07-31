@@ -1,6 +1,7 @@
 package com.example.turboautismdoselog
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -18,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.turboautismdoselog.security.DatabaseProvider
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import java.io.BufferedReader
@@ -35,6 +38,9 @@ class MainActivity : AppCompatActivity() {
     private var adapter: DrugAdapter? = null
     private lateinit var db: AppDatabase
     private lateinit var emptyState: View
+
+    private lateinit var activeSessionBanner: MaterialCardView
+    private lateinit var activeSessionText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +62,14 @@ class MainActivity : AppCompatActivity() {
                     openCSVPicker()
                     true
                 }
+                R.id.action_start_session -> {
+                    showStartSessionDialog()
+                    true
+                }
+                R.id.action_sessions -> {
+                    Toast.makeText(this, "Sessions list coming soon", Toast.LENGTH_SHORT).show()
+                    true
+                }
                 else -> false
             }
         }
@@ -68,10 +82,20 @@ class MainActivity : AppCompatActivity() {
 
         emptyState = findViewById(R.id.emptyState)
 
+        activeSessionBanner = findViewById(R.id.activeSessionBanner)
+        activeSessionText = findViewById(R.id.activeSessionText)
+        activeSessionBanner.setOnClickListener { onActiveSessionBannerClicked() }
+
         db = DatabaseProvider.getDatabase(applicationContext)
 
         refreshList()
+        refreshSessionBanner()
         setupSwipeDelete()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refreshSessionBanner()
     }
 
     private fun refreshList() {
@@ -93,6 +117,118 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    // ---------- Sessions ----------
+
+    private fun refreshSessionBanner() {
+        val activeSessions = db.sessionDao().getActiveSessions()
+
+        if (activeSessions.isEmpty()) {
+            activeSessionBanner.visibility = View.GONE
+        } else {
+            activeSessionBanner.visibility = View.VISIBLE
+            activeSessionText.text = if (activeSessions.size == 1) {
+                "Active session: ${activeSessions[0].name}"
+            } else {
+                "Active sessions: ${activeSessions.joinToString(", ") { it.name }}"
+            }
+        }
+    }
+
+    private fun defaultSessionName(): String {
+        val sdf = SimpleDateFormat("EEEE HH:mm", Locale.getDefault())
+        return sdf.format(Date())
+    }
+
+    private fun showStartSessionDialog() {
+        val dialog = BottomSheetDialog(this)
+        val view = layoutInflater.inflate(R.layout.dialog_start_session, null)
+        dialog.setContentView(view)
+
+        val nameField: EditText = view.findViewById(R.id.editSessionName)
+        val startButton: Button = view.findViewById(R.id.buttonStartSession)
+
+        startButton.setOnClickListener {
+            val typedName = nameField.text.toString().trim()
+            val name = if (typedName.isEmpty()) defaultSessionName() else typedName
+
+            val session = Session(name = name, startTime = System.currentTimeMillis())
+            db.sessionDao().insertSession(session)
+
+            refreshSessionBanner()
+            dialog.dismiss()
+
+            Toast.makeText(this, "Session started: $name", Toast.LENGTH_SHORT).show()
+        }
+
+        dialog.show()
+    }
+
+    private fun onActiveSessionBannerClicked() {
+        val activeSessions = db.sessionDao().getActiveSessions()
+
+        if (activeSessions.isEmpty()) return
+
+        if (activeSessions.size == 1) {
+            endSession(activeSessions[0])
+            return
+        }
+
+        val names = activeSessions.map { it.name }.toTypedArray()
+
+        AlertDialog.Builder(this)
+            .setTitle("End which session?")
+            .setItems(names) { _, which ->
+                endSession(activeSessions[which])
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+
+    private fun endSession(session: Session) {
+        session.endTime = System.currentTimeMillis()
+        db.sessionDao().updateSession(session)
+        refreshSessionBanner()
+        Toast.makeText(this, "Session ended: ${session.name}", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun assignEntryToActiveSessions(entryId: Long) {
+        val activeSessions = db.sessionDao().getActiveSessions()
+
+        if (activeSessions.isEmpty()) return
+
+        if (activeSessions.size == 1) {
+            db.sessionDao().insertCrossRef(
+                SessionEntryCrossRef(sessionId = activeSessions[0].id, entryId = entryId.toInt())
+            )
+            return
+        }
+
+        val names = activeSessions.map { it.name }.toTypedArray()
+        val checkedItems = BooleanArray(activeSessions.size)
+
+        AlertDialog.Builder(this)
+            .setTitle("Assign to session(s)")
+            .setMultiChoiceItems(names, checkedItems) { _, which, isChecked ->
+                checkedItems[which] = isChecked
+            }
+            .setPositiveButton("Assign") { _, _ ->
+                for (i in activeSessions.indices) {
+                    if (checkedItems[i]) {
+                        db.sessionDao().insertCrossRef(
+                            SessionEntryCrossRef(
+                                sessionId = activeSessions[i].id,
+                                entryId = entryId.toInt()
+                            )
+                        )
+                    }
+                }
+            }
+            .setNegativeButton("Skip", null)
+            .show()
+    }
+
+    // ---------- Swipe to delete ----------
 
     private fun setupSwipeDelete() {
         val swipeHandler = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
@@ -123,6 +259,8 @@ class MainActivity : AppCompatActivity() {
         ItemTouchHelper(swipeHandler).attachToRecyclerView(recyclerView)
     }
 
+    // ---------- Add / edit entry ----------
+
     private fun openAddEntrySheet() {
         val dialog = BottomSheetDialog(this)
         val view = layoutInflater.inflate(R.layout.bottom_sheet_add_entry, null)
@@ -151,10 +289,12 @@ class MainActivity : AppCompatActivity() {
             entry.dosage = dosageText
             entry.timestamp = System.currentTimeMillis()
 
-            db.drugDao().insert(entry)
+            val newEntryId = db.drugDao().insert(entry)
 
             refreshList()
             dialog.dismiss()
+
+            assignEntryToActiveSessions(newEntryId)
         }
 
         dialog.show()
@@ -211,6 +351,8 @@ class MainActivity : AppCompatActivity() {
         field.threshold = 1
         field.setOnClickListener { field.showDropDown() }
     }
+
+    // ---------- CSV export / import ----------
 
     private fun exportDatabaseToCSV() {
         val entries = db.drugDao().getAll()
