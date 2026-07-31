@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.view.WindowManager
 import com.example.turboautismdoselog.security.LockActivity
 
 class DoseLogApplication : Application() {
@@ -31,6 +32,13 @@ class DoseLogApplication : Application() {
 
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
 
+            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+                activity.window.setFlags(
+                    WindowManager.LayoutParams.FLAG_SECURE,
+                    WindowManager.LayoutParams.FLAG_SECURE
+                )
+            }
+
             override fun onActivityStarted(activity: Activity) {
                 if (++activityReferences == 1 && !isActivityChangingConfigurations) {
                     redirectToLockIfNeeded(activity)
@@ -48,7 +56,6 @@ class DoseLogApplication : Application() {
                 }
             }
 
-            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
             override fun onActivityPaused(activity: Activity) {}
             override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
             override fun onActivityDestroyed(activity: Activity) {}
