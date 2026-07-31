@@ -1,108 +1,89 @@
-# Turboautism Dose Log
+Turboautism Dose Log
 
-🚧 **Status: Under Active Development (Alpha)**
+🚧 Status: Under Active Development (Alpha)
 
 Turboautism Dose Log is a simple Android application for logging drug or medication administration events locally on your device.
 
 The project is currently in an early alpha stage, so features and database structure may change between releases.
-
-## Why this project exists
+Why this project exists
 
 People sometimes find it difficult to remember exactly what substances they've taken, when they took them, or how much they used—especially over longer sessions or when multiple substances are involved. Keeping an accurate log can support safer decision-making and provide useful information to healthcare professionals if medical treatment is needed.
 
 This application follows a harm reduction philosophy. It does not encourage or promote drug use. Instead, it recognizes that some people will use drugs regardless and aims to provide a private, secure way to keep accurate records. All data remains on the user's device by default, and users can export their records if they choose to share them with emergency medical services, physicians, or detoxification clinics.
+✨ Current Features
 
-## ✨ Current Features
+    Log drug name
+    Log route of administration
+    Log dosage
+    Automatic timestamp using device time
+    Local persistent storage (Room database)
+    Scrollable log view
+    Swipe-to-delete entries with undo
+    Edit existing entries
+    CSV export
+    CSV import (for backups)
+    Sessions — group related doses together under a named session (e.g. "Friday night"). Start a session from the toolbar (name it, or leave blank for an automatic "Friday 15:20"-style name), and new doses are automatically linked to whichever session is active. Multiple sessions can run at once — if more than one is active when you log a dose, you'll be asked which session(s) it belongs to.
+    Sessions list & detail view — see all past and active sessions, and tap into one to see its start/end time, duration, total entries, and the substances used with their logged doses
+    App lock — biometric (fingerprint/face) or device PIN/pattern/password required to open the app, with automatic re-lock when backgrounded or when the screen turns off. Cannot be disabled.
+    Encrypted database — the on-device database is encrypted at rest (AES-256 via SQLCipher), with the passphrase generated automatically and stored securely via the Android Keystore
+    Screenshot/screen-recording prevention — the app blocks screenshots, screen recording, and hides its content from the recent-apps switcher preview
+    Basic statistics:
+        total entries
+        entries today
+        entries last 7 days
+        most used drug
+        average doses per day
+        last dose timestamp
 
-- Log drug name
-- Log route of administration
-- Log dosage
-- Automatic timestamp using device time
-- Local persistent storage (Room database)
-- Scrollable log view
-- Swipe-to-delete entries with undo
-- Edit existing entries
-- CSV export
-- CSV import (for backups)
-- **Sessions** — group related doses together under a named session (e.g. "Friday night"). Start a session from the toolbar (name it, or leave blank for an automatic "Friday 15:20"-style name), and new doses are automatically linked to whichever session is active. Multiple sessions can run at once — if more than one is active when you log a dose, you'll be asked which session(s) it belongs to.
-- **Sessions list & detail view** — see all past and active sessions, and tap into one to see its start/end time, duration, total entries, and the substances used with their logged doses
-- **App lock** — biometric (fingerprint/face) or device PIN/pattern/password required to open the app, with automatic re-lock when backgrounded or when the screen turns off. Cannot be disabled.
-- **Encrypted database** — the on-device database is encrypted at rest (AES-256 via SQLCipher), with the passphrase generated automatically and stored securely via the Android Keystore
-- **Screenshot/screen-recording prevention** — the app blocks screenshots, screen recording, and hides its content from the recent-apps switcher preview
-- Basic statistics:
-  - total entries
-  - entries today
-  - entries last 7 days
-  - most used drug
-  - average doses per day
-  - last dose timestamp
-
-## 🔒 Privacy & Security
+🔒 Privacy & Security
 
 This application is designed to work completely offline.
 
-- No internet communication
-- No Google services
-- No analytics or tracking
-- No user accounts
-- All data is stored locally on the device
-- App access is protected by a mandatory biometric/device-credential lock
-- The local database is encrypted at rest
-- Screenshots and screen recording of the app are blocked
+    No internet communication
+    No Google services
+    No analytics or tracking
+    No user accounts
+    All data is stored locally on the device
+    App access is protected by a mandatory biometric/device-credential lock
+    The local database is encrypted at rest
+    Screenshots and screen recording of the app are blocked
 
 The application does not request network permission.
 
-**Note:** CSV export files are plaintext. Keep this in mind if you back up or share exported CSVs. Also, since screenshots are blocked app-wide, there's no way to screenshot your own log — use CSV export if you need to get data out.
+Note: CSV export files are plaintext by design — this is intentional, so records can be readily shared with emergency medical services, physicians, or detoxification clinics without any extra steps in a situation where that matters. Keep this in mind if you back up or store exported CSVs elsewhere. Also, since screenshots are blocked app-wide, there's no way to screenshot your own log — use CSV export if you need to get data out.
+📱 Compatibility
 
-## 📱 Compatibility
-
-The application has been tested on Android 16.
-It is expected to work on Android 15 and newer, based on the `minSdk` version defined in the project.
-Older Android versions are not officially supported.
-
-## 📦 Download Prebuilt APK (Recommended for Testing)
+The application has been tested on Android 16. It is expected to work on Android 15 and newer, based on the minSdk version defined in the project. Older Android versions are not officially supported.
+📦 Download Prebuilt APK (Recommended for Testing)
 
 You can download the latest compiled alpha APK from:
 
-➡ [GitHub Releases](https://github.com/emmikal/Turboautism-dose-log-/releases)
+➡ GitHub Releases
 
-Download the latest `.apk` file and install it manually.
+Download the latest .apk file and install it manually.
+Installing the APK
 
-### Installing the APK
+    Transfer the APK to your Android device
+    Open the file
+    Allow installation from unknown sources if prompted
+    Install
 
-1. Transfer the APK to your Android device
-2. Open the file
-3. Allow installation from unknown sources if prompted
-4. Install
+Minimum supported Android version depends on the minSdk defined in the project.
 
-Minimum supported Android version depends on the `minSdk` defined in the project.
+Upgrading from an older version: database schema changes (v0.8 encryption, v0.10 sessions) are not backward-compatible with older installs. If updating from an earlier version, export your data to CSV first — updating will reset the database to the new schema. Re-import the CSV afterward to restore your entries.
+🛠 Build From Source
+Requirements
 
-**Upgrading from an older version:** database schema changes (v0.8 encryption, v0.10 sessions) are not backward-compatible with older installs. If updating from an earlier version, export your data to CSV first — updating will reset the database to the new schema. Re-import the CSV afterward to restore your entries.
+    Android Studio (latest stable version recommended)
+    Android SDK installed
+    Java 17+
 
-## 🛠 Build From Source
+Steps
 
-### Requirements
+Clone the repository: git clone https://github.com/emmikal/Turboautism-dose-log-.git Open the project in Android Studio and build the APK.
 
-- Android Studio (latest stable version recommended)
-- Android SDK installed
-- Java 17+
+⚠️ Disclaimer
 
-### Steps
-
-Clone the repository:
-git clone https://github.com/emmikal/Turboautism-dose-log-.git
-Open the project in Android Studio and build the APK.
-
-## 🗺 Roadmap
-
-- Encrypted CSV export
-
-## ⚠️ Disclaimer
-
-This software is provided for informational and personal logging purposes only.
-It is not a medical device and should not be used as a substitute for professional medical advice.
-
-## 💬 Feedback
-
-Suggestions, bug reports, and pull requests are welcome.
-If you encounter problems or have feature ideas, please open an issue on GitHub.
+This software is provided for informational and personal logging purposes only. It is not a medical device and should not be used as a substitute for professional medical advice.
+💬 Feedback
+Suggestions, bug reports, and pull requests are welcome. If you encounter problems or have feature ideas, please open an issue on GitHub.
