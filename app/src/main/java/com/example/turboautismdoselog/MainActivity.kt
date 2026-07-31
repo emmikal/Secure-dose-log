@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
         val startButton: Button = view.findViewById(R.id.buttonStartSession)
 
         nameField.disableCopyCut()
-        
+
         startButton.setOnClickListener {
             val typedName = nameField.text.toString().trim()
             val name = if (typedName.isEmpty()) defaultSessionName() else typedName
