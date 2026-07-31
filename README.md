@@ -18,8 +18,9 @@ The project is currently in an early alpha stage, so features and database struc
 - Edit existing entries
 - CSV export
 - CSV import (for backups)
-- **App lock** — biometric (fingerprint/face) or device PIN/pattern/password required to open the app, with automatic re-lock when backgrounded
+- **App lock** — biometric (fingerprint/face) or device PIN/pattern/password required to open the app, with automatic re-lock when backgrounded or when the screen turns off. Cannot be disabled.
 - **Encrypted database** — the on-device database is encrypted at rest (AES-256 via SQLCipher), with the passphrase generated automatically and stored securely via the Android Keystore
+- **Screenshot/screen-recording prevention** — the app blocks screenshots, screen recording, and hides its content from the recent-apps switcher preview
 - Basic statistics:
   - total entries
   - entries today
@@ -37,12 +38,13 @@ This application is designed to work completely offline.
 - No analytics or tracking
 - No user accounts
 - All data is stored locally on the device
-- App access is protected by biometric/device-credential lock
+- App access is protected by a mandatory biometric/device-credential lock
 - The local database is encrypted at rest
+- Screenshots and screen recording of the app are blocked
 
 The application does not request network permission.
 
-**Note:** CSV export files are plaintext. Keep this in mind if you back up or share exported CSVs.
+**Note:** CSV export files are plaintext. Keep this in mind if you back up or share exported CSVs. Also, since screenshots are blocked app-wide, there's no way to screenshot your own log — use CSV export if you need to get data out.
 
 ## 📱 Compatibility
 
@@ -85,8 +87,6 @@ Open the project in Android Studio and build the APK.
 
 ## 🗺 Roadmap
 
-- Option to disable/configure the app lock
-- Manual "lock now" action
 - Encrypted CSV export
 
 ## ⚠️ Disclaimer
