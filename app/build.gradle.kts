@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -49,8 +50,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.8.4")
+    ksp("androidx.room:room-compiler:2.8.4")
     implementation("androidx.biometric:biometric:1.2.0-alpha05")
     implementation("net.zetetic:sqlcipher-android:4.16.0")
     implementation("androidx.security:security-crypto:1.1.0-alpha06")

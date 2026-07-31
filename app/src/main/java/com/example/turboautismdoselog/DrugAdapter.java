@@ -58,11 +58,11 @@ public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.ViewHolder> {
 
         DrugEntry entry = entries.get(position);
 
-        holder.drug.setText(entry.drug);
-        holder.route.setText(entry.route);
-        holder.dosage.setText(entry.dosage);
+        holder.drug.setText(entry.getDrug());
+        holder.route.setText(entry.getRoute());
+        holder.dosage.setText(entry.getDosage());
 
-        Date date = new Date(entry.timestamp);
+        Date date = new Date(entry.getTimestamp());
 
         SimpleDateFormat sdf =
                 new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
@@ -72,7 +72,7 @@ public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(v -> {
 
             Intent intent = new Intent(v.getContext(), DrugStatisticsActivity.class);
-            intent.putExtra("drug", entry.drug);
+            intent.putExtra("drug", entry.getDrug());
             v.getContext().startActivity(intent);
 
         });
