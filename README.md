@@ -6,6 +6,12 @@ Turboautism Dose Log is a simple Android application for logging drug or medicat
 
 The project is currently in an early alpha stage, so features and database structure may change between releases.
 
+## Why this project exists
+
+People sometimes find it difficult to remember exactly what substances they've taken, when they took them, or how much they used—especially over longer sessions or when multiple substances are involved. Keeping an accurate log can support safer decision-making and provide useful information to healthcare professionals if medical treatment is needed.
+
+This application follows a harm reduction philosophy. It does not encourage or promote drug use. Instead, it recognizes that some people will use drugs regardless and aims to provide a private, secure way to keep accurate records. All data remains on the user's device by default, and users can export their records if they choose to share them with emergency medical services, physicians, or detoxification clinics.
+
 ## ✨ Current Features
 
 - Log drug name
