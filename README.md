@@ -24,6 +24,8 @@ This application follows a harm reduction philosophy. It does not encourage or p
 - Edit existing entries
 - CSV export
 - CSV import (for backups)
+- **Sessions** — group related doses together under a named session (e.g. "Friday night"). Start a session from the toolbar (name it, or leave blank for an automatic "Friday 15:20"-style name), and new doses are automatically linked to whichever session is active. Multiple sessions can run at once — if more than one is active when you log a dose, you'll be asked which session(s) it belongs to.
+- **Sessions list & detail view** — see all past and active sessions, and tap into one to see its start/end time, duration, total entries, and the substances used with their logged doses
 - **App lock** — biometric (fingerprint/face) or device PIN/pattern/password required to open the app, with automatic re-lock when backgrounded or when the screen turns off. Cannot be disabled.
 - **Encrypted database** — the on-device database is encrypted at rest (AES-256 via SQLCipher), with the passphrase generated automatically and stored securely via the Android Keystore
 - **Screenshot/screen-recording prevention** — the app blocks screenshots, screen recording, and hides its content from the recent-apps switcher preview
@@ -75,7 +77,7 @@ Download the latest `.apk` file and install it manually.
 
 Minimum supported Android version depends on the `minSdk` defined in the project.
 
-**Upgrading from an older version:** since v0.8, the database format has changed (encryption). If updating from a pre-0.8 install, export your data to CSV first, then uninstall the old version before installing the new one — see the CHANGELOG or release notes for details.
+**Upgrading from an older version:** database schema changes (v0.8 encryption, v0.10 sessions) are not backward-compatible with older installs. If updating from an earlier version, export your data to CSV first — updating will reset the database to the new schema. Re-import the CSV afterward to restore your entries.
 
 ## 🛠 Build From Source
 
