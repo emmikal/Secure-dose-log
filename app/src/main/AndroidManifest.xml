@@ -29,6 +29,7 @@
         <activity android:name=".StatisticsActivity"/>
         <activity android:name=".DrugStatisticsActivity"/>
         <activity android:name=".SessionsActivity" android:exported="false" />
+        <activity android:name=".SessionDetailActivity" android:exported="false" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.example.turboautismdoselog
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -53,7 +54,9 @@ class SessionsActivity : AppCompatActivity() {
         }
 
         recyclerSessions.adapter = SessionsAdapter(sessions, entryCounts) { session ->
-            // TODO: navigate to SessionDetailActivity once built
+            val intent = Intent(this, SessionDetailActivity::class.java)
+            intent.putExtra("sessionId", session.id)
+            startActivity(intent)
         }
     }
 }
