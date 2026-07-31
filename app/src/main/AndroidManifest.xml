@@ -28,6 +28,7 @@
             android:theme="@style/Theme.TurboautismDoseLog" />
         <activity android:name=".StatisticsActivity"/>
         <activity android:name=".DrugStatisticsActivity"/>
+        <activity android:name=".SessionsActivity" android:exported="false" />
     </application>
 
 </manifest>

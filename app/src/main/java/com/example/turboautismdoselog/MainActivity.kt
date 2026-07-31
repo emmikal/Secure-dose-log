@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.action_sessions -> {
-                    Toast.makeText(this, "Sessions list coming soon", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, SessionsActivity::class.java))
                     true
                 }
                 else -> false
