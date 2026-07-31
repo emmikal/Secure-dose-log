@@ -6,7 +6,6 @@ import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import android.util.Base64
 import com.example.turboautismdoselog.AppDatabase
-import net.zetetic.database.sqlcipher.SQLiteDatabase
 import net.zetetic.database.sqlcipher.SupportOpenHelperFactory
 import java.security.SecureRandom
 
@@ -31,6 +30,7 @@ object DatabaseProvider {
         return Room.databaseBuilder(context, AppDatabase::class.java, "drug_database")
             .openHelperFactory(factory)
             .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
             .build()
     }
 
