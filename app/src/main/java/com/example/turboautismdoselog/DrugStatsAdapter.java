@@ -51,10 +51,10 @@ public class DrugStatsAdapter extends RecyclerView.Adapter<DrugStatsAdapter.View
 
         DrugStats stat = stats.get(position);
 
-        holder.drugName.setText(stat.drug);
-        holder.total.setText("Total doses: " + stat.total);
+        holder.drugName.setText(stat.getDrug());
+        holder.total.setText("Total doses: " + stat.getTotal());
 
-        Date date = new Date(stat.lastTimestamp);
+        Date date = new Date(stat.getLastTimestamp());
 
         SimpleDateFormat sdf =
                 new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
@@ -63,14 +63,14 @@ public class DrugStatsAdapter extends RecyclerView.Adapter<DrugStatsAdapter.View
 
         // Calculate average per day
 
-        double days = (stat.lastTimestamp - stat.firstTimestamp) /
+        double days = (stat.getLastTimestamp() - stat.getFirstTimestamp()) /
                 (1000.0 * 60 * 60 * 24);
 
         if (days < 1) {
             days = 1;
         }
 
-        double avg = stat.total / days;
+        double avg = stat.getTotal() / days;
 
         holder.avg.setText(
                 "Average/day: " +
