@@ -59,8 +59,8 @@ The application does not request network permission.
 
 ## 📱 Compatibility
 
-The application has been tested on Android 16.
-It is expected to work on Android 15 and newer, based on the `minSdk` version defined in the project.
+The application has been tested on Android 16 and Android 11.
+It supports Android 11 (API 30) and newer, based on the `minSdk` version defined in the project.
 Older Android versions are not officially supported.
 
 ## 📦 Download Prebuilt APK
