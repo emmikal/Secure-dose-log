@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.turboautismdoselog"
-        minSdk = 35
+        minSdk = 30
         targetSdk = 36
         versionCode = 11
         versionName = "1.0"
