@@ -26,6 +26,7 @@ This application follows a harm reduction philosophy. It does not encourage or p
 - CSV import (for backups), with duplicate detection and partial-failure reporting
 - **Sessions** — group related doses together under a named session (e.g. "Friday night"). Start a session from the toolbar (name it, or leave blank for an automatic "Friday 15:20"-style name), and new doses are automatically linked to whichever session is active. Multiple sessions can run at once — if more than one is active when you log a dose, you'll be asked which session(s) it belongs to.
 - **Sessions list & detail view** — see all past and active sessions, and tap into one to see its start/end time, duration, total entries, the substances used with their logged doses, and a full chronological timeline of the session
+- **Notes** — add an optional free-text note when logging a dose (e.g. "this weed makes me paranoid"), shown inline in the main log
 - **App lock** — biometric (fingerprint/face) or device PIN/pattern/password required to open the app, with automatic re-lock when backgrounded or when the screen turns off. Cannot be disabled.
 - **Encrypted database** — the on-device database is encrypted at rest (AES-256 via SQLCipher), with the passphrase generated automatically and stored securely via the Android Keystore
 - **Screenshot/screen-recording prevention** — the app blocks screenshots, screen recording, and hides its content from the recent-apps switcher preview
