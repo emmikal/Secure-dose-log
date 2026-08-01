@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.turboautismdoselog.security.DatabaseProvider
+import com.example.turboautismdoselog.substances.EffectsEstimator
+import com.example.turboautismdoselog.substances.SubstanceDatabase
 import com.google.android.material.appbar.MaterialToolbar
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -61,22 +63,32 @@ class SessionDetailActivity : AppCompatActivity() {
             "Entries: ${entries.size}"
 
         // Group entries by substance, preserving first-seen order
-        val bySubstance = LinkedHashMap<String, MutableList<String>>()
+        val bySubstance = LinkedHashMap<String, MutableList<DrugEntry>>()
         for (entry in entries) {
             val drug = entry.drug ?: "Unknown"
-            val dosage = entry.dosage ?: ""
-            bySubstance.getOrPut(drug) { mutableListOf() }.add(dosage)
+            bySubstance.getOrPut(drug) { mutableListOf() }.add(entry)
         }
 
         val inflater = LayoutInflater.from(this)
         val substanceContainer = findViewById<android.widget.LinearLayout>(R.id.substanceContainer)
 
-        for ((drug, doses) in bySubstance) {
+        for ((drug, drugEntries) in bySubstance) {
             val itemView = inflater.inflate(R.layout.item_substance_summary, substanceContainer, false)
 
             itemView.findViewById<TextView>(R.id.substanceName).text = drug
+
+            val doses = drugEntries.map { it.dosage ?: "" }
             itemView.findViewById<TextView>(R.id.substanceDoses).text =
                 doses.filter { it.isNotBlank() }.joinToString(", ").ifEmpty { "${doses.size} doses" }
+
+            val redoseNote = itemView.findViewById<TextView>(R.id.substanceRedoseNote)
+            if (drugEntries.size > 1) {
+                val redoseText = buildRedoseNote(drugEntries)
+                if (redoseText != null) {
+                    redoseNote.visibility = android.view.View.VISIBLE
+                    redoseNote.text = redoseText
+                }
+            }
 
             substanceContainer.addView(itemView)
         }
@@ -101,6 +113,27 @@ class SessionDetailActivity : AppCompatActivity() {
 
             timelineContainer.addView(itemView)
         }
+    }
+
+    /**
+     * Builds a caveat note for a substance logged more than once in
+     * a session. Does not attempt to calculate a combined end time --
+     * only surfaces the most recent linked dose's own estimate,
+     * with a note that actual combined effects likely last longer.
+     */
+    private fun buildRedoseNote(drugEntries: List<DrugEntry>): String? {
+        val linkedEntries = drugEntries.filter { it.substanceId != null && it.linkedRoute != null }
+        if (linkedEntries.isEmpty()) return null
+
+        val mostRecent = linkedEntries.maxByOrNull { it.timestamp } ?: return null
+        val estimate = EffectsEstimator.formatEstimate(mostRecent) ?: return null
+
+        val substanceName = SubstanceDatabase.findById(mostRecent.substanceId!!)?.name
+            ?: mostRecent.drug ?: "this substance"
+
+        return "${drugEntries.size} doses of $substanceName logged in this session. " +
+                "Actual combined effects typically last longer than a single dose's estimate. " +
+                "Most recent dose: $estimate"
     }
 
     private fun formatDuration(millis: Long): String {

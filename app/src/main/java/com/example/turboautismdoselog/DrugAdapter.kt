@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.turboautismdoselog.substances.EffectsEstimator
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -24,6 +25,7 @@ class DrugAdapter(
         val route: TextView = view.findViewById(R.id.textRoute)
         val dosage: TextView = view.findViewById(R.id.textDosage)
         val timestamp: TextView = view.findViewById(R.id.textTimestamp)
+        val effectsEstimate: TextView = view.findViewById(R.id.textEffectsEstimate)
         val notes: TextView = view.findViewById(R.id.textNotes)
     }
 
@@ -43,6 +45,14 @@ class DrugAdapter(
         val date = Date(entry.timestamp)
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
         holder.timestamp.text = sdf.format(date)
+
+        val estimateText = EffectsEstimator.formatEstimate(entry)
+        if (estimateText == null) {
+            holder.effectsEstimate.visibility = View.GONE
+        } else {
+            holder.effectsEstimate.visibility = View.VISIBLE
+            holder.effectsEstimate.text = estimateText
+        }
 
         val note = entry.notes
         if (note.isNullOrBlank()) {
