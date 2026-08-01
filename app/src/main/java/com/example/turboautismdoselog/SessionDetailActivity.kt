@@ -68,17 +68,38 @@ class SessionDetailActivity : AppCompatActivity() {
             bySubstance.getOrPut(drug) { mutableListOf() }.add(dosage)
         }
 
-        val container = findViewById<android.widget.LinearLayout>(R.id.substanceContainer)
         val inflater = LayoutInflater.from(this)
+        val substanceContainer = findViewById<android.widget.LinearLayout>(R.id.substanceContainer)
 
         for ((drug, doses) in bySubstance) {
-            val itemView = inflater.inflate(R.layout.item_substance_summary, container, false)
+            val itemView = inflater.inflate(R.layout.item_substance_summary, substanceContainer, false)
 
             itemView.findViewById<TextView>(R.id.substanceName).text = drug
             itemView.findViewById<TextView>(R.id.substanceDoses).text =
                 doses.filter { it.isNotBlank() }.joinToString(", ").ifEmpty { "${doses.size} doses" }
 
-            container.addView(itemView)
+            substanceContainer.addView(itemView)
+        }
+
+        // Timeline: chronological list of every entry
+        val timelineContainer = findViewById<android.widget.LinearLayout>(R.id.timelineContainer)
+        val timeSdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+
+        val sortedEntries = entries.sortedBy { it.timestamp }
+
+        for (entry in sortedEntries) {
+            val itemView = inflater.inflate(R.layout.item_timeline_entry, timelineContainer, false)
+
+            itemView.findViewById<TextView>(R.id.timelineTime).text =
+                timeSdf.format(Date(entry.timestamp))
+
+            val dosage = entry.dosage?.takeIf { it.isNotBlank() }
+            val drug = entry.drug ?: "Unknown"
+
+            itemView.findViewById<TextView>(R.id.timelineDescription).text =
+                if (dosage != null) "$dosage $drug" else drug
+
+            timelineContainer.addView(itemView)
         }
     }
 
