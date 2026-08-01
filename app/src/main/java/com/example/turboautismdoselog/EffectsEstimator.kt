@@ -23,10 +23,16 @@ object EffectsEstimator {
         val routeName = entry.linkedRoute ?: return null
 
         val substance = SubstanceDatabase.findById(substanceId) ?: return null
-        val routeDuration = substance.routes.find { it.route == routeName } ?: return null
+        val routeDuration = substance.routes.find {
+            it.route.equals(routeName, ignoreCase = true)
+        } ?: return null
 
-        val endMin = entry.timestamp + routeDuration.totalMinMinutes * 60_000L
-        val endMax = entry.timestamp + routeDuration.totalMaxMinutes * 60_000L
+        val total = routeDuration.total ?: return null
+        val minMinutes = total.minMinutes ?: return null
+        val maxMinutes = total.maxMinutes ?: return null
+
+        val endMin = entry.timestamp + minMinutes * 60_000L
+        val endMax = entry.timestamp + maxMinutes * 60_000L
 
         return EstimatedRange(endMin, endMax)
     }

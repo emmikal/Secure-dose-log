@@ -299,7 +299,7 @@ class MainActivity : AppCompatActivity() {
                 linkPrompt.text = "Link to known substance: ${match.name}? Select a route to estimate when effects end."
 
                 val routeOptions = mutableListOf("Don't link")
-                routeOptions.addAll(match.routes.map { it.route })
+                routeOptions.addAll(match.routes.map { it.route.replaceFirstChar { c -> c.uppercase() } })
 
                 val spinnerAdapter = ArrayAdapter(
                     this@MainActivity,
