@@ -9,6 +9,7 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.view.WindowManager
 import com.example.turboautismdoselog.security.LockActivity
+import com.example.turboautismdoselog.substances.SubstanceDatabase
 
 class DoseLogApplication : Application() {
 
@@ -27,6 +28,8 @@ class DoseLogApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        SubstanceDatabase.load(this)
 
         registerReceiver(screenOffReceiver, IntentFilter(Intent.ACTION_SCREEN_OFF))
 
