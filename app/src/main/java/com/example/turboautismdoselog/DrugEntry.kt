@@ -12,5 +12,7 @@ data class DrugEntry(
     var route: String? = null,
     var dosage: String? = null,
     var timestamp: Long = 0,
-    var notes: String? = null
+    var notes: String? = null,
+    var substanceId: String? = null,
+    var linkedRoute: String? = null
 )

@@ -7,6 +7,7 @@ import androidx.security.crypto.MasterKey
 import android.util.Base64
 import com.example.turboautismdoselog.AppDatabase
 import com.example.turboautismdoselog.MIGRATION_2_3
+import com.example.turboautismdoselog.MIGRATION_3_4
 import net.zetetic.database.sqlcipher.SupportOpenHelperFactory
 import java.security.SecureRandom
 
@@ -35,7 +36,7 @@ object DatabaseProvider {
         return Room.databaseBuilder(context, AppDatabase::class.java, DB_NAME)
             .openHelperFactory(factory)
             .allowMainThreadQueries()
-            .addMigrations(MIGRATION_2_3)
+            .addMigrations(MIGRATION_2_3, MIGRATION_3_4)
             .build()
     }
 
