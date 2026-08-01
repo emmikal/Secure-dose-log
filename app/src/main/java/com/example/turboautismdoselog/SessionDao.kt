@@ -34,4 +34,7 @@ interface SessionDao {
                 "ORDER BY timestamp ASC"
     )
     fun getEntriesForSession(sessionId: Int): List<DrugEntry>
+
+    @Query("SELECT * FROM Session WHERE id = :sessionId LIMIT 1")
+    fun getSessionById(sessionId: Int): Session?
 }

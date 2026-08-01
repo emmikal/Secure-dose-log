@@ -33,7 +33,7 @@ class SessionDetailActivity : AppCompatActivity() {
     }
 
     private fun loadSessionDetail(sessionId: Int) {
-        val session = db.sessionDao().getAllSessions().find { it.id == sessionId } ?: run {
+        val session = db.sessionDao().getSessionById(sessionId) ?: run {
             finish()
             return
         }
