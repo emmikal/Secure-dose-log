@@ -8,11 +8,15 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.turboautismdoselog.security.DatabaseProvider
 import com.example.turboautismdoselog.security.disableCopyCut
+import com.example.turboautismdoselog.substances.SubstanceDatabase
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.card.MaterialCardView
@@ -262,6 +267,84 @@ class MainActivity : AppCompatActivity() {
         ItemTouchHelper(swipeHandler).attachToRecyclerView(recyclerView)
     }
 
+    // ---------- Substance linking ----------
+
+    /**
+     * Watches the drug name field and shows/hides the "link to known
+     * substance" section based on whether the typed text matches an
+     * entry in SubstanceDatabase. When a route is picked from the
+     * spinner (anything other than "Don't link"), it overwrites the
+     * visible Route field so the choice is reflected in the log.
+     */
+    private fun setupSubstanceLinking(
+        drugField: AutoCompleteTextView,
+        linkSection: MaterialCardView,
+        linkPrompt: TextView,
+        routeSpinner: Spinner,
+        routeField: EditText
+    ) {
+        drugField.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val match = SubstanceDatabase.findByName(s?.toString() ?: "")
+
+                if (match == null) {
+                    linkSection.visibility = View.GONE
+                    return
+                }
+
+                linkSection.visibility = View.VISIBLE
+                linkPrompt.text = "Link to known substance: ${match.name}? Select a route to estimate when effects end."
+
+                val routeOptions = mutableListOf("Don't link")
+                routeOptions.addAll(match.routes.map { it.route })
+
+                val spinnerAdapter = ArrayAdapter(
+                    this@MainActivity,
+                    android.R.layout.simple_spinner_item,
+                    routeOptions
+                )
+                spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                routeSpinner.adapter = spinnerAdapter
+            }
+        })
+
+        routeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val selected = parent?.getItemAtPosition(position) as? String ?: return
+                if (selected != "Don't link") {
+                    routeField.setText(selected)
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+    }
+
+    /**
+     * Reads the current spinner selection and, if a route was chosen
+     * (not "Don't link"), returns the matching substanceId + route
+     * name to store on the entry. Returns null,null if not linked.
+     */
+    private fun readLinkSelection(
+        drugField: AutoCompleteTextView,
+        routeSpinner: Spinner
+    ): Pair<String?, String?> {
+        val match = SubstanceDatabase.findByName(drugField.text.toString()) ?: return null to null
+        val selected = routeSpinner.selectedItem as? String ?: return null to null
+
+        if (selected == "Don't link") return null to null
+
+        return match.id to selected
+    }
+
     // ---------- Add / edit entry ----------
 
     private fun openAddEntrySheet() {
@@ -275,7 +358,13 @@ class MainActivity : AppCompatActivity() {
         val notes: EditText = view.findViewById(R.id.editNotesSheet)
         val save: Button = view.findViewById(R.id.buttonSaveSheet)
 
+        val linkSection: MaterialCardView = view.findViewById(R.id.linkSubstanceSection)
+        val linkPrompt: TextView = view.findViewById(R.id.linkPromptText)
+        val routeSpinner: Spinner = view.findViewById(R.id.spinnerRoute)
+
         setupDrugAutocomplete(drug)
+        setupSubstanceLinking(drug, linkSection, linkPrompt, routeSpinner, route)
+
         drug.disableCopyCut()
         route.disableCopyCut()
         dosage.disableCopyCut()
@@ -292,12 +381,16 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            val (linkedSubstanceId, linkedRouteName) = readLinkSelection(drug, routeSpinner)
+
             val entry = DrugEntry()
             entry.drug = drugText
             entry.route = routeText
             entry.dosage = dosageText
             entry.timestamp = System.currentTimeMillis()
             entry.notes = notesText.ifBlank { null }
+            entry.substanceId = linkedSubstanceId
+            entry.linkedRoute = linkedRouteName
 
             val newEntryId = db.drugDao().insert(entry)
 
@@ -321,7 +414,13 @@ class MainActivity : AppCompatActivity() {
         val notes: EditText = view.findViewById(R.id.editNotesSheet)
         val save: Button = view.findViewById(R.id.buttonSaveSheet)
 
+        val linkSection: MaterialCardView = view.findViewById(R.id.linkSubstanceSection)
+        val linkPrompt: TextView = view.findViewById(R.id.linkPromptText)
+        val routeSpinner: Spinner = view.findViewById(R.id.spinnerRoute)
+
         setupDrugAutocomplete(drug)
+        setupSubstanceLinking(drug, linkSection, linkPrompt, routeSpinner, route)
+
         drug.disableCopyCut()
         route.disableCopyCut()
         dosage.disableCopyCut()
@@ -332,11 +431,32 @@ class MainActivity : AppCompatActivity() {
         dosage.setText(entry.dosage)
         notes.setText(entry.notes)
 
+        // If this entry was already linked, pre-select that route once
+        // the spinner has been populated by the TextWatcher above.
+        val existingLinkedRoute = entry.linkedRoute
+        if (existingLinkedRoute != null) {
+            routeSpinner.post {
+                val spinnerAdapter = routeSpinner.adapter
+                if (spinnerAdapter != null) {
+                    for (i in 0 until spinnerAdapter.count) {
+                        if (spinnerAdapter.getItem(i) == existingLinkedRoute) {
+                            routeSpinner.setSelection(i)
+                            break
+                        }
+                    }
+                }
+            }
+        }
+
         save.setOnClickListener {
+            val (linkedSubstanceId, linkedRouteName) = readLinkSelection(drug, routeSpinner)
+
             entry.drug = drug.text.toString()
             entry.route = route.text.toString()
             entry.dosage = dosage.text.toString()
             entry.notes = notes.text.toString().ifBlank { null }
+            entry.substanceId = linkedSubstanceId
+            entry.linkedRoute = linkedRouteName
 
             db.drugDao().update(entry)
 
