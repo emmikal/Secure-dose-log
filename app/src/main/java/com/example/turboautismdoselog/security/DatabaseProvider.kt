@@ -14,9 +14,6 @@ object DatabaseProvider {
     @Volatile
     private var instance: AppDatabase? = null
 
-    // Randomized identifiers to reduce metadata disclosure.
-    // These are intentionally meaningless and must remain stable
-    // between releases or existing databases become inaccessible.
     private const val DB_NAME = "a7f3d2e19c4b"
     private const val PREFS_NAME = "b4e91ac308f2"
     private const val PASSPHRASE_KEY = "k9f2a1c7"
@@ -37,7 +34,6 @@ object DatabaseProvider {
         return Room.databaseBuilder(context, AppDatabase::class.java, DB_NAME)
             .openHelperFactory(factory)
             .allowMainThreadQueries()
-            .fallbackToDestructiveMigration()
             .build()
     }
 
