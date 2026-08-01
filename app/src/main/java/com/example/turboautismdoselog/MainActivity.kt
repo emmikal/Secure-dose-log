@@ -2,10 +2,12 @@ package com.example.turboautismdoselog
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.provider.MediaStore
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -370,35 +372,47 @@ class MainActivity : AppCompatActivity() {
 
         val fileDateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm", Locale.getDefault())
         val timestamp = fileDateFormat.format(Date())
+        val fileName = "drug_log_$timestamp.csv"
 
-        val downloadsDir =
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+        val contentValues = ContentValues().apply {
+            put(MediaStore.Downloads.DISPLAY_NAME, fileName)
+            put(MediaStore.Downloads.MIME_TYPE, "text/csv")
+            put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
+        }
 
-        val file = File(downloadsDir, "drug_log_$timestamp.csv")
+        val resolver = contentResolver
+        val uri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues)
+
+        if (uri == null) {
+            Toast.makeText(this, "Export failed", Toast.LENGTH_LONG).show()
+            return
+        }
 
         try {
-            val writer = FileWriter(file)
-            writer.append("Drug,Route,Dosage,Timestamp\n")
+            resolver.openOutputStream(uri)?.use { outputStream ->
+                val writer = outputStream.bufferedWriter()
+                writer.append("Drug,Route,Dosage,Timestamp\n")
 
-            val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+                val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
 
-            for (entry in entries) {
-                val date = Date(entry.timestamp)
-                val formattedTime = sdf.format(date)
+                for (entry in entries) {
+                    val date = Date(entry.timestamp)
+                    val formattedTime = sdf.format(date)
 
-                writer.append(entry.drug).append(",")
-                writer.append(entry.route).append(",")
-                writer.append(entry.dosage).append(",")
-                writer.append(formattedTime).append("\n")
+                    writer.append(entry.drug).append(",")
+                    writer.append(entry.route).append(",")
+                    writer.append(entry.dosage).append(",")
+                    writer.append(formattedTime).append("\n")
+                }
+
+                writer.flush()
             }
-
-            writer.flush()
-            writer.close()
 
             Toast.makeText(this, "CSV exported to Downloads", Toast.LENGTH_LONG).show()
 
         } catch (e: IOException) {
             e.printStackTrace()
+            resolver.delete(uri, null, null) // clean up the empty/partial MediaStore entry on failure
             Toast.makeText(this, "Export failed", Toast.LENGTH_LONG).show()
         }
     }
