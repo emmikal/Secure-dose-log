@@ -34,4 +34,10 @@ interface DrugDao {
 
     @Query("SELECT * FROM DrugEntry WHERE drug = :drug ORDER BY timestamp DESC")
     fun getEntriesForDrug(drug: String): List<DrugEntry>
+
+    @Query(
+        "SELECT COUNT(*) FROM DrugEntry WHERE drug = :drug AND route = :route " +
+                "AND dosage = :dosage AND timestamp = :timestamp"
+    )
+    fun countMatching(drug: String?, route: String?, dosage: String?, timestamp: Long): Int
 }

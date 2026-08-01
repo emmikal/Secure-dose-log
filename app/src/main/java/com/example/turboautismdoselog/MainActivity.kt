@@ -393,7 +393,7 @@ class MainActivity : AppCompatActivity() {
                 val writer = outputStream.bufferedWriter()
                 writer.append("Drug,Route,Dosage,Timestamp\n")
 
-                val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+                val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
 
                 for (entry in entries) {
                     val date = Date(entry.timestamp)
@@ -412,7 +412,7 @@ class MainActivity : AppCompatActivity() {
 
         } catch (e: IOException) {
             e.printStackTrace()
-            resolver.delete(uri, null, null) // clean up the empty/partial MediaStore entry on failure
+            resolver.delete(uri, null, null)
             Toast.makeText(this, "Export failed", Toast.LENGTH_LONG).show()
         }
     }
@@ -435,12 +435,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun importCSV(uri: Uri) {
+        var importedCount = 0
+        var duplicateCount = 0
+        var skippedCount = 0
+
         try {
             val inputStream = contentResolver.openInputStream(uri)
             val reader = BufferedReader(InputStreamReader(inputStream))
 
             var firstLine = true
-            val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+            val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
 
             var line: String?
             while (reader.readLine().also { line = it } != null) {
@@ -449,28 +453,58 @@ class MainActivity : AppCompatActivity() {
                     continue
                 }
 
-                val parts = line!!.split(",")
-                if (parts.size < 4) continue
+                val currentLine = line!!
 
-                val entry = DrugEntry()
-                entry.drug = parts[0]
-                entry.route = parts[1]
-                entry.dosage = parts[2]
+                try {
+                    val parts = currentLine.split(",")
+                    if (parts.size < 4) {
+                        skippedCount++
+                        continue
+                    }
 
-                val date = sdf.parse(parts[3])
-                entry.timestamp = date?.time ?: continue
+                    val drug = parts[0]
+                    val route = parts[1]
+                    val dosage = parts[2]
 
-                db.drugDao().insert(entry)
+                    val date = sdf.parse(parts[3])
+                    if (date == null) {
+                        skippedCount++
+                        continue
+                    }
+                    val timestamp = date.time
+
+                    val alreadyExists = db.drugDao().countMatching(drug, route, dosage, timestamp) > 0
+                    if (alreadyExists) {
+                        duplicateCount++
+                        continue
+                    }
+
+                    val entry = DrugEntry()
+                    entry.drug = drug
+                    entry.route = route
+                    entry.dosage = dosage
+                    entry.timestamp = timestamp
+
+                    db.drugDao().insert(entry)
+                    importedCount++
+
+                } catch (e: Exception) {
+                    skippedCount++
+                }
             }
 
             reader.close()
             refreshList()
 
-            Toast.makeText(this, "CSV import complete", Toast.LENGTH_LONG).show()
+            val parts = mutableListOf("Imported $importedCount entries")
+            if (duplicateCount > 0) parts.add("$duplicateCount duplicates skipped")
+            if (skippedCount > 0) parts.add("$skippedCount rows skipped")
+
+            Toast.makeText(this, parts.joinToString(", "), Toast.LENGTH_LONG).show()
 
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, "Import failed", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Import failed: could not read file", Toast.LENGTH_LONG).show()
         }
     }
 
