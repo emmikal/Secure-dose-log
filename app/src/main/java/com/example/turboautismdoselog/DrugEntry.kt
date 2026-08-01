@@ -11,5 +11,6 @@ data class DrugEntry(
     var drug: String? = null,
     var route: String? = null,
     var dosage: String? = null,
-    var timestamp: Long = 0
+    var timestamp: Long = 0,
+    var notes: String? = null
 )

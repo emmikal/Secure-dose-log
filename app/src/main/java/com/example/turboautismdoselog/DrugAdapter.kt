@@ -24,6 +24,7 @@ class DrugAdapter(
         val route: TextView = view.findViewById(R.id.textRoute)
         val dosage: TextView = view.findViewById(R.id.textDosage)
         val timestamp: TextView = view.findViewById(R.id.textTimestamp)
+        val notes: TextView = view.findViewById(R.id.textNotes)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,6 +43,14 @@ class DrugAdapter(
         val date = Date(entry.timestamp)
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
         holder.timestamp.text = sdf.format(date)
+
+        val note = entry.notes
+        if (note.isNullOrBlank()) {
+            holder.notes.visibility = View.GONE
+        } else {
+            holder.notes.visibility = View.VISIBLE
+            holder.notes.text = note
+        }
 
         holder.itemView.setOnClickListener { v ->
             val intent = Intent(v.context, DrugStatisticsActivity::class.java)

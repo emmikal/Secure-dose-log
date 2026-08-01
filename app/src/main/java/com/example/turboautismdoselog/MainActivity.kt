@@ -20,20 +20,18 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.turboautismdoselog.security.DatabaseProvider
+import com.example.turboautismdoselog.security.disableCopyCut
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import java.io.BufferedReader
-import java.io.File
-import java.io.FileWriter
 import java.io.IOException
 import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-import com.example.turboautismdoselog.security.disableCopyCut
 
 class MainActivity : AppCompatActivity() {
 
@@ -274,18 +272,20 @@ class MainActivity : AppCompatActivity() {
         val drug: AutoCompleteTextView = view.findViewById(R.id.editDrugSheet)
         val route: EditText = view.findViewById(R.id.editRouteSheet)
         val dosage: EditText = view.findViewById(R.id.editDosageSheet)
+        val notes: EditText = view.findViewById(R.id.editNotesSheet)
         val save: Button = view.findViewById(R.id.buttonSaveSheet)
 
+        setupDrugAutocomplete(drug)
         drug.disableCopyCut()
         route.disableCopyCut()
         dosage.disableCopyCut()
-
-        setupDrugAutocomplete(drug)
+        notes.disableCopyCut()
 
         save.setOnClickListener {
             val drugText = drug.text.toString()
             val routeText = route.text.toString()
             val dosageText = dosage.text.toString()
+            val notesText = notes.text.toString()
 
             if (drugText.isEmpty()) {
                 Toast.makeText(this, "Drug name required", Toast.LENGTH_SHORT).show()
@@ -297,6 +297,7 @@ class MainActivity : AppCompatActivity() {
             entry.route = routeText
             entry.dosage = dosageText
             entry.timestamp = System.currentTimeMillis()
+            entry.notes = notesText.ifBlank { null }
 
             val newEntryId = db.drugDao().insert(entry)
 
@@ -317,22 +318,25 @@ class MainActivity : AppCompatActivity() {
         val drug: AutoCompleteTextView = view.findViewById(R.id.editDrugSheet)
         val route: EditText = view.findViewById(R.id.editRouteSheet)
         val dosage: EditText = view.findViewById(R.id.editDosageSheet)
+        val notes: EditText = view.findViewById(R.id.editNotesSheet)
         val save: Button = view.findViewById(R.id.buttonSaveSheet)
 
+        setupDrugAutocomplete(drug)
         drug.disableCopyCut()
         route.disableCopyCut()
         dosage.disableCopyCut()
-
-        setupDrugAutocomplete(drug)
+        notes.disableCopyCut()
 
         drug.setText(entry.drug)
         route.setText(entry.route)
         dosage.setText(entry.dosage)
+        notes.setText(entry.notes)
 
         save.setOnClickListener {
             entry.drug = drug.text.toString()
             entry.route = route.text.toString()
             entry.dosage = dosage.text.toString()
+            entry.notes = notes.text.toString().ifBlank { null }
 
             db.drugDao().update(entry)
 
@@ -391,7 +395,7 @@ class MainActivity : AppCompatActivity() {
         try {
             resolver.openOutputStream(uri)?.use { outputStream ->
                 val writer = outputStream.bufferedWriter()
-                writer.append("Drug,Route,Dosage,Timestamp\n")
+                writer.append("Drug,Route,Dosage,Timestamp,Notes\n")
 
                 val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
 
@@ -399,10 +403,11 @@ class MainActivity : AppCompatActivity() {
                     val date = Date(entry.timestamp)
                     val formattedTime = sdf.format(date)
 
-                    writer.append(entry.drug).append(",")
-                    writer.append(entry.route).append(",")
-                    writer.append(entry.dosage).append(",")
-                    writer.append(formattedTime).append("\n")
+                    writer.append(csvEscape(entry.drug)).append(",")
+                    writer.append(csvEscape(entry.route)).append(",")
+                    writer.append(csvEscape(entry.dosage)).append(",")
+                    writer.append(csvEscape(formattedTime)).append(",")
+                    writer.append(csvEscape(entry.notes)).append("\n")
                 }
 
                 writer.flush()
@@ -456,7 +461,7 @@ class MainActivity : AppCompatActivity() {
                 val currentLine = line!!
 
                 try {
-                    val parts = currentLine.split(",")
+                    val parts = parseCsvLine(currentLine)
                     if (parts.size < 4) {
                         skippedCount++
                         continue
@@ -473,6 +478,8 @@ class MainActivity : AppCompatActivity() {
                     }
                     val timestamp = date.time
 
+                    val notes = if (parts.size >= 5) parts[4].ifBlank { null } else null
+
                     val alreadyExists = db.drugDao().countMatching(drug, route, dosage, timestamp) > 0
                     if (alreadyExists) {
                         duplicateCount++
@@ -484,6 +491,7 @@ class MainActivity : AppCompatActivity() {
                     entry.route = route
                     entry.dosage = dosage
                     entry.timestamp = timestamp
+                    entry.notes = notes
 
                     db.drugDao().insert(entry)
                     importedCount++
