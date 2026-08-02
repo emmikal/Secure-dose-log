@@ -97,6 +97,23 @@ Clone the repository:
 git clone https://github.com/emmikal/Turboautism-dose-log-.git
 Open the project in Android Studio and build the APK.
 
+## ❤️ Support the project
+
+Turboautism Dose Log is a free and open-source harm reduction app developed in my free time.
+
+If you find the project useful and would like to support its continued development, you can sponsor me on GitHub:
+
+https://github.com/sponsors/emmikal
+
+Sponsorships help cover:
+
+- 🤖 Development tools (such as AI assistants)
+- 📱 Google Play developer account and app publishing
+- 📚 Ongoing maintenance of the PsychonautWiki-based substance database
+- 🛠️ General maintenance and future improvements
+
+Thank you for helping keep the project free and open source!
+
 ## ⚠️ Disclaimer
 
 This is a harm reduction tool. It does not encourage, promote, or endorse drug use.
