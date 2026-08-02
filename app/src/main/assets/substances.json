@@ -66,39 +66,6 @@
     ]
   },
   {
-    "id": "1cp-mipla",
-    "name": "1cP-MiPLA",
-    "aliases": [
-      "1cP-MiPLA"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 40
-        },
-        "comeup": {
-          "minMinutes": 45,
-          "maxMinutes": 90
-        },
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "1cp-al-lad",
     "name": "1cP-AL-LAD",
     "aliases": [
@@ -166,61 +133,35 @@
     ]
   },
   {
-    "id": "2-5-dma",
-    "name": "2,5-DMA",
+    "id": "1cp-mipla",
+    "name": "1cP-MiPLA",
     "aliases": [
-      "2,5-DMA",
-      "DOH",
-      "1-(2,5-dimethoxyphenyl)propan-2-amine"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 480
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "1p-lsd",
-    "name": "1P-LSD",
-    "aliases": [
-      "1P-LSD"
+      "1cP-MiPLA"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
           "minMinutes": 20,
-          "maxMinutes": 60
+          "maxMinutes": 40
         },
         "comeup": {
           "minMinutes": 45,
-          "maxMinutes": 120
+          "maxMinutes": 90
         },
         "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 300
+          "minMinutes": 60,
+          "maxMinutes": 120
         },
         "offset": {
-          "minMinutes": 180,
-          "maxMinutes": 300
+          "minMinutes": 60,
+          "maxMinutes": 120
         },
         "total": {
-          "minMinutes": 480,
-          "maxMinutes": 720
+          "minMinutes": 240,
+          "maxMinutes": 360
         },
-        "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 1440
-        }
+        "afterglow": null
       }
     ]
   },
@@ -261,37 +202,29 @@
     ]
   },
   {
-    "id": "1v-lsd",
-    "name": "1V-LSD",
+    "id": "2-aminoindane",
+    "name": "2-Aminoindane",
     "aliases": [
-      "1V-LSD"
+      "2-AI",
+      "2,3-Dihydro-1H-inden-2-amine"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
+          "minMinutes": 10,
+          "maxMinutes": 30
         },
-        "comeup": {
-          "minMinutes": 45,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 60,
           "maxMinutes": 120
         },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "offset": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "total": {
-          "minMinutes": 480,
-          "maxMinutes": 720
-        },
         "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 1440
+          "minMinutes": 120,
+          "maxMinutes": 240
         }
       }
     ]
@@ -333,6 +266,101 @@
         "afterglow": {
           "minMinutes": 120,
           "maxMinutes": 240
+        }
+      }
+    ]
+  },
+  {
+    "id": "1p-lsd",
+    "name": "1P-LSD",
+    "aliases": [
+      "1P-LSD"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 45,
+          "maxMinutes": 120
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "offset": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "total": {
+          "minMinutes": 480,
+          "maxMinutes": 720
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 1440
+        }
+      }
+    ]
+  },
+  {
+    "id": "2-5-dma",
+    "name": "2,5-DMA",
+    "aliases": [
+      "2,5-DMA",
+      "DOH",
+      "1-(2,5-dimethoxyphenyl)propan-2-amine"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 480
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "1v-lsd",
+    "name": "1V-LSD",
+    "aliases": [
+      "1V-LSD"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 45,
+          "maxMinutes": 120
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "offset": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "total": {
+          "minMinutes": 480,
+          "maxMinutes": 720
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 1440
         }
       }
     ]
@@ -411,34 +439,6 @@
     ]
   },
   {
-    "id": "2-aminoindane",
-    "name": "2-Aminoindane",
-    "aliases": [
-      "2-AI",
-      "2,3-Dihydro-1H-inden-2-amine"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 10,
-          "maxMinutes": 30
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        }
-      }
-    ]
-  },
-  {
     "id": "2-fluorodeschloroketamine",
     "name": "2-Fluorodeschloroketamine",
     "aliases": [
@@ -493,38 +493,13 @@
     ]
   },
   {
-    "id": "2-fa",
-    "name": "2-FA",
+    "id": "25b-nboh",
+    "name": "25B-NBOH",
     "aliases": [
-      "2-FA",
-      "1-(2-Fluorophenyl)propan-2-amine"
+      "25B-NBOH",
+      "2-({[2-(4-bromo-2,5-dimethoxyphenyl)ethyl]amino}methyl)phenol"
     ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        },
-        "comeup": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        },
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "total": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "afterglow": null
-      }
-    ]
+    "routes": []
   },
   {
     "id": "2-fma",
@@ -591,13 +566,75 @@
     ]
   },
   {
-    "id": "25b-nboh",
-    "name": "25B-NBOH",
+    "id": "2-fa",
+    "name": "2-FA",
     "aliases": [
-      "25B-NBOH",
-      "2-({[2-(4-bromo-2,5-dimethoxyphenyl)ethyl]amino}methyl)phenol"
+      "2-FA",
+      "1-(2-Fluorophenyl)propan-2-amine"
     ],
-    "routes": []
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "comeup": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "total": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "25e-nboh",
+    "name": "25E-NBOH",
+    "aliases": [
+      "25E-NBOH",
+      "2-(4-Ethyl-2,5-dimethoxyphenyl)-N-[(2-hydroxyphenyl)methyl]ethanamine"
+    ],
+    "routes": [
+      {
+        "route": "sublingual",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 210
+        },
+        "offset": {
+          "minMinutes": 90,
+          "maxMinutes": 150
+        },
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 7200,
+          "maxMinutes": 14400
+        }
+      }
+    ]
   },
   {
     "id": "25c-nbome",
@@ -633,6 +670,37 @@
           "maxMinutes": 600
         },
         "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "25c-nboh",
+    "name": "25C-NBOH",
+    "aliases": [
+      "25C-NBOH",
+      "2-(4-Chloro-2,5-dimethoxyphenyl)-N-[(2-hydroxyphenyl)methyl]ethanamine"
+    ],
+    "routes": [
+      {
+        "route": "sublingual",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 45
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 420
+        },
+        "afterglow": {
+          "minMinutes": 4320,
+          "maxMinutes": 8640
+        }
       }
     ]
   },
@@ -683,37 +751,6 @@
     ]
   },
   {
-    "id": "25c-nboh",
-    "name": "25C-NBOH",
-    "aliases": [
-      "25C-NBOH",
-      "2-(4-Chloro-2,5-dimethoxyphenyl)-N-[(2-hydroxyphenyl)methyl]ethanamine"
-    ],
-    "routes": [
-      {
-        "route": "sublingual",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 45
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 420
-        },
-        "afterglow": {
-          "minMinutes": 4320,
-          "maxMinutes": 8640
-        }
-      }
-    ]
-  },
-  {
     "id": "25d-nbome",
     "name": "25D-NBOMe",
     "aliases": [
@@ -745,41 +782,16 @@
     ]
   },
   {
-    "id": "25e-nboh",
-    "name": "25E-NBOH",
-    "aliases": [
-      "25E-NBOH",
-      "2-(4-Ethyl-2,5-dimethoxyphenyl)-N-[(2-hydroxyphenyl)methyl]ethanamine"
-    ],
-    "routes": [
-      {
-        "route": "sublingual",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 60
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 210
-        },
-        "offset": {
-          "minMinutes": 90,
-          "maxMinutes": 150
-        },
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 7200,
-          "maxMinutes": 14400
-        }
-      }
-    ]
+    "id": "25x-nboh",
+    "name": "25x-NBOH",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "25x-nbome",
+    "name": "25x-NBOMe",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "25i-nboh",
@@ -820,16 +832,107 @@
     ]
   },
   {
-    "id": "25x-nboh",
-    "name": "25x-NBOH",
-    "aliases": [],
-    "routes": []
+    "id": "2c-b-fly",
+    "name": "2C-B-FLY",
+    "aliases": [
+      "2C-B-FLY",
+      "2-(4-bromo-2,3,6,7-tetrahydrofuro[2,3-f][1]benzofuran-8-yl)ethanamine"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 420,
+          "maxMinutes": 720
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 1440
+        }
+      }
+    ]
   },
   {
-    "id": "25x-nbome",
-    "name": "25x-NBOMe",
-    "aliases": [],
-    "routes": []
+    "id": "25i-nbome",
+    "name": "25I-NBOMe",
+    "aliases": [
+      "25i-NBOMe",
+      "25i",
+      "Cimbi-5",
+      "2-(4-Iodo-2,5-dimethoxyphenyl)-N-[(2-methoxyphenyl)methyl]ethanamine"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 5,
+          "maxMinutes": 10
+        },
+        "comeup": {
+          "minMinutes": 10,
+          "maxMinutes": 30
+        },
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 1440,
+          "maxMinutes": 10080
+        }
+      },
+      {
+        "route": "sublingual",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 120
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 120
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 240
+        },
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 600
+        },
+        "afterglow": {
+          "minMinutes": 4320,
+          "maxMinutes": 8640
+        }
+      }
+    ]
   },
   {
     "id": "25n-nbome",
@@ -903,72 +1006,6 @@
     ]
   },
   {
-    "id": "25i-nbome",
-    "name": "25I-NBOMe",
-    "aliases": [
-      "25i-NBOMe",
-      "25i",
-      "Cimbi-5",
-      "2-(4-Iodo-2,5-dimethoxyphenyl)-N-[(2-methoxyphenyl)methyl]ethanamine"
-    ],
-    "routes": [
-      {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 5,
-          "maxMinutes": 10
-        },
-        "comeup": {
-          "minMinutes": 10,
-          "maxMinutes": 30
-        },
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "afterglow": {
-          "minMinutes": 1440,
-          "maxMinutes": 10080
-        }
-      },
-      {
-        "route": "sublingual",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 120
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 120
-        },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 240
-        },
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 600
-        },
-        "afterglow": {
-          "minMinutes": 4320,
-          "maxMinutes": 8640
-        }
-      }
-    ]
-  },
-  {
     "id": "2c-d",
     "name": "2C-D",
     "aliases": [
@@ -1008,18 +1045,40 @@
     ]
   },
   {
-    "id": "2c-b-fly",
-    "name": "2C-B-FLY",
+    "id": "2c-e",
+    "name": "2C-E",
     "aliases": [
-      "2C-B-FLY",
-      "2-(4-bromo-2,3,6,7-tetrahydrofuro[2,3-f][1]benzofuran-8-yl)ethanamine"
+      "2C-E",
+      "Eternity",
+      "2-(4-Ethyl-2,5-dimethoxyphenyl)ethanamine"
     ],
     "routes": [
       {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 1,
+          "maxMinutes": 2
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": null,
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        }
+      },
+      {
         "route": "oral",
         "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 60
+          "minMinutes": 15,
+          "maxMinutes": 45
         },
         "comeup": {
           "minMinutes": 60,
@@ -1034,8 +1093,8 @@
           "maxMinutes": 180
         },
         "total": {
-          "minMinutes": 420,
-          "maxMinutes": 720
+          "minMinutes": 360,
+          "maxMinutes": 600
         },
         "afterglow": {
           "minMinutes": 360,
@@ -1043,16 +1102,6 @@
         }
       }
     ]
-  },
-  {
-    "id": "2c-h",
-    "name": "2C-H",
-    "aliases": [
-      "2C-H",
-      "DMPEA",
-      "2-(2,5-Dimethoxyphenyl)ethanamine"
-    ],
-    "routes": []
   },
   {
     "id": "2c-b",
@@ -1157,60 +1206,52 @@
     ]
   },
   {
-    "id": "2c-e",
-    "name": "2C-E",
+    "id": "2c-h",
+    "name": "2C-H",
     "aliases": [
-      "2C-E",
-      "Eternity",
-      "2-(4-Ethyl-2,5-dimethoxyphenyl)ethanamine"
+      "2C-H",
+      "DMPEA",
+      "2-(2,5-Dimethoxyphenyl)ethanamine"
+    ],
+    "routes": []
+  },
+  {
+    "id": "2c-x",
+    "name": "2C-x",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "2c-t",
+    "name": "2C-T",
+    "aliases": [
+      "2C-T",
+      "Tesseract",
+      "2-[4-(Methylthio)-2,5-dimethoxyphenyl]ethanamine"
     ],
     "routes": [
       {
-        "route": "insufflated",
+        "route": "oral",
         "onset": {
-          "minMinutes": 1,
-          "maxMinutes": 2
+          "minMinutes": 30,
+          "maxMinutes": 45
         },
         "comeup": null,
         "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 240
+          "minMinutes": 30,
+          "maxMinutes": 115
         },
         "offset": {
           "minMinutes": 60,
           "maxMinutes": 120
-        },
-        "total": null,
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        }
-      },
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 45
-        },
-        "comeup": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 180
         },
         "total": {
-          "minMinutes": 360,
-          "maxMinutes": 600
+          "minMinutes": 180,
+          "maxMinutes": 360
         },
         "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 1440
+          "minMinutes": 60,
+          "maxMinutes": 120
         }
       }
     ]
@@ -1290,41 +1331,6 @@
     ]
   },
   {
-    "id": "2c-t",
-    "name": "2C-T",
-    "aliases": [
-      "2C-T",
-      "Tesseract",
-      "2-[4-(Methylthio)-2,5-dimethoxyphenyl]ethanamine"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 45
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 30,
-          "maxMinutes": 115
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 360
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        }
-      }
-    ]
-  },
-  {
     "id": "2c-t-2",
     "name": "2C-T-2",
     "aliases": [
@@ -1384,8 +1390,8 @@
     ]
   },
   {
-    "id": "2c-x",
-    "name": "2C-x",
+    "id": "2c-t-x",
+    "name": "2C-T-x",
     "aliases": [],
     "routes": []
   },
@@ -1423,12 +1429,6 @@
         }
       }
     ]
-  },
-  {
-    "id": "2c-t-x",
-    "name": "2C-T-x",
-    "aliases": [],
-    "routes": []
   },
   {
     "id": "2c-t-7",
@@ -1498,6 +1498,35 @@
     ]
   },
   {
+    "id": "2m2b",
+    "name": "2M2B",
+    "aliases": [
+      "2M2B",
+      "2-methyl-2-butanol",
+      "2-methylbutan-2-ol"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": {
+          "minMinutes": 360,
+          "maxMinutes": 480
+        },
+        "offset": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "total": {
+          "minMinutes": 480,
+          "maxMinutes": 840
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
     "id": "3-4-ctmp",
     "name": "3,4-CTMP",
     "aliases": [
@@ -1522,6 +1551,78 @@
           "minMinutes": 120,
           "maxMinutes": 1440
         }
+      }
+    ]
+  },
+  {
+    "id": "3-cl-pcp",
+    "name": "3-Cl-PCP",
+    "aliases": [
+      "3-Cl-PCP",
+      "1-[1-(3-chlorophenyl)cyclohexyl]piperidine"
+    ],
+    "routes": []
+  },
+  {
+    "id": "3-fpm",
+    "name": "3-FPM",
+    "aliases": [
+      "3-FPM",
+      "PAL-593",
+      "2-(3-Fluorophenyl)-3-methylmorpholine"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        },
+        "afterglow": null
+      },
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 40
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        }
+      }
+    ]
+  },
+  {
+    "id": "3-ho-pce",
+    "name": "3-HO-PCE",
+    "aliases": [
+      "3-HO-PCE",
+      "Hydroxyeticyclidine"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "afterglow": null
       }
     ]
   },
@@ -1560,35 +1661,6 @@
           "minMinutes": 120,
           "maxMinutes": 360
         }
-      }
-    ]
-  },
-  {
-    "id": "2m2b",
-    "name": "2M2B",
-    "aliases": [
-      "2M2B",
-      "2-methyl-2-butanol",
-      "2-methylbutan-2-ol"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": {
-          "minMinutes": 360,
-          "maxMinutes": 480
-        },
-        "offset": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "total": {
-          "minMinutes": 480,
-          "maxMinutes": 840
-        },
-        "afterglow": null
       }
     ]
   },
@@ -1657,69 +1729,6 @@
     ]
   },
   {
-    "id": "3-fpm",
-    "name": "3-FPM",
-    "aliases": [
-      "3-FPM",
-      "PAL-593",
-      "2-(3-Fluorophenyl)-3-methylmorpholine"
-    ],
-    "routes": [
-      {
-        "route": "insufflated",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 360
-        },
-        "afterglow": null
-      },
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 40
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "afterglow": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        }
-      }
-    ]
-  },
-  {
-    "id": "3-ho-pce",
-    "name": "3-HO-PCE",
-    "aliases": [
-      "3-HO-PCE",
-      "Hydroxyeticyclidine"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "3-ho-pcp",
     "name": "3-HO-PCP",
     "aliases": [
@@ -1741,6 +1750,70 @@
           "maxMinutes": 360
         },
         "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "3-meo-pce",
+    "name": "3-MeO-PCE",
+    "aliases": [
+      "3-MeO-PCE",
+      "Methoxyeticyclidine"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 3,
+          "maxMinutes": 15
+        },
+        "comeup": {
+          "minMinutes": 45,
+          "maxMinutes": 90
+        },
+        "peak": {
+          "minMinutes": 90,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 45,
+          "maxMinutes": 60
+        },
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "afterglow": {
+          "minMinutes": 240,
+          "maxMinutes": 2880
+        }
+      },
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "comeup": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 240,
+          "maxMinutes": 2880
+        }
       }
     ]
   },
@@ -1836,58 +1909,18 @@
     ]
   },
   {
-    "id": "3-cl-pcp",
-    "name": "3-Cl-PCP",
+    "id": "3-meo-pcp",
+    "name": "3-MeO-PCP",
     "aliases": [
-      "3-Cl-PCP",
-      "1-[1-(3-chlorophenyl)cyclohexyl]piperidine"
-    ],
-    "routes": []
-  },
-  {
-    "id": "3-meo-pcmo",
-    "name": "3-MeO-PCMo",
-    "aliases": [],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 360
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        }
-      }
-    ]
-  },
-  {
-    "id": "3-meo-pce",
-    "name": "3-MeO-PCE",
-    "aliases": [
-      "3-MeO-PCE",
-      "Methoxyeticyclidine"
+      "3-MeO-PCP",
+      "3-MeO"
     ],
     "routes": [
       {
         "route": "insufflated",
         "onset": {
-          "minMinutes": 3,
-          "maxMinutes": 15
+          "minMinutes": 5,
+          "maxMinutes": 30
         },
         "comeup": {
           "minMinutes": 45,
@@ -1917,7 +1950,7 @@
           "maxMinutes": 90
         },
         "comeup": {
-          "minMinutes": 60,
+          "minMinutes": 45,
           "maxMinutes": 120
         },
         "peak": {
@@ -1935,6 +1968,49 @@
         "afterglow": {
           "minMinutes": 240,
           "maxMinutes": 2880
+        }
+      },
+      {
+        "route": "smoked",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 45,
+          "maxMinutes": 120
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "3-meo-pcmo",
+    "name": "3-MeO-PCMo",
+    "aliases": [],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 180
         }
       }
     ]
@@ -2029,80 +2105,10 @@
     ]
   },
   {
-    "id": "3-meo-pcp",
-    "name": "3-MeO-PCP",
-    "aliases": [
-      "3-MeO-PCP",
-      "3-MeO"
-    ],
-    "routes": [
-      {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 5,
-          "maxMinutes": 30
-        },
-        "comeup": {
-          "minMinutes": 45,
-          "maxMinutes": 90
-        },
-        "peak": {
-          "minMinutes": 90,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 45,
-          "maxMinutes": 60
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "afterglow": {
-          "minMinutes": 240,
-          "maxMinutes": 2880
-        }
-      },
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "comeup": {
-          "minMinutes": 45,
-          "maxMinutes": 120
-        },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 240,
-          "maxMinutes": 2880
-        }
-      },
-      {
-        "route": "smoked",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 45,
-          "maxMinutes": 120
-        },
-        "afterglow": null
-      }
-    ]
+    "id": "4-bmc",
+    "name": "4-BMC",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "4-aco-det",
@@ -2141,79 +2147,6 @@
         }
       }
     ]
-  },
-  {
-    "id": "4-aco-dmt",
-    "name": "4-AcO-DMT",
-    "aliases": [
-      "4-AcO-DMT",
-      "4-Acetoxy-DMT",
-      "Psilacetin",
-      "O-Acetylpsilocin",
-      "Synthetic mushrooms"
-    ],
-    "routes": [
-      {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 5,
-          "maxMinutes": 25
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "peak": {
-          "minMinutes": 90,
-          "maxMinutes": 150
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": null
-        }
-      },
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 40
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 75
-        },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 210
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 420
-        },
-        "afterglow": {
-          "minMinutes": 240,
-          "maxMinutes": 2880
-        }
-      }
-    ]
-  },
-  {
-    "id": "4-bmc",
-    "name": "4-BMC",
-    "aliases": [],
-    "routes": []
   },
   {
     "id": "4-aco-met",
@@ -2294,6 +2227,73 @@
     ]
   },
   {
+    "id": "4-aco-dmt",
+    "name": "4-AcO-DMT",
+    "aliases": [
+      "4-AcO-DMT",
+      "4-Acetoxy-DMT",
+      "Psilacetin",
+      "O-Acetylpsilocin",
+      "Synthetic mushrooms"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 5,
+          "maxMinutes": 25
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "peak": {
+          "minMinutes": 90,
+          "maxMinutes": 150
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": null
+        }
+      },
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 40
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 75
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 210
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 420
+        },
+        "afterglow": {
+          "minMinutes": 240,
+          "maxMinutes": 2880
+        }
+      }
+    ]
+  },
+  {
     "id": "4-aco-mipt",
     "name": "4-AcO-MiPT",
     "aliases": [
@@ -2326,44 +2326,6 @@
         },
         "afterglow": {
           "minMinutes": 120,
-          "maxMinutes": 240
-        }
-      }
-    ]
-  },
-  {
-    "id": "4-ho-det",
-    "name": "4-HO-DET",
-    "aliases": [
-      "4-HO-DET",
-      "Ethocin",
-      "CZ-74"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 45
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "peak": {
-          "minMinutes": 150,
-          "maxMinutes": 210
-        },
-        "offset": {
-          "minMinutes": 90,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 420
-        },
-        "afterglow": {
-          "minMinutes": 60,
           "maxMinutes": 240
         }
       }
@@ -2503,6 +2465,44 @@
     ]
   },
   {
+    "id": "4-ho-det",
+    "name": "4-HO-DET",
+    "aliases": [
+      "4-HO-DET",
+      "Ethocin",
+      "CZ-74"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 45
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "peak": {
+          "minMinutes": 150,
+          "maxMinutes": 210
+        },
+        "offset": {
+          "minMinutes": 90,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 420
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 240
+        }
+      }
+    ]
+  },
+  {
     "id": "4-ho-dipt",
     "name": "4-HO-DiPT",
     "aliases": [
@@ -2531,6 +2531,37 @@
         "total": {
           "minMinutes": 120,
           "maxMinutes": 240
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "4-ho-ept",
+    "name": "4-HO-EPT",
+    "aliases": [
+      "4-HO-EPT",
+      "Eprocin"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 420
         },
         "afterglow": null
       }
@@ -2591,37 +2622,6 @@
     ]
   },
   {
-    "id": "4-ho-ept",
-    "name": "4-HO-EPT",
-    "aliases": [
-      "4-HO-EPT",
-      "Eprocin"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 420
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "4-ho-mpt",
     "name": "4-HO-MPT",
     "aliases": [
@@ -2650,71 +2650,6 @@
         "total": {
           "minMinutes": 300,
           "maxMinutes": 420
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 720
-        }
-      }
-    ]
-  },
-  {
-    "id": "4f-eph",
-    "name": "4F-EPH",
-    "aliases": [
-      "4F-EPH",
-      "4-FEPH"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 10,
-          "maxMinutes": 25
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 360
-        },
-        "afterglow": {
-          "minMinutes": 240,
-          "maxMinutes": 720
-        }
-      }
-    ]
-  },
-  {
-    "id": "4-ho-mipt",
-    "name": "4-HO-MiPT",
-    "aliases": [
-      "4-HO-MiPT",
-      "Miprocin"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 45
-        },
-        "comeup": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "peak": {
-          "minMinutes": 90,
-          "maxMinutes": 150
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
         },
         "afterglow": {
           "minMinutes": 120,
@@ -2781,6 +2716,71 @@
           "maxMinutes": 1200
         },
         "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "4f-eph",
+    "name": "4F-EPH",
+    "aliases": [
+      "4F-EPH",
+      "4-FEPH"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 10,
+          "maxMinutes": 25
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 240,
+          "maxMinutes": 720
+        }
+      }
+    ]
+  },
+  {
+    "id": "4-ho-mipt",
+    "name": "4-HO-MiPT",
+    "aliases": [
+      "4-HO-MiPT",
+      "Miprocin"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 45
+        },
+        "comeup": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "peak": {
+          "minMinutes": 90,
+          "maxMinutes": 150
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 720
+        }
       }
     ]
   },
@@ -2879,92 +2879,6 @@
     ]
   },
   {
-    "id": "5-mapb",
-    "name": "5-MAPB",
-    "aliases": [
-      "5-MAPB"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "comeup": {
-          "minMinutes": 45,
-          "maxMinutes": 90
-        },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 90,
-          "maxMinutes": 180
-        },
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 2880
-        }
-      }
-    ]
-  },
-  {
-    "id": "5-hydroxytryptophan",
-    "name": "5-Hydroxytryptophan",
-    "aliases": [
-      "5-HTP",
-      "Oxitriptan",
-      "Cincofarm",
-      "Levothym",
-      "Levotonine",
-      "Oxyfan",
-      "Telesol",
-      "Tript-OH",
-      "Triptum"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": null,
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "5-meo-dibf",
-    "name": "5-MeO-DiBF",
-    "aliases": [
-      "5-MeO-DiBF"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "offset": null,
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "5-meo-dalt",
     "name": "5-MeO-DALT",
     "aliases": [
@@ -3021,6 +2935,68 @@
         "afterglow": {
           "minMinutes": 5,
           "maxMinutes": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": "5-hydroxytryptophan",
+    "name": "5-Hydroxytryptophan",
+    "aliases": [
+      "5-HTP",
+      "Oxitriptan",
+      "Cincofarm",
+      "Levothym",
+      "Levotonine",
+      "Oxyfan",
+      "Telesol",
+      "Tript-OH",
+      "Triptum"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": null,
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "5-mapb",
+    "name": "5-MAPB",
+    "aliases": [
+      "5-MAPB"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 45,
+          "maxMinutes": 90
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 90,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 2880
         }
       }
     ]
@@ -3089,63 +3065,26 @@
     ]
   },
   {
-    "id": "5-meo-mipt",
-    "name": "5-MeO-MiPT",
+    "id": "5-meo-dibf",
+    "name": "5-MeO-DiBF",
     "aliases": [
-      "5-MeO-MiPT",
-      "Moxy"
+      "5-MeO-DiBF"
     ],
     "routes": [
       {
         "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 40
-        },
-        "comeup": {
+        "onset": null,
+        "comeup": null,
+        "peak": {
           "minMinutes": 30,
           "maxMinutes": 60
         },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
+        "offset": null,
         "total": {
-          "minMinutes": 300,
-          "maxMinutes": 480
+          "minMinutes": 240,
+          "maxMinutes": 360
         },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        }
-      },
-      {
-        "route": "smoked",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 180
-        }
+        "afterglow": null
       }
     ]
   },
@@ -3213,6 +3152,67 @@
     ]
   },
   {
+    "id": "5-meo-mipt",
+    "name": "5-MeO-MiPT",
+    "aliases": [
+      "5-MeO-MiPT",
+      "Moxy"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 40
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        }
+      },
+      {
+        "route": "smoked",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 180
+        }
+      }
+    ]
+  },
+  {
     "id": "8-chlorotheophylline",
     "name": "8-Chlorotheophylline",
     "aliases": [],
@@ -3243,6 +3243,43 @@
         "offset": null,
         "total": null,
         "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "6-apb",
+    "name": "6-APB",
+    "aliases": [
+      "6-APB",
+      "Benzofury"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 420,
+          "maxMinutes": 600
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 2880
+        }
       }
     ]
   },
@@ -3318,38 +3355,34 @@
     ]
   },
   {
-    "id": "6-apb",
-    "name": "6-APB",
+    "id": "ab-fubinaca",
+    "name": "AB-FUBINACA",
     "aliases": [
-      "6-APB",
-      "Benzofury"
+      "Ab-fubi"
     ],
     "routes": [
       {
-        "route": "oral",
+        "route": "smoked",
         "onset": {
+          "minMinutes": 0,
+          "maxMinutes": 20
+        },
+        "comeup": null,
+        "peak": {
           "minMinutes": 30,
           "maxMinutes": 60
         },
-        "comeup": {
+        "offset": {
+          "minMinutes": 10,
+          "maxMinutes": 20
+        },
+        "total": {
           "minMinutes": 60,
           "maxMinutes": 120
         },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
-        "total": {
-          "minMinutes": 420,
-          "maxMinutes": 600
-        },
         "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 2880
+          "minMinutes": 15,
+          "maxMinutes": 30
         }
       }
     ]
@@ -3433,6 +3466,46 @@
         "afterglow": {
           "minMinutes": 60,
           "maxMinutes": 480
+        }
+      }
+    ]
+  },
+  {
+    "id": "ald-52",
+    "name": "ALD-52",
+    "aliases": [
+      "ALD-52",
+      "1-Acetyl-LSD",
+      "1A-LSD",
+      "1A-LAD",
+      "Orange Sunshine"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 40
+        },
+        "comeup": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "offset": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "total": {
+          "minMinutes": 480,
+          "maxMinutes": 840
+        },
+        "afterglow": {
+          "minMinutes": 240,
+          "maxMinutes": 1440
         }
       }
     ]
@@ -3600,79 +3673,6 @@
     ]
   },
   {
-    "id": "ab-fubinaca",
-    "name": "AB-FUBINACA",
-    "aliases": [
-      "Ab-fubi"
-    ],
-    "routes": [
-      {
-        "route": "smoked",
-        "onset": {
-          "minMinutes": 0,
-          "maxMinutes": 20
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "offset": {
-          "minMinutes": 10,
-          "maxMinutes": 20
-        },
-        "total": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "afterglow": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        }
-      }
-    ]
-  },
-  {
-    "id": "ald-52",
-    "name": "ALD-52",
-    "aliases": [
-      "ALD-52",
-      "1-Acetyl-LSD",
-      "1A-LSD",
-      "1A-LAD",
-      "Orange Sunshine"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 40
-        },
-        "comeup": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "offset": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "total": {
-          "minMinutes": 480,
-          "maxMinutes": 840
-        },
-        "afterglow": {
-          "minMinutes": 240,
-          "maxMinutes": 1440
-        }
-      }
-    ]
-  },
-  {
     "id": "apica",
     "name": "APICA",
     "aliases": [
@@ -3704,31 +3704,6 @@
           "minMinutes": 15,
           "maxMinutes": 35
         }
-      }
-    ]
-  },
-  {
-    "id": "allylescaline",
-    "name": "Allylescaline",
-    "aliases": [
-      "Allylescaline",
-      "AL"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 45,
-          "maxMinutes": 240
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 480,
-          "maxMinutes": 720
-        },
-        "afterglow": null
       }
     ]
   },
@@ -3772,10 +3747,29 @@
     ]
   },
   {
-    "id": "amphetamine-disambiguation",
-    "name": "Amphetamine (disambiguation)",
-    "aliases": [],
-    "routes": []
+    "id": "allylescaline",
+    "name": "Allylescaline",
+    "aliases": [
+      "Allylescaline",
+      "AL"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 45,
+          "maxMinutes": 240
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 480,
+          "maxMinutes": 720
+        },
+        "afterglow": null
+      }
+    ]
   },
   {
     "id": "alpha-gpc",
@@ -3802,6 +3796,12 @@
         "afterglow": null
       }
     ]
+  },
+  {
+    "id": "amphetamine-disambiguation",
+    "name": "Amphetamine (disambiguation)",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "alcohol",
@@ -3852,15 +3852,6 @@
       "Yopo",
       "Jopo",
       "Cohoba"
-    ],
-    "routes": []
-  },
-  {
-    "id": "amanita-muscaria",
-    "name": "Amanita muscaria",
-    "aliases": [
-      "Fly agaric",
-      "Fly amanita"
     ],
     "routes": []
   },
@@ -3933,9 +3924,12 @@
     ]
   },
   {
-    "id": "antihistamine",
-    "name": "Antihistamine",
-    "aliases": [],
+    "id": "amanita-muscaria",
+    "name": "Amanita muscaria",
+    "aliases": [
+      "Fly agaric",
+      "Fly amanita"
+    ],
     "routes": []
   },
   {
@@ -3963,8 +3957,8 @@
     ]
   },
   {
-    "id": "arylcyclohexylamines",
-    "name": "Arylcyclohexylamines",
+    "id": "antihistamine",
+    "name": "Antihistamine",
     "aliases": [],
     "routes": []
   },
@@ -4058,6 +4052,12 @@
         }
       }
     ]
+  },
+  {
+    "id": "arylcyclohexylamines",
+    "name": "Arylcyclohexylamines",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "antipsychotic",
@@ -4168,6 +4168,43 @@
     ]
   },
   {
+    "id": "baclofen",
+    "name": "Baclofen",
+    "aliases": [
+      "Baclofen",
+      "Lioresal"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 75
+        },
+        "comeup": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 90,
+          "maxMinutes": 150
+        },
+        "total": {
+          "minMinutes": 480,
+          "maxMinutes": 840
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 720
+        }
+      }
+    ]
+  },
+  {
     "id": "barbiturates",
     "name": "Barbiturates",
     "aliases": [],
@@ -4217,43 +4254,6 @@
     ]
   },
   {
-    "id": "baclofen",
-    "name": "Baclofen",
-    "aliases": [
-      "Baclofen",
-      "Lioresal"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 75
-        },
-        "comeup": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 90,
-          "maxMinutes": 150
-        },
-        "total": {
-          "minMinutes": 480,
-          "maxMinutes": 840
-        },
-        "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 720
-        }
-      }
-    ]
-  },
-  {
     "id": "benzodiazepines",
     "name": "Benzodiazepines",
     "aliases": [],
@@ -4294,31 +4294,39 @@
     ]
   },
   {
-    "id": "bromantane",
-    "name": "Bromantane",
+    "id": "bufotenin",
+    "name": "Bufotenin",
     "aliases": [
-      "Bromantane",
-      "Bromantan",
-      "Ladasten"
+      "Bufotenin",
+      "5-HO-DMT"
     ],
     "routes": [
       {
-        "route": "oral",
+        "route": "smoked",
         "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 60
+          "minMinutes": 0,
+          "maxMinutes": 0
         },
-        "comeup": null,
+        "comeup": {
+          "minMinutes": 0,
+          "maxMinutes": 0
+        },
         "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 240
+          "minMinutes": 1,
+          "maxMinutes": 5
         },
-        "offset": null,
+        "offset": {
+          "minMinutes": 5,
+          "maxMinutes": 10
+        },
         "total": {
-          "minMinutes": 360,
-          "maxMinutes": 600
+          "minMinutes": 15,
+          "maxMinutes": 90
         },
-        "afterglow": null
+        "afterglow": {
+          "minMinutes": 10,
+          "maxMinutes": 60
+        }
       }
     ]
   },
@@ -4373,39 +4381,31 @@
     ]
   },
   {
-    "id": "bufotenin",
-    "name": "Bufotenin",
+    "id": "bromantane",
+    "name": "Bromantane",
     "aliases": [
-      "Bufotenin",
-      "5-HO-DMT"
+      "Bromantane",
+      "Bromantan",
+      "Ladasten"
     ],
     "routes": [
       {
-        "route": "smoked",
+        "route": "oral",
         "onset": {
-          "minMinutes": 0,
-          "maxMinutes": 0
-        },
-        "comeup": {
-          "minMinutes": 0,
-          "maxMinutes": 0
-        },
-        "peak": {
-          "minMinutes": 1,
-          "maxMinutes": 5
-        },
-        "offset": {
-          "minMinutes": 5,
-          "maxMinutes": 10
-        },
-        "total": {
-          "minMinutes": 15,
-          "maxMinutes": 90
-        },
-        "afterglow": {
-          "minMinutes": 10,
+          "minMinutes": 30,
           "maxMinutes": 60
-        }
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "offset": null,
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 600
+        },
+        "afterglow": null
       }
     ]
   },
@@ -4566,12 +4566,6 @@
     ]
   },
   {
-    "id": "cathinone",
-    "name": "Cathinone",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "cannabidiol",
     "name": "Cannabidiol",
     "aliases": [
@@ -4601,38 +4595,22 @@
     ]
   },
   {
-    "id": "changa",
-    "name": "Changa",
+    "id": "cathinone",
+    "name": "Cathinone",
     "aliases": [],
     "routes": []
   },
   {
-    "id": "carisoprodol",
-    "name": "Carisoprodol",
-    "aliases": [
-      "Carisoprodol",
-      "Soma"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 300
-        },
-        "offset": null,
-        "total": null,
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 720
-        }
-      }
-    ]
+    "id": "cannabinoid",
+    "name": "Cannabinoid",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "changa",
+    "name": "Changa",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "caffeine",
@@ -4722,43 +4700,29 @@
     ]
   },
   {
-    "id": "coca",
-    "name": "Coca",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "citicoline",
-    "name": "Citicoline",
+    "id": "carisoprodol",
+    "name": "Carisoprodol",
     "aliases": [
-      "Citicoline"
+      "Carisoprodol",
+      "Soma"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
+          "minMinutes": 15,
+          "maxMinutes": 60
         },
-        "comeup": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
+        "comeup": null,
         "peak": {
-          "minMinutes": 150,
-          "maxMinutes": 210
+          "minMinutes": 120,
+          "maxMinutes": 300
         },
-        "offset": {
-          "minMinutes": 1800,
-          "maxMinutes": 2400
-        },
-        "total": {
-          "minMinutes": 3480,
-          "maxMinutes": 4440
-        },
+        "offset": null,
+        "total": null,
         "afterglow": {
-          "minMinutes": 2400,
-          "maxMinutes": 3600
+          "minMinutes": 60,
+          "maxMinutes": 720
         }
       }
     ]
@@ -4861,6 +4825,54 @@
     ]
   },
   {
+    "id": "citicoline",
+    "name": "Citicoline",
+    "aliases": [
+      "Citicoline"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "comeup": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "peak": {
+          "minMinutes": 150,
+          "maxMinutes": 210
+        },
+        "offset": {
+          "minMinutes": 1800,
+          "maxMinutes": 2400
+        },
+        "total": {
+          "minMinutes": 3480,
+          "maxMinutes": 4440
+        },
+        "afterglow": {
+          "minMinutes": 2400,
+          "maxMinutes": 3600
+        }
+      }
+    ]
+  },
+  {
+    "id": "coca",
+    "name": "Coca",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "classical-psychedelics",
+    "name": "Classical psychedelics",
+    "aliases": [],
+    "routes": []
+  },
+  {
     "id": "choline-bitartrate",
     "name": "Choline bitartrate",
     "aliases": [
@@ -4897,16 +4909,46 @@
     ]
   },
   {
-    "id": "classical-psychedelics",
-    "name": "Classical psychedelics",
+    "id": "cocoa",
+    "name": "Cocoa",
     "aliases": [],
     "routes": []
   },
   {
-    "id": "cannabinoid",
-    "name": "Cannabinoid",
-    "aliases": [],
-    "routes": []
+    "id": "clonazepam",
+    "name": "Clonazepam",
+    "aliases": [
+      "Clonazepam",
+      "Klonopin",
+      "K-Pins",
+      "Rivotril"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        },
+        "total": {
+          "minMinutes": 480,
+          "maxMinutes": 720
+        },
+        "afterglow": {
+          "minMinutes": 480,
+          "maxMinutes": 2880
+        }
+      }
+    ]
   },
   {
     "id": "clonazolam",
@@ -4967,12 +5009,6 @@
         "afterglow": null
       }
     ]
-  },
-  {
-    "id": "cocoa",
-    "name": "Cocoa",
-    "aliases": [],
-    "routes": []
   },
   {
     "id": "creatine",
@@ -5055,6 +5091,70 @@
         "comeup": null,
         "peak": null,
         "offset": null,
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "det",
+    "name": "DET",
+    "aliases": [
+      "Diethyltryptamine",
+      "DET"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "offset": null,
+        "total": null,
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 480
+        }
+      }
+    ]
+  },
+  {
+    "id": "codeine",
+    "name": "Codeine",
+    "aliases": [
+      "Codeine",
+      "Lean",
+      "Purple Drank",
+      "Syrup"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 45
+        },
+        "comeup": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
         "total": {
           "minMinutes": 180,
           "maxMinutes": 360
@@ -5181,70 +5281,6 @@
     ]
   },
   {
-    "id": "codeine",
-    "name": "Codeine",
-    "aliases": [
-      "Codeine",
-      "Lean",
-      "Purple Drank",
-      "Syrup"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 45
-        },
-        "comeup": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 360
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "det",
-    "name": "DET",
-    "aliases": [
-      "Diethyltryptamine",
-      "DET"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "offset": null,
-        "total": null,
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 480
-        }
-      }
-    ]
-  },
-  {
     "id": "dob",
     "name": "DOB",
     "aliases": [
@@ -5349,43 +5385,6 @@
     "routes": []
   },
   {
-    "id": "dom",
-    "name": "DOM",
-    "aliases": [
-      "DOM",
-      "STP (Serenity, Tranquility, and Peace)"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "comeup": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
-        "peak": {
-          "minMinutes": 360,
-          "maxMinutes": 480
-        },
-        "offset": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "total": {
-          "minMinutes": 720,
-          "maxMinutes": 960
-        },
-        "afterglow": {
-          "minMinutes": 240,
-          "maxMinutes": 960
-        }
-      }
-    ]
-  },
-  {
     "id": "dmt",
     "name": "DMT",
     "aliases": [
@@ -5450,6 +5449,43 @@
     ]
   },
   {
+    "id": "dom",
+    "name": "DOM",
+    "aliases": [
+      "DOM",
+      "STP (Serenity, Tranquility, and Peace)"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "comeup": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "peak": {
+          "minMinutes": 360,
+          "maxMinutes": 480
+        },
+        "offset": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "total": {
+          "minMinutes": 720,
+          "maxMinutes": 960
+        },
+        "afterglow": {
+          "minMinutes": 240,
+          "maxMinutes": 960
+        }
+      }
+    ]
+  },
+  {
     "id": "datura-botany",
     "name": "Datura (botany)",
     "aliases": [],
@@ -5478,31 +5514,6 @@
           "minMinutes": 960,
           "maxMinutes": 1440
         },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "datura",
-    "name": "Datura",
-    "aliases": [
-      "Datura",
-      "Jimson Weed"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 120
-        },
-        "comeup": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "peak": null,
-        "offset": null,
-        "total": null,
         "afterglow": null
       }
     ]
@@ -5573,52 +5584,41 @@
     ]
   },
   {
-    "id": "depressant",
-    "name": "Depressant",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "deliriant",
     "name": "Deliriant",
     "aliases": [],
     "routes": []
   },
   {
-    "id": "clonazepam",
-    "name": "Clonazepam",
+    "id": "datura",
+    "name": "Datura",
     "aliases": [
-      "Clonazepam",
-      "Klonopin",
-      "K-Pins",
-      "Rivotril"
+      "Datura",
+      "Jimson Weed"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
           "minMinutes": 20,
-          "maxMinutes": 60
+          "maxMinutes": 120
         },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 240
+        "comeup": {
+          "minMinutes": 60,
+          "maxMinutes": 120
         },
-        "offset": {
-          "minMinutes": 180,
-          "maxMinutes": 360
-        },
-        "total": {
-          "minMinutes": 480,
-          "maxMinutes": 720
-        },
-        "afterglow": {
-          "minMinutes": 480,
-          "maxMinutes": 2880
-        }
+        "peak": null,
+        "offset": null,
+        "total": null,
+        "afterglow": null
       }
     ]
+  },
+  {
+    "id": "depressant",
+    "name": "Depressant",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "desoxypipradrol",
@@ -5677,6 +5677,97 @@
     ]
   },
   {
+    "id": "dextroamphetamine",
+    "name": "Dextroamphetamine",
+    "aliases": [
+      "Dextroamphetamine",
+      "Dexamphetamine",
+      "D-amphetamine",
+      "Dexedrine",
+      "Dex",
+      "Attentin"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 1,
+          "maxMinutes": 5
+        },
+        "comeup": {
+          "minMinutes": 5,
+          "maxMinutes": 15
+        },
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 90,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        }
+      },
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "peak": {
+          "minMinutes": 150,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        }
+      }
+    ]
+  },
+  {
+    "id": "desomorphine",
+    "name": "Desomorphine",
+    "aliases": [
+      "Desomorphine",
+      "Krokodil",
+      "Krok"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 240
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
     "id": "deschloroetizolam",
     "name": "Deschloroetizolam",
     "aliases": [
@@ -5711,6 +5802,12 @@
         }
       }
     ]
+  },
+  {
+    "id": "diarylethylamines",
+    "name": "Diarylethylamines",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "deschloroketamine",
@@ -5787,132 +5884,6 @@
           "maxMinutes": 90
         },
         "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "dextroamphetamine",
-    "name": "Dextroamphetamine",
-    "aliases": [
-      "Dextroamphetamine",
-      "Dexamphetamine",
-      "D-amphetamine",
-      "Dexedrine",
-      "Dex",
-      "Attentin"
-    ],
-    "routes": [
-      {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 1,
-          "maxMinutes": 5
-        },
-        "comeup": {
-          "minMinutes": 5,
-          "maxMinutes": 15
-        },
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 90,
-          "maxMinutes": 180
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 360
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        }
-      },
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "peak": {
-          "minMinutes": 150,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 180,
-          "maxMinutes": 360
-        }
-      }
-    ]
-  },
-  {
-    "id": "diarylethylamines",
-    "name": "Diarylethylamines",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "desomorphine",
-    "name": "Desomorphine",
-    "aliases": [
-      "Desomorphine",
-      "Krokodil",
-      "Krok"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 240
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "dextropropoxyphene",
-    "name": "Dextropropoxyphene",
-    "aliases": [
-      "Dextropropoxyphene",
-      "Propoxyphene",
-      "Darvon"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 30
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 240
-        },
-        "offset": null,
-        "total": null,
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 360
-        }
       }
     ]
   },
@@ -6002,34 +5973,30 @@
     ]
   },
   {
-    "id": "diazepam",
-    "name": "Diazepam",
+    "id": "dextropropoxyphene",
+    "name": "Dextropropoxyphene",
     "aliases": [
-      "Valium",
-      "Diastat",
-      "Mother's Little Helper",
-      "Apaurin"
+      "Dextropropoxyphene",
+      "Propoxyphene",
+      "Darvon"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
           "minMinutes": 20,
-          "maxMinutes": 40
+          "maxMinutes": 30
         },
         "comeup": null,
         "peak": {
           "minMinutes": 60,
-          "maxMinutes": 90
+          "maxMinutes": 240
         },
         "offset": null,
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 480
-        },
+        "total": null,
         "afterglow": {
-          "minMinutes": 720,
-          "maxMinutes": 2160
+          "minMinutes": 60,
+          "maxMinutes": 360
         }
       }
     ]
@@ -6093,6 +6060,39 @@
     ]
   },
   {
+    "id": "diazepam",
+    "name": "Diazepam",
+    "aliases": [
+      "Valium",
+      "Diastat",
+      "Mother's Little Helper",
+      "Apaurin"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 40
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "offset": null,
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 720,
+          "maxMinutes": 2160
+        }
+      }
+    ]
+  },
+  {
     "id": "diphenhydramine",
     "name": "Diphenhydramine",
     "aliases": [
@@ -6130,30 +6130,6 @@
           "minMinutes": null,
           "maxMinutes": 1440
         }
-      }
-    ]
-  },
-  {
-    "id": "diclazepam",
-    "name": "Diclazepam",
-    "aliases": [
-      "Diclazepam"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 10,
-          "maxMinutes": 45
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 480,
-          "maxMinutes": 720
-        },
-        "afterglow": null
       }
     ]
   },
@@ -6251,12 +6227,6 @@
     ]
   },
   {
-    "id": "entactogen",
-    "name": "Entactogen",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "ept",
     "name": "EPT",
     "aliases": [
@@ -6280,6 +6250,30 @@
           "minMinutes": 60,
           "maxMinutes": 180
         }
+      }
+    ]
+  },
+  {
+    "id": "diclazepam",
+    "name": "Diclazepam",
+    "aliases": [
+      "Diclazepam"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 10,
+          "maxMinutes": 45
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 480,
+          "maxMinutes": 720
+        },
+        "afterglow": null
       }
     ]
   },
@@ -6341,6 +6335,12 @@
         "afterglow": null
       }
     ]
+  },
+  {
+    "id": "entactogen",
+    "name": "Entactogen",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "eth-lad",
@@ -6441,31 +6441,6 @@
     ]
   },
   {
-    "id": "ephenidine",
-    "name": "Ephenidine",
-    "aliases": [
-      "Ephenidine",
-      "NEDPA"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 10,
-          "maxMinutes": 30
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 420
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "escaline",
     "name": "Escaline",
     "aliases": [
@@ -6488,6 +6463,36 @@
         "afterglow": {
           "minMinutes": 180,
           "maxMinutes": 300
+        }
+      }
+    ]
+  },
+  {
+    "id": "ephylone",
+    "name": "Ephylone",
+    "aliases": [
+      "Ephylone",
+      "bk-EBDP",
+      "βk-EBDP",
+      "bk-ethyl-K"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 1440
         }
       }
     ]
@@ -6533,53 +6538,60 @@
     ]
   },
   {
-    "id": "ephylone",
-    "name": "Ephylone",
+    "id": "ethylone",
+    "name": "Ethylone",
     "aliases": [
-      "Ephylone",
-      "bk-EBDP",
-      "βk-EBDP",
-      "bk-ethyl-K"
+      "Ethylone",
+      "bk-MDEA",
+      "MDEC"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
           "minMinutes": 15,
+          "maxMinutes": 45
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 720
+        }
+      }
+    ]
+  },
+  {
+    "id": "ephenidine",
+    "name": "Ephenidine",
+    "aliases": [
+      "Ephenidine",
+      "NEDPA"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 10,
           "maxMinutes": 30
         },
         "comeup": null,
         "peak": null,
         "offset": null,
         "total": {
-          "minMinutes": 240,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 1440
-        }
-      }
-    ]
-  },
-  {
-    "id": "ethylmorphine",
-    "name": "Ethylmorphine",
-    "aliases": [
-      "Ethylmorphine",
-      "Codethyline",
-      "Dionine"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 300
+          "minMinutes": 300,
+          "maxMinutes": 420
         },
         "afterglow": null
       }
@@ -6614,37 +6626,25 @@
     ]
   },
   {
-    "id": "ethylone",
-    "name": "Ethylone",
+    "id": "ethylmorphine",
+    "name": "Ethylmorphine",
     "aliases": [
-      "Ethylone",
-      "bk-MDEA",
-      "MDEC"
+      "Ethylmorphine",
+      "Codethyline",
+      "Dionine"
     ],
     "routes": [
       {
         "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 45
-        },
+        "onset": null,
         "comeup": null,
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
+        "peak": null,
+        "offset": null,
         "total": {
-          "minMinutes": 120,
-          "maxMinutes": 240
+          "minMinutes": 240,
+          "maxMinutes": 300
         },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 720
-        }
+        "afterglow": null
       }
     ]
   },
@@ -6746,30 +6746,6 @@
     ]
   },
   {
-    "id": "flubromazepam",
-    "name": "Flubromazepam",
-    "aliases": [
-      "Flubromazepam"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 40,
-          "maxMinutes": 90
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 720
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "flualprazolam",
     "name": "Flualprazolam",
     "aliases": [
@@ -6798,6 +6774,124 @@
         "afterglow": {
           "minMinutes": 360,
           "maxMinutes": 1440
+        }
+      }
+    ]
+  },
+  {
+    "id": "flunitrazepam",
+    "name": "Flunitrazepam",
+    "aliases": [
+      "Rohypnol",
+      "Flunitrazepam",
+      "Roofies",
+      "Roches",
+      "Ruffies",
+      "Circles",
+      "Forget Pill",
+      "Forget Me Pill",
+      "La Rocha",
+      "Mexican Valium",
+      "R2",
+      "Roach 2",
+      "Rophies",
+      "Wolfies"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 30
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 1440
+        }
+      }
+    ]
+  },
+  {
+    "id": "flubromazolam",
+    "name": "Flubromazolam",
+    "aliases": [
+      "Flubromazolam"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 720,
+          "maxMinutes": 1080
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "flubromazepam",
+    "name": "Flubromazepam",
+    "aliases": [
+      "Flubromazepam"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 40,
+          "maxMinutes": 90
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 720
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "flunitrazolam",
+    "name": "Flunitrazolam",
+    "aliases": [
+      "Flunitrazolam"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 40
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 720
         }
       }
     ]
@@ -6865,100 +6959,6 @@
           "maxMinutes": 4320
         },
         "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "flunitrazepam",
-    "name": "Flunitrazepam",
-    "aliases": [
-      "Rohypnol",
-      "Flunitrazepam",
-      "Roofies",
-      "Roches",
-      "Ruffies",
-      "Circles",
-      "Forget Pill",
-      "Forget Me Pill",
-      "La Rocha",
-      "Mexican Valium",
-      "R2",
-      "Roach 2",
-      "Rophies",
-      "Wolfies"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 30
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 1440
-        }
-      }
-    ]
-  },
-  {
-    "id": "flubromazolam",
-    "name": "Flubromazolam",
-    "aliases": [
-      "Flubromazolam"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 720,
-          "maxMinutes": 1080
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "flunitrazolam",
-    "name": "Flunitrazolam",
-    "aliases": [
-      "Flunitrazolam"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 40
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 720
-        }
       }
     ]
   },
@@ -7039,8 +7039,8 @@
     ]
   },
   {
-    "id": "harmala-alkaloid",
-    "name": "Harmala alkaloid",
+    "id": "hallucinogens",
+    "name": "Hallucinogens",
     "aliases": [],
     "routes": []
   },
@@ -7079,6 +7079,12 @@
     ]
   },
   {
+    "id": "harmala-alkaloid",
+    "name": "Harmala alkaloid",
+    "aliases": [],
+    "routes": []
+  },
+  {
     "id": "gabapentin",
     "name": "Gabapentin",
     "aliases": [
@@ -7103,6 +7109,30 @@
         "total": {
           "minMinutes": 360,
           "maxMinutes": 600
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "galantamine",
+    "name": "Galantamine",
+    "aliases": [
+      "Galantamine"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 720
         },
         "afterglow": null
       }
@@ -7136,36 +7166,6 @@
           "minMinutes": 60,
           "maxMinutes": 180
         }
-      }
-    ]
-  },
-  {
-    "id": "hallucinogens",
-    "name": "Hallucinogens",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "galantamine",
-    "name": "Galantamine",
-    "aliases": [
-      "Galantamine"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 720
-        },
-        "afterglow": null
       }
     ]
   },
@@ -7284,6 +7284,12 @@
     ]
   },
   {
+    "id": "hyoscyamus-niger-botany",
+    "name": "Hyoscyamus niger (botany)",
+    "aliases": [],
+    "routes": []
+  },
+  {
     "id": "hexedrone",
     "name": "Hexedrone",
     "aliases": [
@@ -7317,8 +7323,8 @@
     "routes": []
   },
   {
-    "id": "ibotenic-acid",
-    "name": "Ibotenic acid",
+    "id": "inhalants",
+    "name": "Inhalants",
     "aliases": [],
     "routes": []
   },
@@ -7349,10 +7355,101 @@
     ]
   },
   {
-    "id": "inhalants",
-    "name": "Inhalants",
+    "id": "ibotenic-acid",
+    "name": "Ibotenic acid",
     "aliases": [],
     "routes": []
+  },
+  {
+    "id": "heroin",
+    "name": "Heroin",
+    "aliases": [
+      "Heroin",
+      "H",
+      "Smack",
+      "Junk",
+      "Brown"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 0,
+          "maxMinutes": 1
+        },
+        "comeup": {
+          "minMinutes": 0,
+          "maxMinutes": 1
+        },
+        "peak": {
+          "minMinutes": 1,
+          "maxMinutes": 90
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 420
+        },
+        "afterglow": {
+          "minMinutes": 90,
+          "maxMinutes": 180
+        }
+      },
+      {
+        "route": "intravenous",
+        "onset": {
+          "minMinutes": 0,
+          "maxMinutes": 0
+        },
+        "comeup": {
+          "minMinutes": 0,
+          "maxMinutes": 0
+        },
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 300
+        },
+        "afterglow": null
+      },
+      {
+        "route": "smoked",
+        "onset": {
+          "minMinutes": 0,
+          "maxMinutes": 0
+        },
+        "comeup": {
+          "minMinutes": 0,
+          "maxMinutes": 0
+        },
+        "peak": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "offset": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "afterglow": {
+          "minMinutes": 10,
+          "maxMinutes": 30
+        }
+      }
+    ]
   },
   {
     "id": "hydromorphone",
@@ -7447,97 +7544,6 @@
     ]
   },
   {
-    "id": "heroin",
-    "name": "Heroin",
-    "aliases": [
-      "Heroin",
-      "H",
-      "Smack",
-      "Junk",
-      "Brown"
-    ],
-    "routes": [
-      {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 0,
-          "maxMinutes": 1
-        },
-        "comeup": {
-          "minMinutes": 0,
-          "maxMinutes": 1
-        },
-        "peak": {
-          "minMinutes": 1,
-          "maxMinutes": 90
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 180
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 420
-        },
-        "afterglow": {
-          "minMinutes": 90,
-          "maxMinutes": 180
-        }
-      },
-      {
-        "route": "intravenous",
-        "onset": {
-          "minMinutes": 0,
-          "maxMinutes": 0
-        },
-        "comeup": {
-          "minMinutes": 0,
-          "maxMinutes": 0
-        },
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 300
-        },
-        "afterglow": null
-      },
-      {
-        "route": "smoked",
-        "onset": {
-          "minMinutes": 0,
-          "maxMinutes": 0
-        },
-        "comeup": {
-          "minMinutes": 0,
-          "maxMinutes": 0
-        },
-        "peak": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        },
-        "offset": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "afterglow": {
-          "minMinutes": 10,
-          "maxMinutes": 30
-        }
-      }
-    ]
-  },
-  {
     "id": "ibogaine",
     "name": "Ibogaine",
     "aliases": [
@@ -7626,6 +7632,12 @@
     ]
   },
   {
+    "id": "kava",
+    "name": "Kava",
+    "aliases": [],
+    "routes": []
+  },
+  {
     "id": "jwh-018",
     "name": "JWH-018",
     "aliases": [],
@@ -7655,12 +7667,6 @@
         }
       }
     ]
-  },
-  {
-    "id": "kava",
-    "name": "Kava",
-    "aliases": [],
-    "routes": []
   },
   {
     "id": "jwh-073",
@@ -7697,12 +7703,6 @@
     ]
   },
   {
-    "id": "hyoscyamus-niger-botany",
-    "name": "Hyoscyamus niger (botany)",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "lae-32",
     "name": "LAE-32",
     "aliases": [],
@@ -7715,6 +7715,30 @@
         "offset": null,
         "total": {
           "minMinutes": 240,
+          "maxMinutes": 600
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "lsm-775",
+    "name": "LSM-775",
+    "aliases": [
+      "LSM-775"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 10,
+          "maxMinutes": 30
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 360,
           "maxMinutes": 600
         },
         "afterglow": null
@@ -7752,6 +7776,72 @@
           "maxMinutes": 240
         },
         "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "lsa",
+    "name": "LSA",
+    "aliases": [
+      "LSA",
+      "Ergine"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": null,
+        "afterglow": null
+      },
+      {
+        "route": "sublingual",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": null,
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "lisdexamfetamine",
+    "name": "Lisdexamfetamine",
+    "aliases": [
+      "Lisdexamfetamine",
+      "Vyvanse",
+      "Elvanse"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 60
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "offset": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "total": {
+          "minMinutes": 600,
+          "maxMinutes": 840
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 360
+        }
       }
     ]
   },
@@ -7836,100 +7926,10 @@
     ]
   },
   {
-    "id": "lsm-775",
-    "name": "LSM-775",
-    "aliases": [
-      "LSM-775"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 10,
-          "maxMinutes": 30
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 600
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "lsa",
-    "name": "LSA",
-    "aliases": [
-      "LSA",
-      "Ergine"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": null,
-        "afterglow": null
-      },
-      {
-        "route": "sublingual",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": null,
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "lysergamides",
     "name": "Lysergamides",
     "aliases": [],
     "routes": []
-  },
-  {
-    "id": "lisdexamfetamine",
-    "name": "Lisdexamfetamine",
-    "aliases": [
-      "Lisdexamfetamine",
-      "Vyvanse",
-      "Elvanse"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "offset": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "total": {
-          "minMinutes": 600,
-          "maxMinutes": 840
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 360
-        }
-      }
-    ]
   },
   {
     "id": "lsz",
@@ -8044,6 +8044,36 @@
     "routes": []
   },
   {
+    "id": "mcpp",
+    "name": "MCPP",
+    "aliases": [
+      "mCPP"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 180,
+          "maxMinutes": 480
+        },
+        "total": null,
+        "afterglow": null
+      }
+    ]
+  },
+  {
     "id": "mdai",
     "name": "MDAI",
     "aliases": [
@@ -8075,44 +8105,6 @@
         "afterglow": null
       }
     ]
-  },
-  {
-    "id": "mcpp",
-    "name": "MCPP",
-    "aliases": [
-      "mCPP"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "comeup": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 180,
-          "maxMinutes": 480
-        },
-        "total": null,
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "mandragora",
-    "name": "Mandragora",
-    "aliases": [
-      "Mandrake"
-    ],
-    "routes": []
   },
   {
     "id": "mda",
@@ -8192,6 +8184,14 @@
     ]
   },
   {
+    "id": "mandragora",
+    "name": "Mandragora",
+    "aliases": [
+      "Mandrake"
+    ],
+    "routes": []
+  },
+  {
     "id": "mpt",
     "name": "MPT",
     "aliases": [
@@ -8207,135 +8207,6 @@
         "offset": null,
         "total": null,
         "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "mdpv",
-    "name": "MDPV",
-    "aliases": [
-      "MDPV",
-      "Bath Salts",
-      "NRG-1",
-      "1-(1,3-Benzodioxol-5-yl)-2-(pyrrolidin-1-yl)pentan-1-one"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 30,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 120,
-          "maxMinutes": 420
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 2880
-        }
-      }
-    ]
-  },
-  {
-    "id": "mxipr",
-    "name": "MXiPr",
-    "aliases": [
-      "MXiPR",
-      "MXiP"
-    ],
-    "routes": [
-      {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 2,
-          "maxMinutes": 5
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 90,
-          "maxMinutes": 240
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 720
-        }
-      },
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 120,
-          "maxMinutes": 300
-        },
-        "afterglow": {
-          "minMinutes": 240,
-          "maxMinutes": 2880
-        }
-      }
-    ]
-  },
-  {
-    "id": "mdma",
-    "name": "MDMA",
-    "aliases": [
-      "MDMA",
-      "Molly",
-      "Mandy",
-      "Emma",
-      "MD",
-      "Ecstasy",
-      "E",
-      "X",
-      "XTC",
-      "Rolls",
-      "Beans",
-      "Pingers"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 45
-        },
-        "comeup": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        },
-        "peak": {
-          "minMinutes": 90,
-          "maxMinutes": 150
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 360
-        },
-        "afterglow": {
-          "minMinutes": 720,
-          "maxMinutes": 2880
-        }
       }
     ]
   },
@@ -8428,6 +8299,141 @@
     ]
   },
   {
+    "id": "mdma",
+    "name": "MDMA",
+    "aliases": [
+      "MDMA",
+      "Molly",
+      "Mandy",
+      "Emma",
+      "MD",
+      "Ecstasy",
+      "E",
+      "X",
+      "XTC",
+      "Rolls",
+      "Beans",
+      "Pingers"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 45
+        },
+        "comeup": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "peak": {
+          "minMinutes": 90,
+          "maxMinutes": 150
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 720,
+          "maxMinutes": 2880
+        }
+      }
+    ]
+  },
+  {
+    "id": "mdpv",
+    "name": "MDPV",
+    "aliases": [
+      "MDPV",
+      "Bath Salts",
+      "NRG-1",
+      "1-(1,3-Benzodioxol-5-yl)-2-(pyrrolidin-1-yl)pentan-1-one"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 30,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 120,
+          "maxMinutes": 420
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 2880
+        }
+      }
+    ]
+  },
+  {
+    "id": "mxipr",
+    "name": "MXiPr",
+    "aliases": [
+      "MXiPR",
+      "MXiP"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 2,
+          "maxMinutes": 5
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 90,
+          "maxMinutes": 240
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 720
+        }
+      },
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 120,
+          "maxMinutes": 300
+        },
+        "afterglow": {
+          "minMinutes": 240,
+          "maxMinutes": 2880
+        }
+      }
+    ]
+  },
+  {
+    "id": "mandragora-officinarum-botany",
+    "name": "Mandragora officinarum (botany)",
+    "aliases": [],
+    "routes": []
+  },
+  {
     "id": "meclofenoxate",
     "name": "Meclofenoxate",
     "aliases": [],
@@ -8444,10 +8450,148 @@
     ]
   },
   {
-    "id": "mandragora-officinarum-botany",
-    "name": "Mandragora officinarum (botany)",
-    "aliases": [],
-    "routes": []
+    "id": "melatonin",
+    "name": "Melatonin",
+    "aliases": [
+      "Melatonin"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 5,
+          "maxMinutes": 20
+        },
+        "comeup": {
+          "minMinutes": 20,
+          "maxMinutes": 70
+        },
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "methadone",
+    "name": "Methadone",
+    "aliases": [
+      "Methadone",
+      "Dolophine",
+      "Methadose"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 90
+        },
+        "comeup": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "peak": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "offset": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "total": {
+          "minMinutes": 600,
+          "maxMinutes": 1140
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 1440
+        }
+      }
+    ]
+  },
+  {
+    "id": "methallylescaline",
+    "name": "Methallylescaline",
+    "aliases": [
+      "Methallylescaline",
+      "MAL"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 720
+        },
+        "afterglow": {
+          "minMinutes": 240,
+          "maxMinutes": 480
+        }
+      }
+    ]
+  },
+  {
+    "id": "mephenaqualone",
+    "name": "Mephenaqualone",
+    "aliases": [
+      "Mephenaqualone"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 40
+        },
+        "comeup": {
+          "minMinutes": 5,
+          "maxMinutes": 10
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "offset": {
+          "minMinutes": 600,
+          "maxMinutes": 900
+        },
+        "total": {
+          "minMinutes": 900,
+          "maxMinutes": 1200
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 720
+        }
+      }
+    ]
   },
   {
     "id": "memantine",
@@ -8492,71 +8636,28 @@
     ]
   },
   {
-    "id": "melatonin",
-    "name": "Melatonin",
+    "id": "methcathinone",
+    "name": "Methcathinone",
     "aliases": [
-      "Melatonin"
+      "Methcathinone",
+      "Ephedrone",
+      "Methcat",
+      "Cat",
+      "Jeff",
+      "MC"
     ],
     "routes": [
       {
         "route": "oral",
-        "onset": {
-          "minMinutes": 5,
-          "maxMinutes": 20
-        },
-        "comeup": {
-          "minMinutes": 20,
-          "maxMinutes": 70
-        },
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
         "total": {
-          "minMinutes": 180,
+          "minMinutes": 240,
           "maxMinutes": 360
         },
         "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "mephenaqualone",
-    "name": "Mephenaqualone",
-    "aliases": [
-      "Mephenaqualone"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 40
-        },
-        "comeup": {
-          "minMinutes": 5,
-          "maxMinutes": 10
-        },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 600,
-          "maxMinutes": 900
-        },
-        "total": {
-          "minMinutes": 900,
-          "maxMinutes": 1200
-        },
-        "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 720
-        }
       }
     ]
   },
@@ -8623,81 +8724,6 @@
         "afterglow": {
           "minMinutes": 120,
           "maxMinutes": 240
-        }
-      }
-    ]
-  },
-  {
-    "id": "methallylescaline",
-    "name": "Methallylescaline",
-    "aliases": [
-      "Methallylescaline",
-      "MAL"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 300
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 720
-        },
-        "afterglow": {
-          "minMinutes": 240,
-          "maxMinutes": 480
-        }
-      }
-    ]
-  },
-  {
-    "id": "methadone",
-    "name": "Methadone",
-    "aliases": [
-      "Methadone",
-      "Dolophine",
-      "Methadose"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 90
-        },
-        "comeup": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "peak": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "offset": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "total": {
-          "minMinutes": 600,
-          "maxMinutes": 1140
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 1440
         }
       }
     ]
@@ -8951,32 +8977,6 @@
     ]
   },
   {
-    "id": "methcathinone",
-    "name": "Methcathinone",
-    "aliases": [
-      "Methcathinone",
-      "Ephedrone",
-      "Methcat",
-      "Cat",
-      "Jeff",
-      "MC"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "methiopropamine",
     "name": "Methiopropamine",
     "aliases": [
@@ -9014,6 +9014,125 @@
         "afterglow": {
           "minMinutes": 60,
           "maxMinutes": 120
+        }
+      }
+    ]
+  },
+  {
+    "id": "methylone",
+    "name": "Methylone",
+    "aliases": [
+      "Methylone",
+      "bk-MDMA",
+      "M1",
+      "MDMC"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 45
+        },
+        "comeup": {
+          "minMinutes": 15,
+          "maxMinutes": 45
+        },
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "total": {
+          "minMinutes": 150,
+          "maxMinutes": 240
+        },
+        "afterglow": {
+          "minMinutes": 360,
+          "maxMinutes": 1440
+        }
+      }
+    ]
+  },
+  {
+    "id": "mexedrone",
+    "name": "Mexedrone",
+    "aliases": [
+      "Mexedrone",
+      "4-MMC-MeO"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "methylnaphthidate",
+    "name": "Methylnaphthidate",
+    "aliases": [
+      "Methylnaphthidate",
+      "HDMP-28"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 3,
+          "maxMinutes": 6
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 90,
+          "maxMinutes": 180
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        }
+      },
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 1,
+          "maxMinutes": 10
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 90,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 90,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 120,
+          "maxMinutes": 300
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 480
         }
       }
     ]
@@ -9079,103 +9198,6 @@
         "afterglow": {
           "minMinutes": 360,
           "maxMinutes": 2880
-        }
-      }
-    ]
-  },
-  {
-    "id": "methylone",
-    "name": "Methylone",
-    "aliases": [
-      "Methylone",
-      "bk-MDMA",
-      "M1",
-      "MDMC"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 45
-        },
-        "comeup": {
-          "minMinutes": 15,
-          "maxMinutes": 45
-        },
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "total": {
-          "minMinutes": 150,
-          "maxMinutes": 240
-        },
-        "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 1440
-        }
-      }
-    ]
-  },
-  {
-    "id": "methylnaphthidate",
-    "name": "Methylnaphthidate",
-    "aliases": [
-      "Methylnaphthidate",
-      "HDMP-28"
-    ],
-    "routes": [
-      {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 3,
-          "maxMinutes": 6
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 90,
-          "maxMinutes": 180
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        }
-      },
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 1,
-          "maxMinutes": 10
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 90,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": 90,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 120,
-          "maxMinutes": 300
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 480
         }
       }
     ]
@@ -9248,6 +9270,34 @@
     ]
   },
   {
+    "id": "metizolam",
+    "name": "Metizolam",
+    "aliases": [
+      "Metizolam",
+      "Desmethyletizolam"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 480
+        },
+        "afterglow": {
+          "minMinutes": 600,
+          "maxMinutes": 1800
+        }
+      }
+    ]
+  },
+  {
     "id": "methoxphenidine",
     "name": "Methoxphenidine",
     "aliases": [
@@ -9273,77 +9323,6 @@
         "afterglow": {
           "minMinutes": 60,
           "maxMinutes": 180
-        }
-      }
-    ]
-  },
-  {
-    "id": "mexedrone",
-    "name": "Mexedrone",
-    "aliases": [
-      "Mexedrone",
-      "4-MMC-MeO"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "mipt",
-    "name": "MiPT",
-    "aliases": [
-      "MiPT"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 180,
-          "maxMinutes": 480
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "metizolam",
-    "name": "Metizolam",
-    "aliases": [
-      "Metizolam",
-      "Desmethyletizolam"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 480
-        },
-        "afterglow": {
-          "minMinutes": 600,
-          "maxMinutes": 1800
         }
       }
     ]
@@ -9381,6 +9360,33 @@
         "afterglow": null
       }
     ]
+  },
+  {
+    "id": "mipt",
+    "name": "MiPT",
+    "aliases": [
+      "MiPT"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 480
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "morning-glory",
+    "name": "Morning glory",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "midazolam",
@@ -9479,6 +9485,12 @@
     ]
   },
   {
+    "id": "n-2c-fentanyl",
+    "name": "N-(2C)-fentanyl",
+    "aliases": [],
+    "routes": []
+  },
+  {
     "id": "myristicin",
     "name": "Myristicin",
     "aliases": [
@@ -9511,6 +9523,30 @@
           "minMinutes": 1440,
           "maxMinutes": 4320
         }
+      }
+    ]
+  },
+  {
+    "id": "n-acetylcysteine",
+    "name": "N-Acetylcysteine",
+    "aliases": [
+      "N-Acetylcysteine"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        },
+        "afterglow": null
       }
     ]
   },
@@ -9577,12 +9613,6 @@
     ]
   },
   {
-    "id": "n-2c-fentanyl",
-    "name": "N-(2C)-fentanyl",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "n-methylbisfluoromodafinil",
     "name": "N-Methylbisfluoromodafinil",
     "aliases": [
@@ -9606,24 +9636,57 @@
     ]
   },
   {
-    "id": "n-acetylcysteine",
-    "name": "N-Acetylcysteine",
+    "id": "mirtazapine",
+    "name": "Mirtazapine",
     "aliases": [
-      "N-Acetylcysteine"
+      "Avanza",
+      "Axit",
+      "Mirtaz",
+      "Mirtazon",
+      "Remeron",
+      "Zispin"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
-          "minMinutes": 20,
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 90,
+          "maxMinutes": 180
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 360
+        },
+        "total": {
+          "minMinutes": 840,
+          "maxMinutes": 1440
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "nm-2-ai",
+    "name": "NM-2-AI",
+    "aliases": [],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
           "maxMinutes": 60
         },
         "comeup": null,
         "peak": null,
         "offset": null,
         "total": {
-          "minMinutes": 180,
-          "maxMinutes": 360
+          "minMinutes": 120,
+          "maxMinutes": 240
         },
         "afterglow": null
       }
@@ -9688,69 +9751,6 @@
         }
       }
     ]
-  },
-  {
-    "id": "mirtazapine",
-    "name": "Mirtazapine",
-    "aliases": [
-      "Avanza",
-      "Axit",
-      "Mirtaz",
-      "Mirtazon",
-      "Remeron",
-      "Zispin"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 30
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 90,
-          "maxMinutes": 180
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 360
-        },
-        "total": {
-          "minMinutes": 840,
-          "maxMinutes": 1440
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "nm-2-ai",
-    "name": "NM-2-AI",
-    "aliases": [],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "morning-glory",
-    "name": "Morning glory",
-    "aliases": [],
-    "routes": []
   },
   {
     "id": "nep",
@@ -9941,10 +9941,49 @@
     ]
   },
   {
-    "id": "nootropic",
-    "name": "Nootropic",
-    "aliases": [],
-    "routes": []
+    "id": "omberacetam",
+    "name": "Omberacetam",
+    "aliases": [
+      "Noopept",
+      "Ноопепт",
+      "GVS-111",
+      "Omberacetam"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 0,
+          "maxMinutes": 5
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": null,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": null,
+          "maxMinutes": 180
+        },
+        "total": {
+          "minMinutes": 120,
+          "maxMinutes": 300
+        },
+        "afterglow": null
+      },
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 180,
+          "maxMinutes": 300
+        },
+        "afterglow": null
+      }
+    ]
   },
   {
     "id": "nifoxipam",
@@ -9969,6 +10008,12 @@
         "afterglow": null
       }
     ]
+  },
+  {
+    "id": "nootropic",
+    "name": "Nootropic",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "o-desmethyltramadol",
@@ -10055,6 +10100,12 @@
     ]
   },
   {
+    "id": "opioids",
+    "name": "Opioids",
+    "aliases": [],
+    "routes": []
+  },
+  {
     "id": "o-pce",
     "name": "O-PCE",
     "aliases": [
@@ -10101,45 +10152,24 @@
     ]
   },
   {
-    "id": "omberacetam",
-    "name": "Omberacetam",
+    "id": "oxiracetam",
+    "name": "Oxiracetam",
     "aliases": [
-      "Noopept",
-      "Ноопепт",
-      "GVS-111",
-      "Omberacetam"
+      "Oxiracetam"
     ],
     "routes": [
       {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 0,
-          "maxMinutes": 5
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": null,
-          "maxMinutes": 120
-        },
-        "offset": {
-          "minMinutes": null,
-          "maxMinutes": 180
-        },
-        "total": {
-          "minMinutes": 120,
-          "maxMinutes": 300
-        },
-        "afterglow": null
-      },
-      {
         "route": "oral",
-        "onset": null,
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
         "comeup": null,
         "peak": null,
         "offset": null,
         "total": {
-          "minMinutes": 180,
-          "maxMinutes": 300
+          "minMinutes": 480,
+          "maxMinutes": 600
         },
         "afterglow": null
       }
@@ -10232,36 +10262,6 @@
           "minMinutes": 60,
           "maxMinutes": 180
         }
-      }
-    ]
-  },
-  {
-    "id": "opioids",
-    "name": "Opioids",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "oxiracetam",
-    "name": "Oxiracetam",
-    "aliases": [
-      "Oxiracetam"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 480,
-          "maxMinutes": 600
-        },
-        "afterglow": null
       }
     ]
   },
@@ -10365,24 +10365,6 @@
     ]
   },
   {
-    "id": "pma",
-    "name": "PMA",
-    "aliases": [
-      "PMA"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": null,
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": null,
-        "afterglow": null
-      }
-    ]
-  },
-  {
     "id": "pmma",
     "name": "PMMA",
     "aliases": [
@@ -10401,14 +10383,22 @@
     ]
   },
   {
-    "id": "peganum-harmala",
-    "name": "Peganum harmala",
+    "id": "pma",
+    "name": "PMA",
     "aliases": [
-      "Espand",
-      "Esfand",
-      "Syrian rue"
+      "PMA"
     ],
-    "routes": []
+    "routes": [
+      {
+        "route": "oral",
+        "onset": null,
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": null,
+        "afterglow": null
+      }
+    ]
   },
   {
     "id": "oxymorphone",
@@ -10459,28 +10449,14 @@
     ]
   },
   {
-    "id": "pro-lad",
-    "name": "PRO-LAD",
+    "id": "peganum-harmala",
+    "name": "Peganum harmala",
     "aliases": [
-      "PRO-LAD"
+      "Espand",
+      "Esfand",
+      "Syrian rue"
     ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 30,
-          "maxMinutes": 45
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 480
-        },
-        "afterglow": null
-      }
-    ]
+    "routes": []
   },
   {
     "id": "pce",
@@ -10569,6 +10545,88 @@
         "afterglow": {
           "minMinutes": 240,
           "maxMinutes": 2880
+        }
+      }
+    ]
+  },
+  {
+    "id": "pro-lad",
+    "name": "PRO-LAD",
+    "aliases": [
+      "PRO-LAD"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 30,
+          "maxMinutes": 45
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 480
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "pentedrone",
+    "name": "Pentedrone",
+    "aliases": [
+      "Pentedrone",
+      "Drone"
+    ],
+    "routes": [
+      {
+        "route": "insufflated",
+        "onset": {
+          "minMinutes": 5,
+          "maxMinutes": 10
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "offset": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "total": {
+          "minMinutes": 60,
+          "maxMinutes": 240
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 480
+        }
+      },
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 30
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 120,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 600
         }
       }
     ]
@@ -10673,12 +10731,6 @@
     ]
   },
   {
-    "id": "phentermine",
-    "name": "Phentermine",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "phenethylamine-compound",
     "name": "Phenethylamine (compound)",
     "aliases": [
@@ -10688,59 +10740,42 @@
     "routes": []
   },
   {
-    "id": "pentedrone",
-    "name": "Pentedrone",
+    "id": "phentermine",
+    "name": "Phentermine",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "pentobarbital",
+    "name": "Pentobarbital",
     "aliases": [
-      "Pentedrone",
-      "Drone"
+      "Pentobarbital",
+      "pentobarbitone",
+      "Nembutal"
     ],
     "routes": [
-      {
-        "route": "insufflated",
-        "onset": {
-          "minMinutes": 5,
-          "maxMinutes": 10
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "offset": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "total": {
-          "minMinutes": 60,
-          "maxMinutes": 240
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 480
-        }
-      },
       {
         "route": "oral",
         "onset": {
           "minMinutes": 15,
-          "maxMinutes": 30
+          "maxMinutes": 60
         },
         "comeup": null,
         "peak": {
           "minMinutes": 60,
-          "maxMinutes": 120
+          "maxMinutes": 180
         },
         "offset": {
           "minMinutes": 60,
           "maxMinutes": 120
         },
         "total": {
-          "minMinutes": 120,
+          "minMinutes": 240,
           "maxMinutes": 360
         },
         "afterglow": {
           "minMinutes": 60,
-          "maxMinutes": 600
+          "maxMinutes": 2160
         }
       }
     ]
@@ -10783,36 +10818,40 @@
     "routes": []
   },
   {
-    "id": "pentobarbital",
-    "name": "Pentobarbital",
+    "id": "phenibut",
+    "name": "Phenibut",
     "aliases": [
-      "Pentobarbital",
-      "pentobarbitone",
-      "Nembutal"
+      "Phenibut",
+      "Fenibut",
+      "Phenybut",
+      "PhGABA"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 60,
+          "minMinutes": 90,
           "maxMinutes": 180
         },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
+        "comeup": {
+          "minMinutes": 90,
+          "maxMinutes": 180
         },
-        "total": {
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 240
+        },
+        "offset": {
           "minMinutes": 240,
           "maxMinutes": 360
         },
+        "total": {
+          "minMinutes": 600,
+          "maxMinutes": 960
+        },
         "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 2160
+          "minMinutes": 360,
+          "maxMinutes": 1440
         }
       }
     ]
@@ -10857,45 +10896,6 @@
     ]
   },
   {
-    "id": "phenibut",
-    "name": "Phenibut",
-    "aliases": [
-      "Phenibut",
-      "Fenibut",
-      "Phenybut",
-      "PhGABA"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 90,
-          "maxMinutes": 180
-        },
-        "comeup": {
-          "minMinutes": 90,
-          "maxMinutes": 180
-        },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 240
-        },
-        "offset": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "total": {
-          "minMinutes": 600,
-          "maxMinutes": 960
-        },
-        "afterglow": {
-          "minMinutes": 360,
-          "maxMinutes": 1440
-        }
-      }
-    ]
-  },
-  {
     "id": "phenylpiracetam",
     "name": "Phenylpiracetam",
     "aliases": [
@@ -10931,21 +10931,17 @@
     "routes": []
   },
   {
-    "id": "prochlorperazine",
-    "name": "Prochlorperazine",
+    "id": "piracetam",
+    "name": "Piracetam",
     "aliases": [
-      "Compazine",
-      "Stemzine",
-      "Buccastem",
-      "Stemetil",
-      "Phenotil"
+      "Piracetam"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
           "minMinutes": 30,
-          "maxMinutes": 45
+          "maxMinutes": 90
         },
         "comeup": null,
         "peak": null,
@@ -10983,17 +10979,21 @@
     ]
   },
   {
-    "id": "piracetam",
-    "name": "Piracetam",
+    "id": "prochlorperazine",
+    "name": "Prochlorperazine",
     "aliases": [
-      "Piracetam"
+      "Compazine",
+      "Stemzine",
+      "Buccastem",
+      "Stemetil",
+      "Phenotil"
     ],
     "routes": [
       {
         "route": "oral",
         "onset": {
           "minMinutes": 30,
-          "maxMinutes": 90
+          "maxMinutes": 45
         },
         "comeup": null,
         "peak": null,
@@ -11042,42 +11042,6 @@
         "afterglow": {
           "minMinutes": 360,
           "maxMinutes": 720
-        }
-      }
-    ]
-  },
-  {
-    "id": "prolintane",
-    "name": "Prolintane",
-    "aliases": [
-      "Prolintane"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "comeup": {
-          "minMinutes": 20,
-          "maxMinutes": 40
-        },
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 180
-        },
-        "offset": {
-          "minMinutes": 60,
-          "maxMinutes": 120
-        },
-        "total": {
-          "minMinutes": 240,
-          "maxMinutes": 360
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 360
         }
       }
     ]
@@ -11143,6 +11107,42 @@
         "afterglow": {
           "minMinutes": 360,
           "maxMinutes": 720
+        }
+      }
+    ]
+  },
+  {
+    "id": "prolintane",
+    "name": "Prolintane",
+    "aliases": [
+      "Prolintane"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": {
+          "minMinutes": 20,
+          "maxMinutes": 40
+        },
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "offset": {
+          "minMinutes": 60,
+          "maxMinutes": 120
+        },
+        "total": {
+          "minMinutes": 240,
+          "maxMinutes": 360
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 360
         }
       }
     ]
@@ -11243,21 +11243,6 @@
     ]
   },
   {
-    "id": "psilocybe-cubensis",
-    "name": "Psilocybe cubensis",
-    "aliases": [
-      "Shrooms",
-      "Magic mushroom"
-    ],
-    "routes": []
-  },
-  {
-    "id": "psychedelic",
-    "name": "Psychedelic",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "psilocin",
     "name": "Psilocin",
     "aliases": [
@@ -11299,70 +11284,19 @@
     ]
   },
   {
-    "id": "rima",
-    "name": "RIMA",
-    "aliases": [],
+    "id": "psilocybe-cubensis",
+    "name": "Psilocybe cubensis",
+    "aliases": [
+      "Shrooms",
+      "Magic mushroom"
+    ],
     "routes": []
   },
   {
-    "id": "pyrazolam",
-    "name": "Pyrazolam",
-    "aliases": [
-      "Pyrazolam"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 10,
-          "maxMinutes": 15
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 480
-        },
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "racetams",
-    "name": "Racetams",
+    "id": "psychedelic",
+    "name": "Psychedelic",
     "aliases": [],
     "routes": []
-  },
-  {
-    "id": "risperidone",
-    "name": "Risperidone",
-    "aliases": [
-      "Risperdal"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 20,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 120,
-          "maxMinutes": 480
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "total": {
-          "minMinutes": 720,
-          "maxMinutes": 1200
-        },
-        "afterglow": null
-      }
-    ]
   },
   {
     "id": "psilocybin-mushrooms",
@@ -11405,6 +11339,72 @@
     ]
   },
   {
+    "id": "racetams",
+    "name": "Racetams",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "rima",
+    "name": "RIMA",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "pyrazolam",
+    "name": "Pyrazolam",
+    "aliases": [
+      "Pyrazolam"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 10,
+          "maxMinutes": 15
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 480
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "risperidone",
+    "name": "Risperidone",
+    "aliases": [
+      "Risperdal"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 20,
+          "maxMinutes": 60
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 120,
+          "maxMinutes": 480
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "total": {
+          "minMinutes": 720,
+          "maxMinutes": 1200
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
     "id": "quetiapine",
     "name": "Quetiapine",
     "aliases": [
@@ -11437,6 +11437,19 @@
         }
       }
     ]
+  },
+  {
+    "id": "salvia-divinorum",
+    "name": "Salvia divinorum",
+    "aliases": [
+      "Salvia",
+      "Sage of the Diviners",
+      "ska maría pastora",
+      "seer's sage",
+      "yerba de la pastora",
+      "Sally"
+    ],
+    "routes": []
   },
   {
     "id": "sts-135",
@@ -11475,19 +11488,6 @@
     ]
   },
   {
-    "id": "salvia-divinorum",
-    "name": "Salvia divinorum",
-    "aliases": [
-      "Salvia",
-      "Sage of the Diviners",
-      "ska maría pastora",
-      "seer's sage",
-      "yerba de la pastora",
-      "Sally"
-    ],
-    "routes": []
-  },
-  {
     "id": "sam-e",
     "name": "SAM-e",
     "aliases": [
@@ -11513,163 +11513,6 @@
   {
     "id": "salvinorin-b-methoxymethyl-ether",
     "name": "Salvinorin B methoxymethyl ether",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "serotonergic-psychedelic",
-    "name": "Serotonergic psychedelic",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "sedative",
-    "name": "Sedative",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "salvinorin-a",
-    "name": "Salvinorin A",
-    "aliases": [
-      "Salvia",
-      "Salvia divinorum",
-      "Diviner's Sage",
-      "Ska María Pastora",
-      "Seer's Sage",
-      "Sally"
-    ],
-    "routes": [
-      {
-        "route": "smoked",
-        "onset": {
-          "minMinutes": 0,
-          "maxMinutes": 1
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 15,
-          "maxMinutes": 90
-        },
-        "afterglow": {
-          "minMinutes": 15,
-          "maxMinutes": 60
-        }
-      },
-      {
-        "route": "sublingual",
-        "onset": {
-          "minMinutes": 10,
-          "maxMinutes": 20
-        },
-        "comeup": null,
-        "peak": null,
-        "offset": null,
-        "total": {
-          "minMinutes": 30,
-          "maxMinutes": 90
-        },
-        "afterglow": {
-          "minMinutes": 30,
-          "maxMinutes": 120
-        }
-      }
-    ]
-  },
-  {
-    "id": "secobarbital",
-    "name": "Secobarbital",
-    "aliases": [
-      "Secobarbital",
-      "Secobarbitone",
-      "Seconal"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 60
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 240,
-          "maxMinutes": 480
-        },
-        "offset": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        },
-        "total": {
-          "minMinutes": 360,
-          "maxMinutes": 600
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 1440
-        }
-      }
-    ]
-  },
-  {
-    "id": "selective-serotonin-reuptake-inhibitor",
-    "name": "Selective serotonin reuptake inhibitor",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "serotonin-norepinephrine-reuptake-inhibitor",
-    "name": "Serotonin-norepinephrine reuptake inhibitor",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "substituted-aminorexes",
-    "name": "Substituted aminorexes",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "substituted-amphetamines",
-    "name": "Substituted amphetamines",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "substituted-cathinones",
-    "name": "Substituted cathinones",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "substituted-morphinans",
-    "name": "Substituted morphinans",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "serotonin",
-    "name": "Serotonin",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "stimulants",
-    "name": "Stimulants",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "substituted-phenidates",
-    "name": "Substituted phenidates",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "substituted-phenethylamines",
-    "name": "Substituted phenethylamines",
     "aliases": [],
     "routes": []
   },
@@ -11764,6 +11607,235 @@
     ]
   },
   {
+    "id": "salvinorin-a",
+    "name": "Salvinorin A",
+    "aliases": [
+      "Salvia",
+      "Salvia divinorum",
+      "Diviner's Sage",
+      "Ska María Pastora",
+      "Seer's Sage",
+      "Sally"
+    ],
+    "routes": [
+      {
+        "route": "smoked",
+        "onset": {
+          "minMinutes": 0,
+          "maxMinutes": 1
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 15,
+          "maxMinutes": 90
+        },
+        "afterglow": {
+          "minMinutes": 15,
+          "maxMinutes": 60
+        }
+      },
+      {
+        "route": "sublingual",
+        "onset": {
+          "minMinutes": 10,
+          "maxMinutes": 20
+        },
+        "comeup": null,
+        "peak": null,
+        "offset": null,
+        "total": {
+          "minMinutes": 30,
+          "maxMinutes": 90
+        },
+        "afterglow": {
+          "minMinutes": 30,
+          "maxMinutes": 120
+        }
+      }
+    ]
+  },
+  {
+    "id": "sedative",
+    "name": "Sedative",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "serotonergic-psychedelic",
+    "name": "Serotonergic psychedelic",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "secobarbital",
+    "name": "Secobarbital",
+    "aliases": [
+      "Secobarbital",
+      "Secobarbitone",
+      "Seconal"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 60
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 240,
+          "maxMinutes": 480
+        },
+        "offset": {
+          "minMinutes": 120,
+          "maxMinutes": 240
+        },
+        "total": {
+          "minMinutes": 360,
+          "maxMinutes": 600
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 1440
+        }
+      }
+    ]
+  },
+  {
+    "id": "selective-serotonin-reuptake-inhibitor",
+    "name": "Selective serotonin reuptake inhibitor",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "serotonin-norepinephrine-reuptake-inhibitor",
+    "name": "Serotonin-norepinephrine reuptake inhibitor",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "serotonin",
+    "name": "Serotonin",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "substituted-aminorexes",
+    "name": "Substituted aminorexes",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "substituted-amphetamines",
+    "name": "Substituted amphetamines",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "stimulants",
+    "name": "Stimulants",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "substituted-cathinones",
+    "name": "Substituted cathinones",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "substituted-morphinans",
+    "name": "Substituted morphinans",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "substituted-phenidates",
+    "name": "Substituted phenidates",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "substituted-phenethylamines",
+    "name": "Substituted phenethylamines",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "sufentanil",
+    "name": "Sufentanil",
+    "aliases": [
+      "Sufentanil",
+      "Sufentanyl",
+      "Sufenta",
+      "Chronogesic"
+    ],
+    "routes": [
+      {
+        "route": "intravenous",
+        "onset": {
+          "minMinutes": 1,
+          "maxMinutes": 2
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 5,
+          "maxMinutes": 10
+        },
+        "offset": null,
+        "total": null,
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "tabernanthe-iboga-botany",
+    "name": "Tabernanthe iboga (botany)",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "synthetic-cannabinoid",
+    "name": "Synthetic cannabinoid",
+    "aliases": [],
+    "routes": []
+  },
+  {
+    "id": "thj-018",
+    "name": "THJ-018",
+    "aliases": [
+      "THJ-018"
+    ],
+    "routes": [
+      {
+        "route": "smoked",
+        "onset": {
+          "minMinutes": 5,
+          "maxMinutes": 10
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        },
+        "offset": {
+          "minMinutes": 5,
+          "maxMinutes": 10
+        },
+        "total": {
+          "minMinutes": 120,
+          "maxMinutes": 180
+        },
+        "afterglow": {
+          "minMinutes": 60,
+          "maxMinutes": 90
+        }
+      }
+    ]
+  },
+  {
     "id": "substituted-tryptamines",
     "name": "Substituted tryptamines",
     "aliases": [],
@@ -11794,78 +11866,6 @@
         "total": {
           "minMinutes": 60,
           "maxMinutes": 120
-        },
-        "afterglow": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        }
-      }
-    ]
-  },
-  {
-    "id": "sufentanil",
-    "name": "Sufentanil",
-    "aliases": [
-      "Sufentanil",
-      "Sufentanyl",
-      "Sufenta",
-      "Chronogesic"
-    ],
-    "routes": [
-      {
-        "route": "intravenous",
-        "onset": {
-          "minMinutes": 1,
-          "maxMinutes": 2
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 5,
-          "maxMinutes": 10
-        },
-        "offset": null,
-        "total": null,
-        "afterglow": null
-      }
-    ]
-  },
-  {
-    "id": "synthetic-cannabinoid",
-    "name": "Synthetic cannabinoid",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "tabernanthe-iboga-botany",
-    "name": "Tabernanthe iboga (botany)",
-    "aliases": [],
-    "routes": []
-  },
-  {
-    "id": "thj-018",
-    "name": "THJ-018",
-    "aliases": [
-      "THJ-018"
-    ],
-    "routes": [
-      {
-        "route": "smoked",
-        "onset": {
-          "minMinutes": 5,
-          "maxMinutes": 10
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 60,
-          "maxMinutes": 90
-        },
-        "offset": {
-          "minMinutes": 5,
-          "maxMinutes": 10
-        },
-        "total": {
-          "minMinutes": 120,
-          "maxMinutes": 180
         },
         "afterglow": {
           "minMinutes": 60,
@@ -11953,12 +11953,6 @@
     "routes": []
   },
   {
-    "id": "tetrahydrocannabinol",
-    "name": "Tetrahydrocannabinol",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "tapentadol",
     "name": "Tapentadol",
     "aliases": [
@@ -11994,6 +11988,12 @@
         "afterglow": null
       }
     ]
+  },
+  {
+    "id": "tetrahydrocannabinol",
+    "name": "Tetrahydrocannabinol",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "tetrahydrocannabutol",
@@ -12225,12 +12225,6 @@
     ]
   },
   {
-    "id": "beta-carboline",
-    "name": "Beta-Carboline",
-    "aliases": [],
-    "routes": []
-  },
-  {
     "id": "xanthines",
     "name": "Xanthines",
     "aliases": [],
@@ -12267,6 +12261,12 @@
         }
       }
     ]
+  },
+  {
+    "id": "beta-carboline",
+    "name": "Beta-Carboline",
+    "aliases": [],
+    "routes": []
   },
   {
     "id": "u-47700",
@@ -12308,77 +12308,10 @@
     "routes": []
   },
   {
-    "id": "zolpidem",
-    "name": "Zolpidem",
-    "aliases": [
-      "Ambien",
-      "Intermezzo",
-      "Edluar",
-      "Zolpimist"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 15,
-          "maxMinutes": 45
-        },
-        "comeup": {
-          "minMinutes": 30,
-          "maxMinutes": 45
-        },
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 360
-        },
-        "offset": {
-          "minMinutes": 240,
-          "maxMinutes": 300
-        },
-        "total": {
-          "minMinutes": 300,
-          "maxMinutes": 600
-        },
-        "afterglow": {
-          "minMinutes": 120,
-          "maxMinutes": 240
-        }
-      }
-    ]
-  },
-  {
     "id": "11-tetrahydrocannabinol",
     "name": "Δ-11-Tetrahydrocannabinol",
     "aliases": [],
     "routes": []
-  },
-  {
-    "id": "zopiclone",
-    "name": "Zopiclone",
-    "aliases": [
-      "Zimovane",
-      "Imovane"
-    ],
-    "routes": [
-      {
-        "route": "oral",
-        "onset": {
-          "minMinutes": 10,
-          "maxMinutes": 30
-        },
-        "comeup": null,
-        "peak": {
-          "minMinutes": 180,
-          "maxMinutes": 240
-        },
-        "offset": null,
-        "total": {
-          "minMinutes": 210,
-          "maxMinutes": 540
-        },
-        "afterglow": null
-      }
-    ]
   },
   {
     "id": "8-tetrahydrocannabinol",
@@ -12414,6 +12347,73 @@
         "afterglow": {
           "minMinutes": 60,
           "maxMinutes": 300
+        }
+      }
+    ]
+  },
+  {
+    "id": "zopiclone",
+    "name": "Zopiclone",
+    "aliases": [
+      "Zimovane",
+      "Imovane"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 10,
+          "maxMinutes": 30
+        },
+        "comeup": null,
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 240
+        },
+        "offset": null,
+        "total": {
+          "minMinutes": 210,
+          "maxMinutes": 540
+        },
+        "afterglow": null
+      }
+    ]
+  },
+  {
+    "id": "zolpidem",
+    "name": "Zolpidem",
+    "aliases": [
+      "Ambien",
+      "Intermezzo",
+      "Edluar",
+      "Zolpimist"
+    ],
+    "routes": [
+      {
+        "route": "oral",
+        "onset": {
+          "minMinutes": 15,
+          "maxMinutes": 45
+        },
+        "comeup": {
+          "minMinutes": 30,
+          "maxMinutes": 45
+        },
+        "peak": {
+          "minMinutes": 180,
+          "maxMinutes": 360
+        },
+        "offset": {
+          "minMinutes": 240,
+          "maxMinutes": 300
+        },
+        "total": {
+          "minMinutes": 300,
+          "maxMinutes": 600
+        },
+        "afterglow": {
+          "minMinutes": 120,
+          "maxMinutes": 240
         }
       }
     ]
