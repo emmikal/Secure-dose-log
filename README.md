@@ -114,6 +114,12 @@ Sponsorships help cover:
 
 Thank you for helping keep the project free and open source!
 
+## 🙏 Acknowledgements
+
+Turboautism Dose Log is built on the work of many excellent open-source projects and communities.
+
+Please see [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md) for credits and thanks.
+
 ## ⚠️ Disclaimer
 
 This is a harm reduction tool. It does not encourage, promote, or endorse drug use.
