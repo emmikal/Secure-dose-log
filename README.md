@@ -1,6 +1,6 @@
 # Turboautism Dose Log
 
-✅ **Status: 1.0 — Stable Release**
+✅ **Status:2.0 — Stable Release**
 
 Turboautism Dose Log is a simple Android application for logging drug or medication administration events locally on your device.
 
