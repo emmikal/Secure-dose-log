@@ -41,7 +41,7 @@ If the upstream project incorporates these fixes in the future, this documentati
 From the project root, run:
 
 ```bash
-./scripts/update_substances.sh
+./update_substances.sh
 ```
 
 The script will automatically:
