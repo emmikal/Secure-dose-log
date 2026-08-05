@@ -2,6 +2,18 @@
 
 This directory contains the tooling used to generate the application's bundled `substances.json` database from the PsychonautWiki GraphQL API.
 
+The generated database includes:
+
+substance names and aliases
+systematic names
+routes of administration
+duration data
+chemical classes
+psychoactive classes
+dangerous interactions
+unsafe interactions
+uncertain interactions
+
 The generated database is committed to the repository and distributed with the Android application. The generation process is fully reproducible.
 
 ## Requirements
