@@ -10,6 +10,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -25,6 +26,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.turboautismdoselog.security.DatabaseProvider
 import com.example.turboautismdoselog.security.disableCopyCut
+import com.example.turboautismdoselog.substances.InteractionEngine
 import com.example.turboautismdoselog.substances.SubstanceDatabase
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -93,6 +95,18 @@ class MainActivity : AppCompatActivity() {
         activeSessionBanner.setOnClickListener { onActiveSessionBannerClicked() }
 
         db = DatabaseProvider.getDatabase(applicationContext)
+
+        SubstanceDatabase.load(applicationContext)
+
+        val alcohol = SubstanceDatabase.findByName("Alcohol")!!
+        val ketamine = SubstanceDatabase.findByName("Ketamine")!!
+
+        val interactions = InteractionEngine.findInteractions(
+            listOf(alcohol),
+            ketamine
+        )
+
+        Log.d("InteractionTest", interactions.toString())
 
         refreshList()
         refreshSessionBanner()

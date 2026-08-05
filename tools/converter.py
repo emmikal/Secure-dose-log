@@ -21,7 +21,7 @@ def duration_to_minutes(value: float | None, units: str | None) -> int | None:
 
     normalized_units = units.lower() if units else None
 
-    if units == "seconds":
+    if normalized_units == "seconds":
         return round(value / 60)
 
     if normalized_units == "minutes":
@@ -85,10 +85,37 @@ def parse_substance(data: dict) -> Substance:
     if systematic_name and systematic_name not in aliases:
         aliases.append(systematic_name)
 
+    substance_class = data.get("class") or {}
+
+    chemical_classes = list(substance_class.get("chemical") or [])
+    psychoactive_classes = list(substance_class.get("psychoactive") or [])
+
+    dangerous_interactions = [
+        interaction["name"]
+        for interaction in (data.get("dangerousInteractions") or [])
+    ]
+
+    unsafe_interactions = [
+        interaction["name"]
+        for interaction in (data.get("unsafeInteractions") or [])
+    ]
+
+    uncertain_interactions = [
+        interaction["name"]
+        for interaction in (data.get("uncertainInteractions") or [])
+    ]
     return Substance(
         name=data["name"],
         aliases=aliases,
         systematic_name=systematic_name,
+
+        chemical_classes=chemical_classes,
+        psychoactive_classes=psychoactive_classes,
+
+        dangerous_interactions=dangerous_interactions,
+        unsafe_interactions=unsafe_interactions,
+        uncertain_interactions=uncertain_interactions,
+
         routes=[
             parse_route(route)
             for route in (data.get("roas") or [])

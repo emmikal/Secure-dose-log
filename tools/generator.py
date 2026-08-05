@@ -51,7 +51,19 @@ def substance_to_dict(substance: Substance) -> dict:
         "id": make_id(substance.name),
         "name": substance.name,
         "aliases": substance.aliases,
-        "routes": [route_to_dict(route) for route in substance.routes],
+        "systematicName": substance.systematic_name,
+
+        "chemicalClasses": substance.chemical_classes,
+        "psychoactiveClasses": substance.psychoactive_classes,
+
+        "dangerousInteractions": substance.dangerous_interactions,
+        "unsafeInteractions": substance.unsafe_interactions,
+        "uncertainInteractions": substance.uncertain_interactions,
+
+        "routes": [
+            route_to_dict(route)
+            for route in substance.routes
+        ],
     }
 
 
@@ -60,9 +72,16 @@ def generate_database(substances: list[Substance]) -> str:
     Generate the complete substances.json content as a string.
     """
 
-    data = [substance_to_dict(substance) for substance in substances]
+    data = [
+        substance_to_dict(substance)
+        for substance in substances
+    ]
 
-    return json.dumps(data, indent=2, ensure_ascii=False)
+    return json.dumps(
+        data,
+        indent=2,
+        ensure_ascii=False,
+    )
 
 
 def generate_attribution() -> str:

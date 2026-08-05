@@ -23,11 +23,21 @@ data class KnownSubstance(
     val id: String,
     val name: String,
     val aliases: List<String>,
+
+    val systematicName: String?,
+
+    val chemicalClasses: List<String>,
+    val psychoactiveClasses: List<String>,
+
+    val dangerousInteractions: List<String>,
+    val unsafeInteractions: List<String>,
+    val uncertainInteractions: List<String>,
+
     val routes: List<RouteDuration>
 )
 
 /**
- * Loads substance duration reference data from a bundled JSON asset
+ * Loads substance reference data from a bundled JSON asset
  * (assets/substances.json), generated offline by
  * tools/update_substances.py from PsychonautWiki's GraphQL API.
  *
@@ -70,6 +80,18 @@ object SubstanceDatabase {
         loaded = true
     }
 
+    private fun parseStringArray(array: JSONArray?): List<String> {
+        if (array == null) return emptyList()
+
+        val result = mutableListOf<String>()
+
+        for (i in 0 until array.length()) {
+            result.add(array.getString(i))
+        }
+
+        return result
+    }
+
     private fun parseSubstances(json: String): List<KnownSubstance> {
         val array = JSONArray(json)
         val result = mutableListOf<KnownSubstance>()
@@ -77,19 +99,31 @@ object SubstanceDatabase {
         for (i in 0 until array.length()) {
             val obj = array.getJSONObject(i)
 
-            val aliases = mutableListOf<String>()
-            val aliasesArray = obj.optJSONArray("aliases")
-            if (aliasesArray != null) {
-                for (j in 0 until aliasesArray.length()) {
-                    aliases.add(aliasesArray.getString(j))
-                }
-            }
+            val aliases =
+                parseStringArray(obj.optJSONArray("aliases"))
+
+            val chemicalClasses =
+                parseStringArray(obj.optJSONArray("chemicalClasses"))
+
+            val psychoactiveClasses =
+                parseStringArray(obj.optJSONArray("psychoactiveClasses"))
+
+            val dangerousInteractions =
+                parseStringArray(obj.optJSONArray("dangerousInteractions"))
+
+            val unsafeInteractions =
+                parseStringArray(obj.optJSONArray("unsafeInteractions"))
+
+            val uncertainInteractions =
+                parseStringArray(obj.optJSONArray("uncertainInteractions"))
 
             val routes = mutableListOf<RouteDuration>()
             val routesArray = obj.optJSONArray("routes")
+
             if (routesArray != null) {
                 for (j in 0 until routesArray.length()) {
                     val routeObj = routesArray.getJSONObject(j)
+
                     routes.add(
                         RouteDuration(
                             route = routeObj.getString("route"),
@@ -108,7 +142,21 @@ object SubstanceDatabase {
                 KnownSubstance(
                     id = obj.getString("id"),
                     name = obj.getString("name"),
+
                     aliases = aliases,
+                    systematicName =
+                        if (obj.isNull("systematicName"))
+                            null
+                        else
+                            obj.getString("systematicName"),
+
+                    chemicalClasses = chemicalClasses,
+                    psychoactiveClasses = psychoactiveClasses,
+
+                    dangerousInteractions = dangerousInteractions,
+                    unsafeInteractions = unsafeInteractions,
+                    uncertainInteractions = uncertainInteractions,
+
                     routes = routes
                 )
             )
@@ -119,9 +167,21 @@ object SubstanceDatabase {
 
     private fun parseDurationRange(obj: JSONObject?): DurationRange? {
         if (obj == null) return null
-        val min = if (obj.isNull("minMinutes")) null else obj.optInt("minMinutes")
-        val max = if (obj.isNull("maxMinutes")) null else obj.optInt("maxMinutes")
+
+        val min =
+            if (obj.isNull("minMinutes"))
+                null
+            else
+                obj.optInt("minMinutes")
+
+        val max =
+            if (obj.isNull("maxMinutes"))
+                null
+            else
+                obj.optInt("maxMinutes")
+
         if (min == null && max == null) return null
+
         return DurationRange(min, max)
     }
 
@@ -130,9 +190,15 @@ object SubstanceDatabase {
 
     fun findByName(query: String): KnownSubstance? {
         val normalized = query.trim().lowercase()
+
         return substances.find {
             it.name.lowercase() == normalized ||
-                    it.aliases.any { alias -> alias.lowercase() == normalized }
+
+                    it.aliases.any { alias ->
+                        alias.lowercase() == normalized
+                    } ||
+
+                    it.systematicName?.lowercase() == normalized
         }
     }
 }

@@ -12,6 +12,23 @@ QUERY = """
     commonNames
     systematicName
 
+    class {
+      chemical
+      psychoactive
+    }
+
+    dangerousInteractions {
+      name
+    }
+
+    unsafeInteractions {
+      name
+    }
+
+    uncertainInteractions {
+      name
+    }
+
     roas {
       name
 
@@ -83,12 +100,7 @@ def main():
     )
     print(f"✓ Wrote {json_output}")
 
-    attribution_output = output_dir / "substances_ATTRIBUTION.txt"
-    attribution_output.write_text(
-        generate_attribution(),
-        encoding="utf-8",
-    )
-    print(f"✓ Wrote {attribution_output}")
+    attribution_output = output_dir / "app" / "src" / "main" / "assets" / "substances_ATTRIBUTION.txt"
 
 
 if __name__ == "__main__":

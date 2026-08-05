@@ -1,0 +1,49 @@
+Connecting to Bifrost...
+✓ Loaded 373 substances
+
+Known identifiers
+-----------------
+Substances:          373
+Aliases:             851
+Chemical classes:    338
+Psychoactive classes:337
+
+Interaction targets
+-------------------
+Total:               1958
+Resolved:            1485
+Unknown:             473
+
+Unknown interaction targets
+---------------------------
+ 112  MAOIs
+  71  Lithium
+  42  SSRIs
+  37  Depressants
+  37  Amphetamines
+  34  Serotonin releasers
+  33  SNRIs
+  31  5-MeO-xxT
+  23  Grapefruit
+  12  Psychedelics
+  11  Mushrooms
+   6  5-MeO-xxt
+   4  NBOMe
+   2  Tricyclic antidepressants
+   2  NBOMes
+   1  5-meo-xxt
+   1  amphetamines
+   1  maois
+   1  nbomes
+   1  ALDH2 inhibitors
+   1  Hepatotoxic drugs
+   1  Hormonal birth control
+   1  Antihistamines
+   1  Bupropion
+   1  Cholinergics
+   1  Trazodone
+   1  Deliriants
+   1  Ritonavir
+   1  Protease Inhibitors
+   1  Hormonal Birth Control
+   1  CYP2C19-substrates
