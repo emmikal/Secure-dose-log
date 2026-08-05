@@ -29,10 +29,12 @@ import com.example.turboautismdoselog.security.disableCopyCut
 import com.example.turboautismdoselog.substances.ActiveSubstanceFinder
 import com.example.turboautismdoselog.substances.Interaction
 import com.example.turboautismdoselog.substances.InteractionEngine
+import com.example.turboautismdoselog.substances.InteractionSeverity
 import com.example.turboautismdoselog.substances.SubstanceDatabase
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.card.MaterialCardView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import java.io.BufferedReader
@@ -440,14 +442,55 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        interactions.forEach {
-            Log.d(
-                "Interaction",
-                "${it.existing.name} + ${it.incoming.name} (${it.severity}, matched via ${it.matchedInteraction})"
-            )
+        showInteractionWarningDialog(
+            interactions,
+            entry,
+            dialog
+        )
+    }
+
+    private fun showInteractionWarningDialog(
+        interactions: List<Interaction>,
+        entry: DrugEntry,
+        dialog: BottomSheetDialog
+    ) {
+
+        val message = buildString {
+
+            append("The following interactions were detected:\n\n")
+
+            interactions.forEach {
+
+                val icon = when (it.severity) {
+                    InteractionSeverity.DANGEROUS -> "🔴"
+                    InteractionSeverity.UNSAFE -> "🟠"
+                    InteractionSeverity.UNCERTAIN -> "🟡"
+                }
+
+                append(icon)
+                append(" ")
+                append(it.existing.name)
+                append(" + ")
+                append(it.incoming.name)
+                append("\n")
+
+                append("Matched via: ")
+                append(it.matchedInteraction)
+                append("\n\n")
+            }
+
+            append("PsychonautWiki classifies these combinations as potentially unsafe.\n\n")
+            append("Do you still want to log this dose?")
         }
 
-        saveEntry(entry, dialog)
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Interaction detected")
+            .setMessage(message)
+            .setNegativeButton("Cancel", null)
+            .setPositiveButton("Log anyway") { _, _ ->
+                saveEntry(entry, dialog)
+            }
+            .show()
     }
 
     private fun findInteractions(
