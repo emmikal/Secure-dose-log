@@ -26,6 +26,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.turboautismdoselog.security.DatabaseProvider
 import com.example.turboautismdoselog.security.disableCopyCut
+import com.example.turboautismdoselog.substances.ActiveSubstanceFinder
+import com.example.turboautismdoselog.substances.Interaction
 import com.example.turboautismdoselog.substances.InteractionEngine
 import com.example.turboautismdoselog.substances.SubstanceDatabase
 import com.google.android.material.appbar.MaterialToolbar
@@ -39,6 +41,7 @@ import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import kotlin.collections.joinToString
 
 class MainActivity : AppCompatActivity() {
 
@@ -406,15 +409,68 @@ class MainActivity : AppCompatActivity() {
             entry.substanceId = linkedSubstanceId
             entry.linkedRoute = linkedRouteName
 
-            val newEntryId = db.drugDao().insert(entry)
-
-            refreshList()
-            dialog.dismiss()
-
-            assignEntryToActiveSessions(newEntryId)
+            attemptSaveEntry(entry, dialog)
         }
 
         dialog.show()
+    }
+
+    private fun saveEntry(
+        entry: DrugEntry,
+        dialog: BottomSheetDialog
+    ) {
+
+        val newEntryId = db.drugDao().insert(entry)
+
+        refreshList()
+        dialog.dismiss()
+
+        assignEntryToActiveSessions(newEntryId)
+    }
+
+    private fun attemptSaveEntry(
+        entry: DrugEntry,
+        dialog: BottomSheetDialog
+    ) {
+
+        val interactions = findInteractions(entry)
+
+        if (interactions.isEmpty()) {
+            saveEntry(entry, dialog)
+            return
+        }
+
+        interactions.forEach {
+            Log.d(
+                "Interaction",
+                "${it.existing.name} + ${it.incoming.name} (${it.severity}, matched via ${it.matchedInteraction})"
+            )
+        }
+
+        saveEntry(entry, dialog)
+    }
+
+    private fun findInteractions(
+        entry: DrugEntry
+    ): List<Interaction> {
+
+        val substanceId = entry.substanceId
+            ?: return emptyList()
+
+        val incoming =
+            SubstanceDatabase.findById(substanceId)
+                ?: return emptyList()
+
+        val existingEntries =
+            db.drugDao().getAll()
+
+        val activeSubstances =
+            ActiveSubstanceFinder.findActiveSubstances(existingEntries)
+
+        return InteractionEngine.findInteractions(
+            existing = activeSubstances.map { it.substance },
+            incoming = incoming
+        )
     }
 
     private fun openEditEntrySheet(entry: DrugEntry) {
