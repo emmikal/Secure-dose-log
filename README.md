@@ -39,6 +39,18 @@ This application follows a harm reduction philosophy. It does not encourage or p
   - average doses per day
   - last dose timestamp
 
+## Harm Reduction Features
+
+Turboautism Dose Log can warn about potentially unsafe combinations of substances before a new dose is logged.
+
+Interaction detection:
+
+- Works completely offline
+- Uses bundled PsychonautWiki reference data
+- Detects dangerous, unsafe and uncertain combinations
+- Considers only substances that are likely still active based on estimated duration
+- Never prevents logging—warnings can always be dismissed
+
 ## 🔒 Privacy & Security
 
 This application is designed to work completely offline.
