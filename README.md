@@ -206,7 +206,7 @@ Download the latest `.apk` release and install it manually on your Android devic
 Clone the repository:
 
 ```bash
-git clone https://github.com/emmikal/Turboautism-dose-log-.git
+git clone https://github.com/emmikal/Secure-dose-log.git
 ```
 
 Open the project in Android Studio and build normally.
