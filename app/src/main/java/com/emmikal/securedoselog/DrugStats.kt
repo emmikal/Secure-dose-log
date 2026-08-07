@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 data class DrugStats(
     var drug: String? = null,

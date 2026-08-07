@@ -1,4 +1,4 @@
-package com.example.securedoselog.substances
+package com.emmikal.securedoselog.substances
 
 enum class InteractionSeverity {
     DANGEROUS,

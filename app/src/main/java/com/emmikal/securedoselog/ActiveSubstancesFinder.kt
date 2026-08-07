@@ -1,6 +1,6 @@
-package com.example.securedoselog.substances
+package com.emmikal.securedoselog.substances
 
-import com.example.securedoselog.DrugEntry
+import com.emmikal.securedoselog.DrugEntry
 
 data class ActiveSubstance(
     val entry: DrugEntry,

@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 import android.view.LayoutInflater
 import android.view.View

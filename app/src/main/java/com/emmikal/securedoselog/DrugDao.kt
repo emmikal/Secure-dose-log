@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 import androidx.room.Dao
 import androidx.room.Delete

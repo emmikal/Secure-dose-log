@@ -1,12 +1,12 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.securedoselog.security.DatabaseProvider
-import com.example.securedoselog.substances.EffectsEstimator
-import com.example.securedoselog.substances.SubstanceDatabase
+import com.emmikal.securedoselog.security.DatabaseProvider
+import com.emmikal.securedoselog.substances.EffectsEstimator
+import com.emmikal.securedoselog.substances.SubstanceDatabase
 import com.google.android.material.appbar.MaterialToolbar
 import java.text.SimpleDateFormat
 import java.util.Date

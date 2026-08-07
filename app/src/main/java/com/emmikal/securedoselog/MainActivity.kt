@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -24,13 +24,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.securedoselog.security.DatabaseProvider
-import com.example.securedoselog.security.disableCopyCut
-import com.example.securedoselog.substances.ActiveSubstanceFinder
-import com.example.securedoselog.substances.Interaction
-import com.example.securedoselog.substances.InteractionEngine
-import com.example.securedoselog.substances.InteractionSeverity
-import com.example.securedoselog.substances.SubstanceDatabase
+import com.emmikal.securedoselog.security.DatabaseProvider
+import com.emmikal.securedoselog.security.disableCopyCut
+import com.emmikal.securedoselog.substances.ActiveSubstanceFinder
+import com.emmikal.securedoselog.substances.Interaction
+import com.emmikal.securedoselog.substances.InteractionEngine
+import com.emmikal.securedoselog.substances.InteractionSeverity
+import com.emmikal.securedoselog.substances.SubstanceDatabase
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.card.MaterialCardView

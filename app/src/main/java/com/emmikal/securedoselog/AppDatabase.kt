@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

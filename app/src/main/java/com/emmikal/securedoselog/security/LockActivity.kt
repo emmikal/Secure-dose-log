@@ -1,4 +1,4 @@
-package com.example.securedoselog.security
+package com.emmikal.securedoselog.security
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,10 +9,10 @@ import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
 import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
-import com.example.securedoselog.DoseLogApplication
-import com.example.securedoselog.MainActivity
-import com.example.securedoselog.R
-import com.example.securedoselog.databinding.ActivityLockBinding
+import com.emmikal.securedoselog.DoseLogApplication
+import com.emmikal.securedoselog.MainActivity
+import com.emmikal.securedoselog.R
+import com.emmikal.securedoselog.databinding.ActivityLockBinding
 
 class LockActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.securedoselog;
+package com.emmikal.securedoselog;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.securedoselog.security
+package com.emmikal.securedoselog.security
 
 import android.view.ActionMode
 import android.view.Menu

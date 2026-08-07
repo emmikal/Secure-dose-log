@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.securedoselog.substances.EffectsEstimator
+import com.emmikal.securedoselog.substances.EffectsEstimator
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

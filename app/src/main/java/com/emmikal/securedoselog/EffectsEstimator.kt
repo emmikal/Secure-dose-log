@@ -1,6 +1,6 @@
-package com.example.securedoselog.substances
+package com.emmikal.securedoselog.substances
 
-import com.example.securedoselog.DrugEntry
+import com.emmikal.securedoselog.DrugEntry
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

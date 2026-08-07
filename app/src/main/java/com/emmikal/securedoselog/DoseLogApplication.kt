@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 import android.app.Activity
 import android.app.Application
@@ -8,8 +8,8 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.securedoselog.security.LockActivity
-import com.example.securedoselog.substances.SubstanceDatabase
+import com.emmikal.securedoselog.security.LockActivity
+import com.emmikal.securedoselog.substances.SubstanceDatabase
 
 class DoseLogApplication : Application() {
 

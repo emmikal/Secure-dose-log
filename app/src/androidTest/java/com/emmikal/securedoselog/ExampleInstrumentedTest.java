@@ -1,4 +1,4 @@
-package com.example.securedoselog;
+package com.emmikal.securedoselog;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.turboautismdoselog", appContext.getPackageName());
+        assertEquals("com.emmikal.securedoselog", appContext.getPackageName());
     }
 }

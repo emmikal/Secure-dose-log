@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.securedoselog.security.DatabaseProvider
+import com.emmikal.securedoselog.security.DatabaseProvider
 import com.google.android.material.appbar.MaterialToolbar
 
 class SessionsActivity : AppCompatActivity() {

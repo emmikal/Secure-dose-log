@@ -1,4 +1,4 @@
-package com.example.securedoselog
+package com.emmikal.securedoselog
 
 /**
  * Escapes a single CSV field per RFC 4180: wraps in quotes and doubles

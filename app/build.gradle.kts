@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.turboautismdoselog"
+    namespace = "com.emmikal.securedoselog"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.turboautismdoselog"
+        applicationId = "com.emmikal.securedoselog"
         minSdk = 30
         targetSdk = 36
         versionCode = 14

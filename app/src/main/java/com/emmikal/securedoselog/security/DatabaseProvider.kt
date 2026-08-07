@@ -1,13 +1,13 @@
-package com.example.securedoselog.security
+package com.emmikal.securedoselog.security
 
 import android.content.Context
 import androidx.room.Room
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import android.util.Base64
-import com.example.securedoselog.AppDatabase
-import com.example.securedoselog.MIGRATION_2_3
-import com.example.securedoselog.MIGRATION_3_4
+import com.emmikal.securedoselog.AppDatabase
+import com.emmikal.securedoselog.MIGRATION_2_3
+import com.emmikal.securedoselog.MIGRATION_3_4
 import net.zetetic.database.sqlcipher.SupportOpenHelperFactory
 import java.security.SecureRandom
 
