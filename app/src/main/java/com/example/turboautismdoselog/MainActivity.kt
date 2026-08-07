@@ -449,6 +449,33 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    private fun deduplicateInteractions(
+        interactions: List<Interaction>
+    ): List<Interaction> {
+
+        val map = mutableMapOf<String, Interaction>()
+
+        for (interaction in interactions) {
+
+            val key = listOf(
+                interaction.existing.id,
+                interaction.incoming.id
+            )
+                .sorted()
+                .joinToString("|")
+
+            val existing = map[key]
+
+            if (
+                existing == null ||
+                interaction.severity.ordinal < existing.severity.ordinal
+            ) {
+                map[key] = interaction
+            }
+        }
+
+        return map.values.toList()
+    }
     private fun showInteractionWarningDialog(
         interactions: List<Interaction>,
         entry: DrugEntry,
@@ -459,7 +486,10 @@ class MainActivity : AppCompatActivity() {
 
             append("The following interactions were detected:\n\n")
 
-            interactions.forEach {
+            val uniqueInteractions =
+                deduplicateInteractions(interactions)
+
+            uniqueInteractions.forEach {
 
                 val icon = when (it.severity) {
                     InteractionSeverity.DANGEROUS -> "🔴"
