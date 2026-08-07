@@ -1,4 +1,4 @@
-# Turboautism Dose Log
+# Secure Dose Log
 
 > **A private, offline harm reduction journal for logging substance use and medication administration on Android.**
 
