@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/store/feature-graphic.png" alt="Secure Dose Log">
+</p>
+
 # Secure Dose Log
 
 > **A private, offline harm reduction journal for logging substance use and medication administration on Android.**
