@@ -403,7 +403,7 @@ class MainActivity : AppCompatActivity() {
             val (linkedSubstanceId, linkedRouteName) = readLinkSelection(drug, routeSpinner)
 
             val entry = DrugEntry()
-            entry.drug = drugText
+            entry.drug = drugText.trim()
             entry.route = routeText
             entry.dosage = dosageText
             entry.timestamp = System.currentTimeMillis()
