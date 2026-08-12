@@ -15,6 +15,27 @@
     <string name="skip">Ohita</string>
     <string name="entry_deleted">Merkintä poistettu</string>
     <string name="undo">KUMOA</string>
+    <string name="link_known_substance">
+    Linkitä tunnettuun aineeseen: %1$s? Valitse antoreitti arvioidaksesi, milloin vaikutukset loppuvat.
+</string>
+    <string name="dont_link">Älä linkitä</string>
+    <string name="drug_name_required">Aineen nimi vaaditaan</string>
+    <string name="interactions_detected">Seuraavat yhteisvaikutukset havaittiin:</string>
+    <string name="matched_via">Täsmäsi perusteella:</string>
+    <string name="potentially_unsafe_combinations">
+    PsychonautWiki luokittelee nämä yhdistelmät mahdollisesti vaarallisiksi.
+</string>
+    <string name="log_dose_confirmation">
+    Haluatko silti kirjata tämän annoksen?
+</string>
+    <string name="interaction_detected">Yhteisvaikutus havaittu</string>
+    <string name="log_anyway">Kirjaa silti</string>
+    <string name="export_failed">Vienti epäonnistui</string>
+    <string name="csv_exported_to_downloads">CSV-tiedosto vietiin Lataukset-kansioon</string>
+    <string name="imported_entries">%1$d merkintää tuotu</string>
+    <string name="duplicates_skipped">%1$d kaksoiskappaletta ohitettu</string>
+    <string name="rows_skipped">%1$d riviä ohitettu</string>
+    <string name="import_failed_read">Tuonti epäonnistui: tiedostoa ei voitu lukea</string>
     <!-- Strings used for fragments for navigation -->
     <string name="next">Seuraava</string>
     <string name="previous">Edellinen</string>

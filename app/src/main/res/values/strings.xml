@@ -15,6 +15,27 @@
     <string name="skip">Skip</string>
     <string name="entry_deleted">Entry deleted</string>
     <string name="undo">UNDO</string>
+    <string name="link_known_substance">
+    Link to known substance: %1$s? Select a route to estimate when effects end.
+</string>
+    <string name="dont_link">Don\'t link</string>
+    <string name="drug_name_required">Drug name required</string>
+    <string name="interactions_detected">The following interactions were detected:\n\n</string>
+    <string name="matched_via">Matched via:</string>
+    <string name="potentially_unsafe_combinations">
+    PsychonautWiki classifies these combinations as potentially unsafe.
+</string>
+    <string name="log_dose_confirmation">
+    Do you still want to log this dose?
+</string>
+    <string name="interaction_detected">Interaction detected</string>
+    <string name="log_anyway">Log anyway</string>
+    <string name="export_failed">Export failed</string>
+    <string name="csv_exported_to_downloads">CSV exported to Downloads</string>
+    <string name="imported_entries">%1$d entries imported</string>
+    <string name="duplicates_skipped">%1$d duplicates skipped</string>
+    <string name="rows_skipped">%1$d rows skipped</string>
+    <string name="import_failed_read">Import failed: could not read file</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>
     <string name="second_fragment_label" translatable="false">Second Fragment</string>

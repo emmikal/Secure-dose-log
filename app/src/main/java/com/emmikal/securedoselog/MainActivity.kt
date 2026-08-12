@@ -321,9 +321,9 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 linkSection.visibility = View.VISIBLE
-                linkPrompt.text = "Link to known substance: ${match.name}? Select a route to estimate when effects end."
+                linkPrompt.text = getString(R.string.link_known_substance, match.name)
 
-                val routeOptions = mutableListOf("Don't link")
+                val routeOptions = mutableListOf(getString(R.string.dont_link))
                 routeOptions.addAll(match.routes.map { it.route.replaceFirstChar { c -> c.uppercase() } })
 
                 val spinnerAdapter = ArrayAdapter(
@@ -344,7 +344,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 val selected = parent?.getItemAtPosition(position) as? String ?: return
-                if (selected != "Don't link") {
+                if (selected != getString(R.string.dont_link)) {
                     routeField.setText(selected)
                 }
             }
@@ -365,7 +365,7 @@ class MainActivity : AppCompatActivity() {
         val match = SubstanceDatabase.findByName(drugField.text.toString()) ?: return null to null
         val selected = routeSpinner.selectedItem as? String ?: return null to null
 
-        if (selected == "Don't link") return null to null
+        if (selected == getString(R.string.dont_link)) return null to null
 
         return match.id to selected
     }
@@ -402,7 +402,11 @@ class MainActivity : AppCompatActivity() {
             val notesText = notes.text.toString()
 
             if (drugText.isEmpty()) {
-                Toast.makeText(this, "Drug name required", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    R.string.drug_name_required,
+                    Toast.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
 
@@ -490,7 +494,8 @@ class MainActivity : AppCompatActivity() {
 
         val message = buildString {
 
-            append("The following interactions were detected:\n\n")
+            append(getString(R.string.interactions_detected))
+            append("\n\n")
 
             val uniqueInteractions =
                 deduplicateInteractions(interactions)
@@ -510,22 +515,25 @@ class MainActivity : AppCompatActivity() {
                 append(it.incoming.name)
                 append("\n")
 
-                append("Matched via: ")
+                append(getString(R.string.matched_via))
+                append(" ")
                 append(it.matchedInteraction)
                 append("\n\n")
             }
 
-            append("PsychonautWiki classifies these combinations as potentially unsafe.\n\n")
-            append("Do you still want to log this dose?")
+            append(getString(R.string.potentially_unsafe_combinations))
+            append("\n\n")
+            append(getString(R.string.log_dose_confirmation))
         }
 
         MaterialAlertDialogBuilder(this)
-            .setTitle("Interaction detected")
+            .setTitle(R.string.interaction_detected)
             .setMessage(message)
-            .setNegativeButton("Cancel", null)
-            .setPositiveButton("Log anyway") { _, _ ->
+            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(R.string.log_anyway) { _, _ ->
                 saveEntry(entry, dialog)
             }
+
             .show()
     }
 
@@ -657,7 +665,7 @@ class MainActivity : AppCompatActivity() {
         val uri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues)
 
         if (uri == null) {
-            Toast.makeText(this, "Export failed", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.export_failed, Toast.LENGTH_LONG).show()
             return
         }
 
@@ -682,12 +690,16 @@ class MainActivity : AppCompatActivity() {
                 writer.flush()
             }
 
-            Toast.makeText(this, "CSV exported to Downloads", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                R.string.csv_exported_to_downloads,
+                Toast.LENGTH_LONG
+            ).show()
 
         } catch (e: IOException) {
             e.printStackTrace()
             resolver.delete(uri, null, null)
-            Toast.makeText(this, "Export failed", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.export_failed, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -773,15 +785,31 @@ class MainActivity : AppCompatActivity() {
             reader.close()
             refreshList()
 
-            val parts = mutableListOf("Imported $importedCount entries")
-            if (duplicateCount > 0) parts.add("$duplicateCount duplicates skipped")
-            if (skippedCount > 0) parts.add("$skippedCount rows skipped")
+            val parts = mutableListOf(
+                getString(R.string.imported_entries, importedCount)
+            )
 
-            Toast.makeText(this, parts.joinToString(", "), Toast.LENGTH_LONG).show()
+            if (duplicateCount > 0) {
+                parts.add(getString(R.string.duplicates_skipped, duplicateCount))
+            }
+
+            if (skippedCount > 0) {
+                parts.add(getString(R.string.rows_skipped, skippedCount))
+            }
+
+            Toast.makeText(
+                this,
+                parts.joinToString(", "),
+                Toast.LENGTH_LONG
+            ).show()
 
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, "Import failed: could not read file", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                R.string.import_failed_read,
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
