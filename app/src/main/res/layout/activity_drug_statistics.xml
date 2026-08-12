@@ -19,7 +19,7 @@
             android:id="@+id/statDrugName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Drug"
+            android:text="@string/drug_statistics_drug"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp"/>
@@ -42,7 +42,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total doses"
+                    android:text="@string/drug_statistics_total_doses"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
@@ -76,7 +76,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Entries today"
+                    android:text="@string/drug_statistics_entries_today"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
@@ -110,7 +110,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Entries last 7 days"
+                    android:text="@string/drug_statistics_entries_last_7_days"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
@@ -144,7 +144,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Average doses per day"
+                    android:text="@string/drug_statistics_average_doses_per_day"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
@@ -178,7 +178,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="First dose"
+                    android:text="@string/drug_statistics_first_dose"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
@@ -211,7 +211,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Last dose"
+                    android:text="@string/drug_statistics_last_dose"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 

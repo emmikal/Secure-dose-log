@@ -36,6 +36,56 @@
     <string name="duplicates_skipped">%1$d duplicates skipped</string>
     <string name="rows_skipped">%1$d rows skipped</string>
     <string name="import_failed_read">Import failed: could not read file</string>
+    <string name="unlock_dose_log">Unlock Secure Dose Log</string>
+    <string name="total_doses">Total doses: %1$d</string>
+    <string name="last_dose">Last dose: %1$s</string>
+    <string name="average_per_day">Average/day: %1$s</string>
+    <string name="effects_likely_ended">Effects likely ended by %1$s</string>
+    <string name="estimated_effects_end">Est. effects end ~%1$s–%2$s</string>
+    <string name="started">Started: %1$s</string>
+    <string name="ended">Ended: %1$s</string>
+    <string name="ended_still_active">Ended: still active</string>
+    <string name="duration">Duration: %1$s</string>
+    <string name="entries_count">Entries: %1$d</string>
+    <string name="unknown">Unknown</string>
+    <string name="doses_count">%1$d doses</string>
+    <string name="this_substance">this substance</string>
+    <string name="redose_note">%1$d doses of %2$s logged in this session. Actual combined effects typically last longer than a single dose\'s estimate. Most recent dose: %3$s</string>
+    <string name="duration_format">%1$dh %2$dm</string>
+    <string name="session_active_started">Active — started %1$s</string>
+    <string name="session_ended_at">Ended %1$s</string>
+    <plurals name="entry_count">
+        <item quantity="one">%1$d entry</item>
+        <item quantity="other">%1$d entries</item>
+    </plurals>
+    <string name="not_available">—</string>
+    <string name="drug_statistics_drug">Drug</string>
+    <string name="drug_statistics_total_doses">Total doses</string>
+    <string name="drug_statistics_entries_today">Entries today</string>
+    <string name="drug_statistics_entries_last_7_days">Entries last 7 days</string>
+    <string name="drug_statistics_average_doses_per_day">Average doses per day</string>
+    <string name="drug_statistics_first_dose">First dose</string>
+    <string name="drug_statistics_last_dose">Last dose</string>
+    <string name="session">Session</string>
+    <string name="session_substances">Substances</string>
+    <string name="session_timeline">Timeline</string>
+    <string name="statistics_no_statistics_yet">No statistics yet</string>
+    <string name="statistics_add_entries">Add entries to see statistics</string>
+    <string name="statistics_total_entries">Total entries</string>
+    <string name="statistics_most_used_drug">Most used drug</string>
+    <string name="statistics_entries_today">Entries today</string>
+    <string name="statistics_entries_last_7_days">Entries last 7 days</string>
+    <string name="statistics_average_doses_per_day">Average doses per day</string>
+    <string name="statistics_last_dose">Last dose</string>
+    <string name="statistics_substance_statistics">Substance statistics</string>
+    <string name="drug">Drug</string>
+    <string name="route">Route</string>
+    <string name="dosage">Dosage</string>
+    <string name="notes_optional">Notes (optional)</string>
+    <string name="save_entry">Save Entry</string>
+    <string name="start_session">Start Session</string>
+    <string name="session_name_optional">Session name (optional)</string>
+    <string name="start">Start</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>
     <string name="second_fragment_label" translatable="false">Second Fragment</string>

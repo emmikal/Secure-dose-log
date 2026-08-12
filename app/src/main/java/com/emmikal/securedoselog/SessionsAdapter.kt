@@ -33,21 +33,35 @@ class SessionsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val session = sessions[position]
+        val context = holder.itemView.context
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
 
         holder.name.text = session.name
 
         val end = session.endTime
         holder.status.text = if (end == null) {
-            "Active — started ${sdf.format(Date(session.startTime))}"
+            context.getString(
+                R.string.session_active_started,
+                sdf.format(Date(session.startTime))
+            )
         } else {
-            "Ended ${sdf.format(Date(end))}"
+            context.getString(
+                R.string.session_ended_at,
+                sdf.format(Date(end))
+            )
         }
 
         val count = entryCounts[session.id] ?: 0
-        holder.entryCount.text = "$count ${if (count == 1) "entry" else "entries"}"
 
-        holder.itemView.setOnClickListener { listener.onSessionClick(session) }
+        holder.entryCount.text = context.resources.getQuantityString(
+            R.plurals.entry_count,
+            count,
+            count
+        )
+
+        holder.itemView.setOnClickListener {
+            listener.onSessionClick(session)
+        }
     }
 
     override fun getItemCount(): Int = sessions.size

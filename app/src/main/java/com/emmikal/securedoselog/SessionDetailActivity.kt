@@ -45,45 +45,66 @@ class SessionDetailActivity : AppCompatActivity() {
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
 
         findViewById<TextView>(R.id.detailSessionName).text = session.name
+
         findViewById<TextView>(R.id.detailStarted).text =
-            "Started: ${sdf.format(Date(session.startTime))}"
+            getString(R.string.started, sdf.format(Date(session.startTime)))
 
         val endTime = session.endTime
         val endedText = if (endTime != null) {
-            "Ended: ${sdf.format(Date(endTime))}"
+            getString(R.string.ended, sdf.format(Date(endTime)))
         } else {
-            "Ended: still active"
+            getString(R.string.ended_still_active)
         }
+
         findViewById<TextView>(R.id.detailEnded).text = endedText
 
-        val durationMillis = (endTime ?: System.currentTimeMillis()) - session.startTime
-        findViewById<TextView>(R.id.detailDuration).text = "Duration: ${formatDuration(durationMillis)}"
+        val durationMillis =
+            (endTime ?: System.currentTimeMillis()) - session.startTime
+
+        findViewById<TextView>(R.id.detailDuration).text =
+            getString(R.string.duration, formatDuration(durationMillis))
 
         findViewById<TextView>(R.id.detailEntryCount).text =
-            "Entries: ${entries.size}"
+            getString(R.string.entries_count, entries.size)
 
         // Group entries by substance, preserving first-seen order
         val bySubstance = LinkedHashMap<String, MutableList<DrugEntry>>()
+
         for (entry in entries) {
-            val drug = entry.drug ?: "Unknown"
+            val drug = entry.drug ?: getString(R.string.unknown)
             bySubstance.getOrPut(drug) { mutableListOf() }.add(entry)
         }
 
         val inflater = LayoutInflater.from(this)
-        val substanceContainer = findViewById<android.widget.LinearLayout>(R.id.substanceContainer)
+
+        val substanceContainer =
+            findViewById<android.widget.LinearLayout>(R.id.substanceContainer)
 
         for ((drug, drugEntries) in bySubstance) {
-            val itemView = inflater.inflate(R.layout.item_substance_summary, substanceContainer, false)
+            val itemView = inflater.inflate(
+                R.layout.item_substance_summary,
+                substanceContainer,
+                false
+            )
 
             itemView.findViewById<TextView>(R.id.substanceName).text = drug
 
             val doses = drugEntries.map { it.dosage ?: "" }
-            itemView.findViewById<TextView>(R.id.substanceDoses).text =
-                doses.filter { it.isNotBlank() }.joinToString(", ").ifEmpty { "${doses.size} doses" }
 
-            val redoseNote = itemView.findViewById<TextView>(R.id.substanceRedoseNote)
+            itemView.findViewById<TextView>(R.id.substanceDoses).text =
+                doses
+                    .filter { it.isNotBlank() }
+                    .joinToString(", ")
+                    .ifEmpty {
+                        getString(R.string.doses_count, doses.size)
+                    }
+
+            val redoseNote =
+                itemView.findViewById<TextView>(R.id.substanceRedoseNote)
+
             if (drugEntries.size > 1) {
                 val redoseText = buildRedoseNote(drugEntries)
+
                 if (redoseText != null) {
                     redoseNote.visibility = android.view.View.VISIBLE
                     redoseNote.text = redoseText
@@ -94,22 +115,32 @@ class SessionDetailActivity : AppCompatActivity() {
         }
 
         // Timeline: chronological list of every entry
-        val timelineContainer = findViewById<android.widget.LinearLayout>(R.id.timelineContainer)
+        val timelineContainer =
+            findViewById<android.widget.LinearLayout>(R.id.timelineContainer)
+
         val timeSdf = SimpleDateFormat("HH:mm", Locale.getDefault())
 
         val sortedEntries = entries.sortedBy { it.timestamp }
 
         for (entry in sortedEntries) {
-            val itemView = inflater.inflate(R.layout.item_timeline_entry, timelineContainer, false)
+            val itemView = inflater.inflate(
+                R.layout.item_timeline_entry,
+                timelineContainer,
+                false
+            )
 
             itemView.findViewById<TextView>(R.id.timelineTime).text =
                 timeSdf.format(Date(entry.timestamp))
 
             val dosage = entry.dosage?.takeIf { it.isNotBlank() }
-            val drug = entry.drug ?: "Unknown"
+            val drug = entry.drug ?: getString(R.string.unknown)
 
             itemView.findViewById<TextView>(R.id.timelineDescription).text =
-                if (dosage != null) "$dosage $drug" else drug
+                if (dosage != null) {
+                    "$dosage $drug"
+                } else {
+                    drug
+                }
 
             timelineContainer.addView(itemView)
         }
@@ -122,24 +153,42 @@ class SessionDetailActivity : AppCompatActivity() {
      * with a note that actual combined effects likely last longer.
      */
     private fun buildRedoseNote(drugEntries: List<DrugEntry>): String? {
-        val linkedEntries = drugEntries.filter { it.substanceId != null && it.linkedRoute != null }
+        val linkedEntries = drugEntries.filter {
+            it.substanceId != null && it.linkedRoute != null
+        }
+
         if (linkedEntries.isEmpty()) return null
 
-        val mostRecent = linkedEntries.maxByOrNull { it.timestamp } ?: return null
-        val estimate = EffectsEstimator.formatEstimate(mostRecent) ?: return null
+        val mostRecent =
+            linkedEntries.maxByOrNull { it.timestamp } ?: return null
 
-        val substanceName = SubstanceDatabase.findById(mostRecent.substanceId!!)?.name
-            ?: mostRecent.drug ?: "this substance"
+        val estimate = EffectsEstimator.formatEstimate(
+            this@SessionDetailActivity,
+            mostRecent
+        ) ?: return null
 
-        return "${drugEntries.size} doses of $substanceName logged in this session. " +
-                "Actual combined effects typically last longer than a single dose's estimate. " +
-                "Most recent dose: $estimate"
+        val substanceName =
+            SubstanceDatabase.findById(mostRecent.substanceId!!)?.name
+                ?: mostRecent.drug
+                ?: getString(R.string.this_substance)
+
+        return getString(
+            R.string.redose_note,
+            drugEntries.size,
+            substanceName,
+            estimate
+        )
     }
 
     private fun formatDuration(millis: Long): String {
         val totalMinutes = millis / (1000 * 60)
         val hours = totalMinutes / 60
         val minutes = totalMinutes % 60
-        return "${hours}h ${minutes}m"
+
+        return getString(
+            R.string.duration_format,
+            hours,
+            minutes
+        )
     }
 }

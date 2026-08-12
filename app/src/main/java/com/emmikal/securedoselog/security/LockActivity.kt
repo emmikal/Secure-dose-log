@@ -18,18 +18,20 @@ class LockActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLockBinding
     private lateinit var biometricPrompt: BiometricPrompt
+    private lateinit var promptInfo: BiometricPrompt.PromptInfo
 
     private val allowedAuthenticators = BIOMETRIC_STRONG or DEVICE_CREDENTIAL
 
-    private val promptInfo = BiometricPrompt.PromptInfo.Builder()
-        .setTitle("Unlock Dose Log")
-        .setAllowedAuthenticators(allowedAuthenticators)
-        .build()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityLockBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle(getString(R.string.unlock_dose_log))
+            .setAllowedAuthenticators(allowedAuthenticators)
+            .build()
 
         biometricPrompt = BiometricPrompt(
             this,
@@ -37,7 +39,9 @@ class LockActivity : AppCompatActivity() {
             authCallback
         )
 
-        binding.unlockButton.setOnClickListener { attemptUnlock() }
+        binding.unlockButton.setOnClickListener {
+            attemptUnlock()
+        }
     }
 
     override fun onStart() {
@@ -47,23 +51,46 @@ class LockActivity : AppCompatActivity() {
 
     private fun attemptUnlock() {
         val manager = BiometricManager.from(this)
+
         when (manager.canAuthenticate(allowedAuthenticators)) {
-            BiometricManager.BIOMETRIC_SUCCESS -> biometricPrompt.authenticate(promptInfo)
-            else -> binding.lockStatusText.text = getString(R.string.lock_no_auth_available)
+            BiometricManager.BIOMETRIC_SUCCESS -> {
+                biometricPrompt.authenticate(promptInfo)
+            }
+
+            else -> {
+                binding.lockStatusText.text =
+                    getString(R.string.lock_no_auth_available)
+            }
         }
     }
 
     private val authCallback = object : BiometricPrompt.AuthenticationCallback() {
-        override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+
+        override fun onAuthenticationSucceeded(
+            result: BiometricPrompt.AuthenticationResult
+        ) {
             super.onAuthenticationSucceeded(result)
+
             (application as DoseLogApplication).unlockApp()
-            startActivity(Intent(this@LockActivity, MainActivity::class.java))
+
+            startActivity(
+                Intent(this@LockActivity, MainActivity::class.java)
+            )
+
             finish()
         }
 
-        override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+        override fun onAuthenticationError(
+            errorCode: Int,
+            errString: CharSequence
+        ) {
             super.onAuthenticationError(errorCode, errString)
-            Toast.makeText(this@LockActivity, errString, Toast.LENGTH_SHORT).show()
+
+            Toast.makeText(
+                this@LockActivity,
+                errString,
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }

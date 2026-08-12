@@ -10,7 +10,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Drug"
+        android:hint="@string/drug"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
         <AutoCompleteTextView
@@ -51,13 +51,12 @@
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
-
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Route"
+        android:hint="@string/route"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
         <EditText
@@ -70,7 +69,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Dosage"
+        android:hint="@string/dosage"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
         <EditText
@@ -83,7 +82,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Notes (optional)"
+        android:hint="@string/notes_optional"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
         <EditText
@@ -99,7 +98,7 @@
         android:id="@+id/buttonSaveSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Entry"
+        android:text="@string/save_entry"
         android:layout_marginTop="16dp"/>
 
 </LinearLayout>

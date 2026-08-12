@@ -21,7 +21,7 @@
             android:id="@+id/statDrugName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Drug"
+            android:text="@string/drug_statistics_drug"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -31,7 +31,7 @@
             android:id="@+id/statDrugTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total doses"
+            android:text="@string/drug_statistics_total_doses"
             android:textSize="14sp"
             android:layout_marginTop="6dp"/>
 
@@ -48,7 +48,7 @@
             android:id="@+id/statDrugLast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last dose"
+            android:text="@string/drug_statistics_last_dose"
             android:textSize="14sp"
             android:layout_marginTop="2dp"/>
 

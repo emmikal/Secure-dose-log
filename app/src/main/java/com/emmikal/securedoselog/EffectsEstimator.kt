@@ -4,6 +4,8 @@ import com.emmikal.securedoselog.DrugEntry
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import android.content.Context
+import com.emmikal.securedoselog.R
 
 /**
  * Computes an approximate effects-end range for an entry linked to
@@ -42,7 +44,7 @@ object EffectsEstimator {
      * ~14:30-16:00" or "Effects likely ended by 16:00" if the max
      * estimate has already passed.
      */
-    fun formatEstimate(entry: DrugEntry): String? {
+    fun formatEstimate(context: Context, entry: DrugEntry): String? {
         val estimate = estimateFor(entry) ?: return null
         val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
         val now = System.currentTimeMillis()
@@ -51,9 +53,16 @@ object EffectsEstimator {
         val endText = sdf.format(Date(estimate.endMaxTimestamp))
 
         return if (now > estimate.endMaxTimestamp) {
-            "Effects likely ended by $endText"
+            context.getString(
+                R.string.effects_likely_ended,
+                endText
+            )
         } else {
-            "Est. effects end ~$startText\u2013$endText"
+            context.getString(
+                R.string.estimated_effects_end,
+                startText,
+                endText
+            )
         }
     }
 }

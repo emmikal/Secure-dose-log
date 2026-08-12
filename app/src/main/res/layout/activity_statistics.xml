@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No statistics yet"
+            android:text="@string/statistics_no_statistics_yet"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="4dp"/>
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add entries to see statistics"
+            android:text="@string/statistics_add_entries"
             android:textSize="14sp"
             android:alpha="0.7"/>
 
@@ -72,7 +72,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Total entries"
+                        android:text="@string/statistics_total_entries"
                         android:textStyle="bold"
                         android:textSize="16sp"/>
 
@@ -106,7 +106,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Most used drug"
+                        android:text="@string/statistics_most_used_drug"
                         android:textStyle="bold"
                         android:textSize="16sp"/>
 
@@ -140,7 +140,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Entries today"
+                        android:text="@string/statistics_entries_today"
                         android:textStyle="bold"
                         android:textSize="16sp"/>
 
@@ -174,7 +174,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Entries last 7 days"
+                        android:text="@string/statistics_entries_last_7_days"
                         android:textStyle="bold"
                         android:textSize="16sp"/>
 
@@ -208,7 +208,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Average doses per day"
+                        android:text="@string/statistics_average_doses_per_day"
                         android:textStyle="bold"
                         android:textSize="16sp"/>
 
@@ -241,7 +241,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last dose"
+                        android:text="@string/statistics_last_dose"
                         android:textStyle="bold"
                         android:textSize="16sp"/>
 
@@ -256,10 +256,11 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Substance statistics"
+                android:text="@string/statistics_substance_statistics"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"

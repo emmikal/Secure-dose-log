@@ -46,7 +46,11 @@ class DrugAdapter(
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
         holder.timestamp.text = sdf.format(date)
 
-        val estimateText = EffectsEstimator.formatEstimate(entry)
+        val estimateText = EffectsEstimator.formatEstimate(
+            holder.itemView.context,
+            entry
+        )
+
         if (estimateText == null) {
             holder.effectsEstimate.visibility = View.GONE
         } else {

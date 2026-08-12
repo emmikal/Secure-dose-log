@@ -100,7 +100,7 @@ class StatisticsActivity : AppCompatActivity() {
 
         // Average doses per day
         if (entries.size < 2) {
-            statAvgPerDay.text = "—"
+            statAvgPerDay.text = getString(R.string.not_available)
         } else {
             val minTimestamp = entries.minOf { it.timestamp }
             val maxTimestamp = entries.maxOf { it.timestamp }
@@ -114,18 +114,23 @@ class StatisticsActivity : AppCompatActivity() {
 
             val avg = entries.size / days
 
-            statAvgPerDay.text = String.format(Locale.getDefault(), "%.2f", avg)
+            statAvgPerDay.text =
+                String.format(Locale.getDefault(), "%.2f", avg)
         }
 
         // Last dose
         val lastTimestamp = entries.maxOf { it.timestamp }
         val date = Date(lastTimestamp)
 
-        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+        val sdf = SimpleDateFormat(
+            "yyyy-MM-dd HH:mm",
+            Locale.getDefault()
+        )
+
         statLastDose.text = sdf.format(date)
 
         // Substance statistics RecyclerView
-        drugStatsAdapter = DrugStatsAdapter(stats)
+        drugStatsAdapter = DrugStatsAdapter(this, stats)
         recyclerDrugStats.adapter = drugStatsAdapter
     }
 }
