@@ -103,15 +103,6 @@ class MainActivity : AppCompatActivity() {
 
         SubstanceDatabase.load(applicationContext)
 
-        val alcohol = SubstanceDatabase.findByName("Alcohol")!!
-        val ketamine = SubstanceDatabase.findByName("Ketamine")!!
-
-        val interactions = InteractionEngine.findInteractions(
-            listOf(alcohol),
-            ketamine
-        )
-
-        Log.d("InteractionTest", interactions.toString())
 
         refreshList()
         refreshSessionBanner()
@@ -153,9 +144,12 @@ class MainActivity : AppCompatActivity() {
         } else {
             activeSessionBanner.visibility = View.VISIBLE
             activeSessionText.text = if (activeSessions.size == 1) {
-                "Active session: ${activeSessions[0].name}"
+                getString(R.string.active_session, activeSessions[0].name)
             } else {
-                "Active sessions: ${activeSessions.joinToString(", ") { it.name }}"
+                getString(
+                    R.string.active_sessions,
+                    activeSessions.joinToString(", ") { it.name }
+                )
             }
         }
     }
@@ -185,7 +179,11 @@ class MainActivity : AppCompatActivity() {
             refreshSessionBanner()
             dialog.dismiss()
 
-            Toast.makeText(this, "Session started: $name", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                getString(R.string.session_started, name),
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
         dialog.show()
@@ -204,11 +202,11 @@ class MainActivity : AppCompatActivity() {
         val names = activeSessions.map { it.name }.toTypedArray()
 
         AlertDialog.Builder(this)
-            .setTitle("End which session?")
+            .setTitle(getString(R.string.end_which_session))
             .setItems(names) { _, which ->
                 endSession(activeSessions[which])
             }
-            .setNegativeButton("Cancel", null)
+            .setNegativeButton(getString(R.string.cancel), null)
             .show()
     }
 
@@ -216,7 +214,11 @@ class MainActivity : AppCompatActivity() {
         session.endTime = System.currentTimeMillis()
         db.sessionDao().updateSession(session)
         refreshSessionBanner()
-        Toast.makeText(this, "Session ended: ${session.name}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            this,
+            getString(R.string.session_ended, session.name),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     private fun assignEntryToActiveSessions(entryId: Long) {
@@ -235,11 +237,11 @@ class MainActivity : AppCompatActivity() {
         val checkedItems = BooleanArray(activeSessions.size)
 
         AlertDialog.Builder(this)
-            .setTitle("Assign to session(s)")
+            .setTitle(R.string.assign_to_sessions)
             .setMultiChoiceItems(names, checkedItems) { _, which, isChecked ->
                 checkedItems[which] = isChecked
             }
-            .setPositiveButton("Assign") { _, _ ->
+            .setPositiveButton(R.string.assign) { _, _ ->
                 for (i in activeSessions.indices) {
                     if (checkedItems[i]) {
                         db.sessionDao().insertCrossRef(
@@ -251,7 +253,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            .setNegativeButton("Skip", null)
+            .setNegativeButton(R.string.skip, null)
             .show()
     }
 
@@ -274,8 +276,12 @@ class MainActivity : AppCompatActivity() {
                 db.drugDao().delete(deletedEntry)
                 refreshList()
 
-                Snackbar.make(recyclerView, "Entry deleted", Snackbar.LENGTH_LONG)
-                    .setAction("UNDO") {
+                Snackbar.make(
+                    recyclerView,
+                    R.string.entry_deleted,
+                    Snackbar.LENGTH_LONG
+                )
+                    .setAction(R.string.undo) {
                         db.drugDao().insert(deletedEntry)
                         refreshList()
                     }
@@ -594,7 +600,7 @@ class MainActivity : AppCompatActivity() {
         save.setOnClickListener {
             val (linkedSubstanceId, linkedRouteName) = readLinkSelection(drug, routeSpinner)
 
-            entry.drug = drug.text.toString()
+            entry.drug = drug.text.toString().trim()
             entry.route = route.text.toString()
             entry.dosage = dosage.text.toString()
             entry.notes = notes.text.toString().ifBlank { null }
@@ -730,7 +736,7 @@ class MainActivity : AppCompatActivity() {
                         continue
                     }
 
-                    val drug = parts[0]
+                    val drug = parts[0].trim()
                     val route = parts[1]
                     val dosage = parts[2]
 

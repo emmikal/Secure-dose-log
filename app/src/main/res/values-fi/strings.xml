@@ -1,3 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="lock_prompt_message">Poista lukitus katsellaksesi annoslogia</string>
+    <string name="unlock_button">Avaa</string>
+    <string name="lock_no_auth_available">Näytön lukitusta ei asetettu. Laita päälle PIN, kuvio, tai biometrinen lukitus laitteen asetuksista.</string>
+    <string name="app_name">Secure Dose Log</string>
+    <string name="action_settings">Asetukset</string>
+    <string name="active_session">Aktiivinen istunto %1$s</string>
+    <string name="active_sessions">Aktiiviset istunnot: %1$s</string>
+    <string name="session_started">Istunto aloitettu: %1$s</string>
+    <string name="end_which_session">Minkä istunnon haluat lopettaa?</string>
+    <string name="session_ended">Istunto päättynyt: %1$s</string>
+    <string name="cancel">Peruuta</string>
+    <string name="assign_to_sessions">Liitä istuntoihin</string>
+    <string name="assign">Liitä</string>
+    <string name="skip">Ohita</string>
+    <string name="entry_deleted">Merkintä poistettu</string>
+    <string name="undo">KUMOA</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Seuraava</string>
+    <string name="previous">Edellinen</string>
+
 </resources>
