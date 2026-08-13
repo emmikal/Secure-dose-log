@@ -1,0 +1,113 @@
+<resources>
+    <string name="lock_prompt_message">Lås upp för att visa dosloggen</string>
+    <string name="unlock_button">Lås upp</string>
+    <string name="lock_no_auth_available">Ingen skärmlåsning är inställd. Aktivera PIN-kod, mönster eller biometrisk låsning i enhetens inställningar.</string>
+    <string name="app_name">Secure Dose Log</string>
+    <string name="action_settings">Inställningar</string>
+    <string name="active_session">Aktiv session: %1$s</string>
+    <string name="active_sessions">Aktiva sessioner: %1$s</string>
+    <string name="session_started">Session startad: %1$s</string>
+    <string name="end_which_session">Vilken session vill du avsluta?</string>
+    <string name="session_ended">Session avslutad: %1$s</string>
+    <string name="cancel">Avbryt</string>
+    <string name="assign_to_sessions">Koppla till sessioner</string>
+    <string name="assign">Koppla</string>
+    <string name="skip">Hoppa över</string>
+    <string name="entry_deleted">Post borttagen</string>
+    <string name="undo">ÅNGRA</string>
+
+    <string name="link_known_substance">
+        Koppla till känd substans: %1$s? Välj administreringsväg för att uppskatta när effekterna upphör.
+    </string>
+
+    <string name="dont_link">Koppla inte</string>
+    <string name="drug_name_required">Substansens namn krävs</string>
+    <string name="interactions_detected">Följande interaktioner upptäcktes:</string>
+    <string name="matched_via">Matchade via:</string>
+
+    <string name="potentially_unsafe_combinations">
+        PsychonautWiki klassificerar dessa kombinationer som potentiellt farliga.
+    </string>
+
+    <string name="log_dose_confirmation">
+        Vill du ändå logga denna dos?
+    </string>
+
+    <string name="interaction_detected">Interaktion upptäckt</string>
+    <string name="log_anyway">Logga ändå</string>
+    <string name="export_failed">Exporten misslyckades</string>
+    <string name="csv_exported_to_downloads">CSV-filen exporterades till mappen Hämtade filer</string>
+    <string name="imported_entries">%1$d poster importerades</string>
+    <string name="duplicates_skipped">%1$d dubbletter hoppades över</string>
+    <string name="rows_skipped">%1$d rader hoppades över</string>
+    <string name="import_failed_read">Importen misslyckades: kunde inte läsa filen</string>
+    <string name="unlock_dose_log">Lås upp Secure Dose Log</string>
+    <string name="total_doses">Totalt antal doser: %1$d</string>
+    <string name="last_dose">Senaste dos: %1$s</string>
+    <string name="average_per_day">Genomsnitt per dag: %1$s</string>
+    <string name="effects_likely_ended">Effekterna upphörde sannolikt kl. %1$s</string>
+    <string name="estimated_effects_end">Beräknat slut för effekterna omkring %1$s–%2$s</string>
+    <string name="started">Startade: %1$s</string>
+    <string name="ended">Avslutad: %1$s</string>
+    <string name="ended_still_active">Avslutad: fortfarande aktiv</string>
+    <string name="duration">Varaktighet: %1$s</string>
+    <string name="entries_count">Antal poster: %1$d</string>
+    <string name="unknown">Okänd</string>
+    <string name="doses_count">%1$d doser</string>
+    <string name="this_substance">denna substans</string>
+    <string name="redose_note">%1$d doser av substansen %2$s har loggats i denna session. Faktiska interaktioner varar vanligtvis längre än den uppskattade effektdurationen för en enskild dos. Senaste dos: %3$s</string>
+    <string name="duration_format">%1$d t %2$d min</string>
+    <string name="session_active_started">Aktiv — startad %1$s</string>
+    <string name="session_ended_at">Avslutad %1$s</string>
+
+    <plurals name="entry_count">
+        <item quantity="one">%1$d post</item>
+        <item quantity="other">%1$d poster</item>
+    </plurals>
+
+    <string name="not_available">—</string>
+
+    <string name="drug_statistics_drug">Substans</string>
+    <string name="drug_statistics_total_doses">Totalt antal doser</string>
+    <string name="drug_statistics_entries_today">Poster idag</string>
+    <string name="drug_statistics_entries_last_7_days">Poster under de senaste 7 dagarna</string>
+    <string name="drug_statistics_average_doses_per_day">Genomsnittligt antal doser per dag</string>
+    <string name="drug_statistics_first_dose">Första dos</string>
+    <string name="drug_statistics_last_dose">Senaste dos</string>
+
+    <string name="session">Session</string>
+    <string name="session_substances">Substanser</string>
+    <string name="session_timeline">Tidslinje</string>
+
+    <string name="statistics_no_statistics_yet">Ingen statistik ännu</string>
+    <string name="statistics_add_entries">Lägg till poster för att se statistik</string>
+    <string name="statistics_total_entries">Totalt antal poster</string>
+    <string name="statistics_most_used_drug">Mest använda substans</string>
+    <string name="statistics_entries_today">Poster idag</string>
+    <string name="statistics_entries_last_7_days">Poster under de senaste 7 dagarna</string>
+    <string name="statistics_average_doses_per_day">Genomsnittligt antal doser per dag</string>
+    <string name="statistics_last_dose">Senaste dos</string>
+    <string name="statistics_substance_statistics">Substansstatistik</string>
+
+    <string name="drug">Substans</string>
+    <string name="route">Administreringsväg</string>
+    <string name="dosage">Dos</string>
+    <string name="notes_optional">Anteckningar (valfritt)</string>
+    <string name="save_entry">Spara post</string>
+
+    <string name="start_session">Starta session</string>
+    <string name="session_name_optional">Sessionsnamn (valfritt)</string>
+    <string name="start">Starta</string>
+    <string name="sessions">Sessioner</string>
+    <string name="sessions_no_sessions_yet">Inga sessioner ännu</string>
+    <string name="sessions_start_from_main">Starta en session från huvudvyn</string>
+
+    <string name="statistics">Statistik</string>
+    <string name="export_csv">Exportera CSV</string>
+    <string name="import_csv">Importera CSV</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Nästa</string>
+    <string name="previous">Föregående</string>
+
+</resources>
