@@ -86,6 +86,12 @@
     <string name="start_session">Aloita istunto</string>
     <string name="session_name_optional">Istunnon nimi (valinnainen)</string>
     <string name="start">Aloita</string>
+    <string name="sessions">Istunnot</string>
+    <string name="sessions_no_sessions_yet">Ei vielä istuntoja</string>
+    <string name="sessions_start_from_main">Aloita istunto päänäkymästä</string>
+    <string name="statistics">Tilastot</string>
+    <string name="export_csv">Vie CSV</string>
+    <string name="import_csv">Tuo CSV</string>
     <!-- Strings used for fragments for navigation -->
     <string name="next">Seuraava</string>
     <string name="previous">Edellinen</string>

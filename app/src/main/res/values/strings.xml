@@ -86,6 +86,12 @@
     <string name="start_session">Start Session</string>
     <string name="session_name_optional">Session name (optional)</string>
     <string name="start">Start</string>
+    <string name="sessions">Sessions</string>
+    <string name="sessions_no_sessions_yet">No sessions yet</string>
+    <string name="sessions_start_from_main">Start one from the main screen</string>
+    <string name="statistics">Statistics</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="import_csv">Import CSV</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>
     <string name="second_fragment_label" translatable="false">Second Fragment</string>

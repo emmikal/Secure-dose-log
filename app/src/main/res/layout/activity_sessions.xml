@@ -10,7 +10,7 @@
         android:id="@+id/topAppBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:title="Sessions"
+        android:title="@string/sessions"
         app:navigationIcon="@android:drawable/ic_menu_revert"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No sessions yet"
+            android:text="@string/sessions_no_sessions_yet"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="4dp"/>
@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start one from the main screen"
+            android:text="@string/sessions_start_from_main"
             android:textSize="14sp"
             android:alpha="0.7"/>
 
