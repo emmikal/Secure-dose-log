@@ -108,6 +108,7 @@ Secure Dose Log is available in:
 
 - 🇬🇧 English
 - 🇫🇮 Finnish
+- 🇸🇪 Swedish
 
 The app follows the device's language settings.
 
