@@ -14,8 +14,8 @@ android {
         applicationId = "com.emmikal.securedoselog"
         minSdk = 30
         targetSdk = 36
-        versionCode = 15
-        versionName = "3.0"
+        versionCode = 16
+        versionName = "3.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
