@@ -102,6 +102,15 @@ Built-in statistics include:
 - Average doses per day
 - Last recorded dose
 
+## Languages
+
+Secure Dose Log is available in:
+
+- 🇬🇧 English
+- 🇫🇮 Finnish
+
+The app follows the device's language settings.
+
 ---
 
 ## 🔒 Privacy & Security
