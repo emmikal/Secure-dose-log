@@ -92,6 +92,10 @@
     <string name="statistics">Tilastot</string>
     <string name="export_csv">Vie CSV</string>
     <string name="import_csv">Tuo CSV</string>
+    <string name="tap_to_end">Napauta lopettaaksesi</string>
+    <string name="no_entries_yet">Ei vielä merkintöjä</string>
+    <string name="tap_to_add_entry">Napauta + lisätäksesi merkinnän</string>
+    <string name="add_entry">Lisää merkintä</string>
     <!-- Strings used for fragments for navigation -->
     <string name="next">Seuraava</string>
     <string name="previous">Edellinen</string>

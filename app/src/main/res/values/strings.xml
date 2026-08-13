@@ -92,6 +92,10 @@
     <string name="statistics">Statistics</string>
     <string name="export_csv">Export CSV</string>
     <string name="import_csv">Import CSV</string>
+    <string name="tap_to_end">Tap to end</string>
+    <string name="no_entries_yet">No entries yet</string>
+    <string name="tap_to_add_entry">Tap + to add one</string>
+    <string name="add_entry">Add entry</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
