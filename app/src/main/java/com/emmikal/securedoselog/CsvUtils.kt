@@ -1,15 +1,35 @@
 package com.emmikal.securedoselog
 
 /**
- * Escapes a single CSV field per RFC 4180: wraps in quotes and doubles
- * any internal quotes if the field contains a comma, quote, or newline.
+ * Escapes a single CSV field per RFC 4180 and prevents spreadsheet formula
+ * injection when the exported CSV is opened by spreadsheet software.
+ *
+ * Values beginning with '=', '+', '-', or '@' are prefixed with an apostrophe
+ * so that spreadsheet applications treat them as text rather than formulas.
  */
 fun csvEscape(field: String?): String {
     val value = field ?: ""
-    return if (value.contains(",") || value.contains("\"") || value.contains("\n")) {
-        "\"" + value.replace("\"", "\"\"") + "\""
+
+    val safeValue = if (
+        value.startsWith("=") ||
+        value.startsWith("+") ||
+        value.startsWith("-") ||
+        value.startsWith("@")
+    ) {
+        "'$value"
     } else {
         value
+    }
+
+    return if (
+        safeValue.contains(",") ||
+        safeValue.contains("\"") ||
+        safeValue.contains("\n") ||
+        safeValue.contains("\r")
+    ) {
+        "\"" + safeValue.replace("\"", "\"\"") + "\""
+    } else {
+        safeValue
     }
 }
 
@@ -25,6 +45,7 @@ fun parseCsvLine(line: String): List<String> {
 
     while (i < line.length) {
         val c = line[i]
+
         if (inQuotes) {
             if (c == '"') {
                 if (i + 1 < line.length && line[i + 1] == '"') {
@@ -39,15 +60,19 @@ fun parseCsvLine(line: String): List<String> {
         } else {
             when (c) {
                 '"' -> inQuotes = true
+
                 ',' -> {
                     result.add(sb.toString())
                     sb.clear()
                 }
+
                 else -> sb.append(c)
             }
         }
+
         i++
     }
+
     result.add(sb.toString())
     return result
 }
