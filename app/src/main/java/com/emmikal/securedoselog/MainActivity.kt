@@ -725,86 +725,189 @@ class MainActivity : AppCompatActivity() {
         var duplicateCount = 0
         var skippedCount = 0
 
+        val maxImportFileSize = 10L * 1024 * 1024 // 10 MB
+        val maxImportRows = 100_000
+        val maxFieldLength = 1_000
+        val maxLineLength = 10_000
+
         try {
-            val inputStream = contentResolver.openInputStream(uri)
-            val reader = BufferedReader(InputStreamReader(inputStream))
+            val cursor = contentResolver.query(
+                uri,
+                arrayOf(android.provider.OpenableColumns.SIZE),
+                null,
+                null,
+                null
+            )
 
-            var firstLine = true
-            val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-
-            var line: String?
-            while (reader.readLine().also { line = it } != null) {
-                if (firstLine) {
-                    firstLine = false
-                    continue
+            val fileSize = cursor?.use {
+                if (it.moveToFirst() && !it.isNull(0)) {
+                    it.getLong(0)
+                } else {
+                    -1L
                 }
+            } ?: -1L
 
-                val currentLine = line!!
-
-                try {
-                    val parts = parseCsvLine(currentLine)
-                    if (parts.size < 4) {
-                        skippedCount++
-                        continue
-                    }
-
-                    val drug = parts[0].trim()
-                    val route = parts[1]
-                    val dosage = parts[2]
-
-                    val date = sdf.parse(parts[3])
-                    if (date == null) {
-                        skippedCount++
-                        continue
-                    }
-                    val timestamp = date.time
-
-                    val notes = if (parts.size >= 5) parts[4].ifBlank { null } else null
-
-                    val alreadyExists = db.drugDao().countMatching(drug, route, dosage, timestamp) > 0
-                    if (alreadyExists) {
-                        duplicateCount++
-                        continue
-                    }
-
-                    val entry = DrugEntry()
-                    entry.drug = drug
-                    entry.route = route
-                    entry.dosage = dosage
-                    entry.timestamp = timestamp
-                    entry.notes = notes
-
-                    db.drugDao().insert(entry)
-                    importedCount++
-
-                } catch (e: Exception) {
-                    skippedCount++
-                }
+            if (fileSize > maxImportFileSize) {
+                Toast.makeText(
+                    this,
+                    R.string.import_file_too_large,
+                    Toast.LENGTH_LONG
+                ).show()
+                return
             }
 
-            reader.close()
+            contentResolver.openInputStream(uri)?.use { inputStream ->
+                inputStream.bufferedReader().use { reader ->
+
+                    var firstLine = true
+                    var rowCount = 0
+
+                    val sdf = SimpleDateFormat(
+                        "yyyy-MM-dd HH:mm:ss",
+                        Locale.getDefault()
+                    ).apply {
+                        isLenient = false
+                    }
+
+                    var line: String?
+
+                    while (reader.readLine().also { line = it } != null) {
+
+                        if (firstLine) {
+                            firstLine = false
+                            continue
+                        }
+
+                        rowCount++
+
+                        if (rowCount > maxImportRows) {
+                            skippedCount++
+                            continue
+                        }
+
+                        val currentLine = line ?: continue
+
+                        if (currentLine.length > maxLineLength) {
+                            skippedCount++
+                            continue
+                        }
+
+                        try {
+                            val csvParts = parseCsvLine(currentLine)
+
+                            // A valid exported row contains:
+                            // Drug, Route, Dosage, Timestamp, Notes
+                            if (csvParts.size < 4 || csvParts.size > 5) {
+                                skippedCount++
+                                continue
+                            }
+
+                            val drug = csvParts[0].trim()
+                            val route = csvParts[1].trim()
+                            val dosage = csvParts[2].trim()
+                            val timestampText = csvParts[3].trim()
+
+                            val notes = if (csvParts.size == 5) {
+                                csvParts[4].trim().ifBlank { null }
+                            } else {
+                                null
+                            }
+
+                            // Required fields
+                            if (drug.isBlank() ||
+                                route.isBlank() ||
+                                dosage.isBlank() ||
+                                timestampText.isBlank()
+                            ) {
+                                skippedCount++
+                                continue
+                            }
+
+                            // Protect against oversized fields
+                            if (drug.length > maxFieldLength ||
+                                route.length > maxFieldLength ||
+                                dosage.length > maxFieldLength ||
+                                timestampText.length > maxFieldLength ||
+                                (notes?.length ?: 0) > maxFieldLength
+                            ) {
+                                skippedCount++
+                                continue
+                            }
+
+                            val date = sdf.parse(timestampText)
+
+                            if (date == null) {
+                                skippedCount++
+                                continue
+                            }
+
+                            val timestamp = date.time
+
+                            val alreadyExists =
+                                db.drugDao().countMatching(
+                                    drug,
+                                    route,
+                                    dosage,
+                                    timestamp
+                                ) > 0
+
+                            if (alreadyExists) {
+                                duplicateCount++
+                                continue
+                            }
+
+                            val entry = DrugEntry().apply {
+                                this.drug = drug
+                                this.route = route
+                                this.dosage = dosage
+                                this.timestamp = timestamp
+                                this.notes = notes
+                            }
+
+                            db.drugDao().insert(entry)
+                            importedCount++
+
+                        } catch (e: Exception) {
+                            skippedCount++
+                        }
+                    }
+                }
+            } ?: run {
+                Toast.makeText(
+                    this,
+                    R.string.import_failed_read,
+                    Toast.LENGTH_LONG
+                ).show()
+                return
+            }
+
             refreshList()
 
-            val parts = mutableListOf(
+            val resultParts = mutableListOf(
                 getString(R.string.imported_entries, importedCount)
             )
 
             if (duplicateCount > 0) {
-                parts.add(getString(R.string.duplicates_skipped, duplicateCount))
+                resultParts.add(
+                    getString(R.string.duplicates_skipped, duplicateCount)
+                )
             }
 
             if (skippedCount > 0) {
-                parts.add(getString(R.string.rows_skipped, skippedCount))
+                resultParts.add(
+                    getString(R.string.rows_skipped, skippedCount)
+                )
             }
 
             Toast.makeText(
                 this,
-                parts.joinToString(", "),
+                resultParts.joinToString(", "),
                 Toast.LENGTH_LONG
             ).show()
 
         } catch (e: Exception) {
             e.printStackTrace()
+
             Toast.makeText(
                 this,
                 R.string.import_failed_read,
