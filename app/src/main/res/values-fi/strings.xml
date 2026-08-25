@@ -97,6 +97,9 @@
     <string name="tap_to_add_entry">Napauta + lisätäksesi merkinnän</string>
     <string name="add_entry">Lisää merkintä</string>
     <string name="import_file_too_large">Tuonti epäonnistui: tiedosto on liian suuri (enintään 10 Mt)</string>
+    <string name="edit_entry">Muokkaa merkintää</string>
+    <string name="duplicate_entry">Kopioi merkintä</string>
+    <string name="entry_duplicated">Merkintä kopioitu</string>
     <!-- Strings used for fragments for navigation -->
     <string name="next">Seuraava</string>
     <string name="previous">Edellinen</string>

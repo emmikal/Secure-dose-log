@@ -110,6 +110,9 @@
     <string name="tap_to_add_entry">Tryck på + för att lägga till en post</string>
     <string name="add_entry">Lägg till post</string>
     <string name="import_file_too_large">Importen misslyckades: filen är för stor (max 10 MB)</string>
+    <string name="edit_entry">Redigera post</string>
+    <string name="duplicate_entry">Duplicera post</string>
+    <string name="entry_duplicated">Post duplicerad</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="next">Nästa</string>

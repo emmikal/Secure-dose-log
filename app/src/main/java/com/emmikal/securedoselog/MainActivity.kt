@@ -126,7 +126,9 @@ class MainActivity : AppCompatActivity() {
 
             val currentAdapter = adapter
             if (currentAdapter == null) {
-                adapter = DrugAdapter(entries) { entry -> openEditEntrySheet(entry) }
+                adapter = DrugAdapter(entries) { entry ->
+                    showEntryContextMenu(entry)
+                }
                 recyclerView.adapter = adapter
             } else {
                 currentAdapter.updateEntries(entries)
@@ -425,6 +427,101 @@ class MainActivity : AppCompatActivity() {
         }
 
         dialog.show()
+    }
+
+    private fun showEntryContextMenu(entry: DrugEntry) {
+        val options = arrayOf(
+            getString(R.string.edit_entry),
+            getString(R.string.duplicate_entry)
+        )
+
+        MaterialAlertDialogBuilder(this)
+            .setItems(options) { _, which ->
+                when (which) {
+                    0 -> openEditEntrySheet(entry)
+                    1 -> duplicateEntry(entry)
+                }
+            }
+            .setNegativeButton(R.string.cancel, null)
+            .show()
+    }
+
+    private fun duplicateEntry(entry: DrugEntry) {
+        val duplicate = DrugEntry(
+            drug = entry.drug,
+            route = entry.route,
+            dosage = entry.dosage,
+            timestamp = System.currentTimeMillis(),
+            notes = entry.notes,
+            substanceId = entry.substanceId,
+            linkedRoute = entry.linkedRoute
+        )
+
+        val interactions = findInteractions(duplicate)
+
+        if (interactions.isEmpty()) {
+            saveDuplicatedEntry(duplicate)
+        } else {
+            showDuplicateInteractionWarning(duplicate, interactions)
+        }
+    }
+
+    private fun saveDuplicatedEntry(entry: DrugEntry) {
+        val newEntryId = db.drugDao().insert(entry)
+
+        refreshList()
+        assignEntryToActiveSessions(newEntryId)
+
+        Toast.makeText(
+            this,
+            R.string.entry_duplicated,
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
+    private fun showDuplicateInteractionWarning(
+        entry: DrugEntry,
+        interactions: List<Interaction>
+    ) {
+        val message = buildString {
+            append(getString(R.string.interactions_detected))
+            append("\n\n")
+
+            val uniqueInteractions = deduplicateInteractions(interactions)
+
+            uniqueInteractions.forEach {
+                val icon = when (it.severity) {
+                    InteractionSeverity.DANGEROUS -> "🔴"
+                    InteractionSeverity.UNSAFE -> "🟠"
+                    InteractionSeverity.UNCERTAIN -> "🟡"
+                }
+
+                append(icon)
+                append(" ")
+                append(it.existing.name)
+                append(" + ")
+                append(it.incoming.name)
+                append("\n")
+
+                append(getString(R.string.matched_via))
+                append(" ")
+                append(it.matchedInteraction)
+                append("\n\n")
+            }
+
+            append(getString(R.string.potentially_unsafe_combinations))
+            append("\n\n")
+            append(getString(R.string.log_dose_confirmation))
+        }
+
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.interaction_detected)
+            .setMessage(message)
+            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(R.string.log_anyway) { _, _ ->
+                saveDuplicatedEntry(entry)
+            }
+            .show()
     }
 
     private fun saveEntry(
