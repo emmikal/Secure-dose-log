@@ -64,7 +64,7 @@ Every contribution, no matter how small, has helped improve Secure Dose Log.
 
 ## Personal Note
 
-Turboautism Dose Log was created with the goal of supporting harm reduction through privacy, openness, and user control.
+Secure Dose Log was created with the goal of supporting harm reduction through privacy, openness, and user control.
 
 If this application helps even one person make safer decisions or communicate more effectively with healthcare professionals, then the project has achieved its purpose.
 
