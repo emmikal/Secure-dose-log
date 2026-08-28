@@ -60,7 +60,7 @@ Finally, thank you to everyone who has:
 - provided feedback
 - contributed ideas
 
-Every contribution, no matter how small, has helped improve Turboautism Dose Log.
+Every contribution, no matter how small, has helped improve Secure Dose Log.
 
 ## Personal Note
 
