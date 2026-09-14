@@ -142,21 +142,17 @@ object SubstanceDatabase {
                 KnownSubstance(
                     id = obj.getString("id"),
                     name = obj.getString("name"),
-
                     aliases = aliases,
                     systematicName =
                         if (obj.isNull("systematicName"))
                             null
                         else
                             obj.getString("systematicName"),
-
                     chemicalClasses = chemicalClasses,
                     psychoactiveClasses = psychoactiveClasses,
-
                     dangerousInteractions = dangerousInteractions,
                     unsafeInteractions = unsafeInteractions,
                     uncertainInteractions = uncertainInteractions,
-
                     routes = routes
                 )
             )
@@ -185,20 +181,35 @@ object SubstanceDatabase {
         return DurationRange(min, max)
     }
 
+    fun getAll(): List<KnownSubstance> = substances
+
     fun findById(id: String): KnownSubstance? =
         substances.find { it.id == id }
 
     fun findByName(query: String): KnownSubstance? {
         val normalized = query.trim().lowercase()
 
-        return substances.find {
-            it.name.lowercase() == normalized ||
+        if (normalized.isEmpty()) return null
 
+        // Exact matches always take priority.
+        substances.find {
+            it.name.lowercase() == normalized ||
                     it.aliases.any { alias ->
                         alias.lowercase() == normalized
                     } ||
-
                     it.systematicName?.lowercase() == normalized
+        }?.let { return it }
+
+        // Fall back to prefix matching for partial input.
+        val matches = substances.filter {
+            it.name.lowercase().startsWith(normalized) ||
+                    it.aliases.any { alias ->
+                        alias.lowercase().startsWith(normalized)
+                    } ||
+                    it.systematicName?.lowercase()?.startsWith(normalized) == true
         }
+
+        // Only return a partial match if it is unambiguous.
+        return if (matches.size == 1) matches.first() else null
     }
 }

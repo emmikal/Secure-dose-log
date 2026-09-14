@@ -722,13 +722,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDrugAutocomplete(field: AutoCompleteTextView) {
-        val entries = db.drugDao().getAll()
         val drugNames = mutableListOf<String>()
 
+        // Add previously used drug names from the user's log.
+        val entries = db.drugDao().getAll()
+
         for (entry in entries) {
-            val name = entry.drug
-            if (name != null && !drugNames.contains(name)) {
+            val name = entry.drug?.trim()
+
+            if (!name.isNullOrEmpty() && !drugNames.contains(name)) {
                 drugNames.add(name)
+            }
+        }
+
+        // Add known substances from the bundled substance database.
+        // This allows autocomplete to suggest substances that have
+        // never been logged before.
+        val knownSubstances = SubstanceDatabase.getAll()
+
+        for (substance in knownSubstances) {
+            if (!drugNames.contains(substance.name)) {
+                drugNames.add(substance.name)
+            }
+
+            for (alias in substance.aliases) {
+                if (alias.isNotBlank() && !drugNames.contains(alias)) {
+                    drugNames.add(alias)
+                }
             }
         }
 
@@ -740,7 +760,10 @@ class MainActivity : AppCompatActivity() {
 
         field.setAdapter(adapter)
         field.threshold = 1
-        field.setOnClickListener { field.showDropDown() }
+
+        field.setOnClickListener {
+            field.showDropDown()
+        }
     }
 
     // ---------- CSV export / import ----------
