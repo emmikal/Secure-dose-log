@@ -15,16 +15,18 @@
 
         <!-- Drug name header -->
 
+        <!-- Total doses -->
+
         <TextView
             android:id="@+id/statDrugName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="@string/drug_statistics_drug"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- Total doses -->
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
